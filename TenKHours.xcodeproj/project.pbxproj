@@ -1,0 +1,305 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		49B68FBB17486BE700CF841D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B68FBA17486BE700CF841D /* UIKit.framework */; };
+		49B68FBD17486BE700CF841D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B68FBC17486BE700CF841D /* Foundation.framework */; };
+		49B68FBF17486BE700CF841D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B68FBE17486BE700CF841D /* CoreGraphics.framework */; };
+		49B68FC517486BE700CF841D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49B68FC317486BE700CF841D /* InfoPlist.strings */; };
+		49B68FC717486BE700CF841D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B68FC617486BE700CF841D /* main.m */; };
+		49B68FCB17486BE700CF841D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B68FCA17486BE700CF841D /* AppDelegate.m */; };
+		49B68FCD17486BE700CF841D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 49B68FCC17486BE700CF841D /* Default.png */; };
+		49B68FCF17486BE700CF841D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49B68FCE17486BE700CF841D /* Default@2x.png */; };
+		49B68FD117486BE700CF841D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49B68FD017486BE700CF841D /* Default-568h@2x.png */; };
+		49B68FD417486BE700CF841D /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49B68FD217486BE700CF841D /* MainStoryboard.storyboard */; };
+		49B68FD717486BE700CF841D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B68FD617486BE700CF841D /* ViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		49B68FB717486BE700CF841D /* TenKHours.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TenKHours.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		49B68FBA17486BE700CF841D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		49B68FBC17486BE700CF841D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		49B68FBE17486BE700CF841D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		49B68FC217486BE700CF841D /* TenKHours-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TenKHours-Info.plist"; sourceTree = "<group>"; };
+		49B68FC417486BE700CF841D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		49B68FC617486BE700CF841D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		49B68FC817486BE700CF841D /* TenKHours-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TenKHours-Prefix.pch"; sourceTree = "<group>"; };
+		49B68FC917486BE700CF841D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		49B68FCA17486BE700CF841D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		49B68FCC17486BE700CF841D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		49B68FCE17486BE700CF841D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		49B68FD017486BE700CF841D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		49B68FD317486BE700CF841D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		49B68FD517486BE700CF841D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		49B68FD617486BE700CF841D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		49B68FB417486BE700CF841D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49B68FBB17486BE700CF841D /* UIKit.framework in Frameworks */,
+				49B68FBD17486BE700CF841D /* Foundation.framework in Frameworks */,
+				49B68FBF17486BE700CF841D /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		49B68FAE17486BE700CF841D = {
+			isa = PBXGroup;
+			children = (
+				49B68FC017486BE700CF841D /* TenKHours */,
+				49B68FB917486BE700CF841D /* Frameworks */,
+				49B68FB817486BE700CF841D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		49B68FB817486BE700CF841D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				49B68FB717486BE700CF841D /* TenKHours.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		49B68FB917486BE700CF841D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				49B68FBA17486BE700CF841D /* UIKit.framework */,
+				49B68FBC17486BE700CF841D /* Foundation.framework */,
+				49B68FBE17486BE700CF841D /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		49B68FC017486BE700CF841D /* TenKHours */ = {
+			isa = PBXGroup;
+			children = (
+				49B68FC917486BE700CF841D /* AppDelegate.h */,
+				49B68FCA17486BE700CF841D /* AppDelegate.m */,
+				49B68FD217486BE700CF841D /* MainStoryboard.storyboard */,
+				49B68FD517486BE700CF841D /* ViewController.h */,
+				49B68FD617486BE700CF841D /* ViewController.m */,
+				49B68FC117486BE700CF841D /* Supporting Files */,
+			);
+			path = TenKHours;
+			sourceTree = "<group>";
+		};
+		49B68FC117486BE700CF841D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				49B68FC217486BE700CF841D /* TenKHours-Info.plist */,
+				49B68FC317486BE700CF841D /* InfoPlist.strings */,
+				49B68FC617486BE700CF841D /* main.m */,
+				49B68FC817486BE700CF841D /* TenKHours-Prefix.pch */,
+				49B68FCC17486BE700CF841D /* Default.png */,
+				49B68FCE17486BE700CF841D /* Default@2x.png */,
+				49B68FD017486BE700CF841D /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		49B68FB617486BE700CF841D /* TenKHours */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49B68FDA17486BE700CF841D /* Build configuration list for PBXNativeTarget "TenKHours" */;
+			buildPhases = (
+				49B68FB317486BE700CF841D /* Sources */,
+				49B68FB417486BE700CF841D /* Frameworks */,
+				49B68FB517486BE700CF841D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TenKHours;
+			productName = TenKHours;
+			productReference = 49B68FB717486BE700CF841D /* TenKHours.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		49B68FAF17486BE700CF841D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = Zation;
+			};
+			buildConfigurationList = 49B68FB217486BE700CF841D /* Build configuration list for PBXProject "TenKHours" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 49B68FAE17486BE700CF841D;
+			productRefGroup = 49B68FB817486BE700CF841D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				49B68FB617486BE700CF841D /* TenKHours */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		49B68FB517486BE700CF841D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49B68FC517486BE700CF841D /* InfoPlist.strings in Resources */,
+				49B68FCD17486BE700CF841D /* Default.png in Resources */,
+				49B68FCF17486BE700CF841D /* Default@2x.png in Resources */,
+				49B68FD117486BE700CF841D /* Default-568h@2x.png in Resources */,
+				49B68FD417486BE700CF841D /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		49B68FB317486BE700CF841D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49B68FC717486BE700CF841D /* main.m in Sources */,
+				49B68FCB17486BE700CF841D /* AppDelegate.m in Sources */,
+				49B68FD717486BE700CF841D /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		49B68FC317486BE700CF841D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49B68FC417486BE700CF841D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		49B68FD217486BE700CF841D /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49B68FD317486BE700CF841D /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		49B68FD817486BE700CF841D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		49B68FD917486BE700CF841D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		49B68FDB17486BE700CF841D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TenKHours/TenKHours-Prefix.pch";
+				INFOPLIST_FILE = "TenKHours/TenKHours-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		49B68FDC17486BE700CF841D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TenKHours/TenKHours-Prefix.pch";
+				INFOPLIST_FILE = "TenKHours/TenKHours-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		49B68FB217486BE700CF841D /* Build configuration list for PBXProject "TenKHours" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49B68FD817486BE700CF841D /* Debug */,
+				49B68FD917486BE700CF841D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49B68FDA17486BE700CF841D /* Build configuration list for PBXNativeTarget "TenKHours" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49B68FDB17486BE700CF841D /* Debug */,
+				49B68FDC17486BE700CF841D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 49B68FAF17486BE700CF841D /* Project object */;
+}

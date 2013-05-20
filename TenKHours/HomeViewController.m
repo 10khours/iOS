@@ -7,6 +7,7 @@
 //
 
 #import "HomeViewController.h"
+#import "AddTaskCell.h"
 
 @interface HomeViewController ()
 
@@ -14,11 +15,13 @@
 
 @implementation HomeViewController
 
+NSMutableArray *tasks;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        
     }
     return self;
 }
@@ -26,7 +29,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	tasks = [NSMutableArray arrayWithObjects:@"Task 1", @"Task 2", nil];
+    [self.collectionView registerClass:[AddTaskCell class] forCellWithReuseIdentifier:@"AddTaskCell"];
+    self.collectionView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -42,13 +47,19 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 1;
+    return [tasks count] + 1;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"AddTaskCell" forIndexPath:indexPath];
-    
+    UICollectionViewCell *cell;
+    if (indexPath.row == [tasks count]) {
+        cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"AddTaskCell" forIndexPath:indexPath];
+    } else {
+        cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"TaskCell" forIndexPath:indexPath];
+        UILabel *taskName = (UILabel *) [cell viewWithTag:1];
+        taskName.text = [tasks objectAtIndex:indexPath.row];
+    }
     return cell;
 }
 

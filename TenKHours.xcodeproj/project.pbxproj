@@ -22,6 +22,8 @@
 		49B68FE317486FB800CF841D /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 49B68FE217486FB800CF841D /* icon.png */; };
 		49B68FE517486FBD00CF841D /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49B68FE417486FBD00CF841D /* icon@2x.png */; };
 		49B68FE81748757200CF841D /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B68FE71748757200CF841D /* HomeViewController.m */; };
+		49B68FEB17489C1A00CF841D /* AddTaskCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B68FEA17489C1A00CF841D /* AddTaskCell.m */; };
+		49B68FED17489F9F00CF841D /* AddTaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49B68FEC17489F9F00CF841D /* AddTaskCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +47,9 @@
 		49B68FE417486FBD00CF841D /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "../../icon@2x.png"; sourceTree = "<group>"; };
 		49B68FE61748757200CF841D /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		49B68FE71748757200CF841D /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		49B68FE917489C1A00CF841D /* AddTaskCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTaskCell.h; sourceTree = "<group>"; };
+		49B68FEA17489C1A00CF841D /* AddTaskCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTaskCell.m; sourceTree = "<group>"; };
+		49B68FEC17489F9F00CF841D /* AddTaskCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddTaskCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +103,9 @@
 				49B68FC117486BE700CF841D /* Supporting Files */,
 				49B68FE61748757200CF841D /* HomeViewController.h */,
 				49B68FE71748757200CF841D /* HomeViewController.m */,
+				49B68FE917489C1A00CF841D /* AddTaskCell.h */,
+				49B68FEA17489C1A00CF841D /* AddTaskCell.m */,
+				49B68FEC17489F9F00CF841D /* AddTaskCell.xib */,
 			);
 			path = TenKHours;
 			sourceTree = "<group>";
@@ -187,6 +195,7 @@
 				49B68FE117486E2E00CF841D /* logo.png in Resources */,
 				49B68FE317486FB800CF841D /* icon.png in Resources */,
 				49B68FE517486FBD00CF841D /* icon@2x.png in Resources */,
+				49B68FED17489F9F00CF841D /* AddTaskCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,6 +209,7 @@
 				49B68FC717486BE700CF841D /* main.m in Sources */,
 				49B68FCB17486BE700CF841D /* AppDelegate.m in Sources */,
 				49B68FE81748757200CF841D /* HomeViewController.m in Sources */,
+				49B68FEB17489C1A00CF841D /* AddTaskCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

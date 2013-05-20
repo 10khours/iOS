@@ -13,5 +13,6 @@
 - (IBAction)addTask:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextField *textFieldNewTaskName;
 @property (weak, nonatomic) IBOutlet UIButton *buttonAddTask;
+@property (weak, nonatomic) IBOutlet UILabel *addTaskMark;
 
 @end

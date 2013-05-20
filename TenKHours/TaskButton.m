@@ -10,6 +10,8 @@
 
 @implementation TaskButton
 
+@synthesize borderColor;
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -33,7 +35,7 @@
     [borderPath setLineWidth:lineWidth];
     CGFloat dashPattern[2] = {15, 15};
     [borderPath setLineDash:dashPattern count:1 phase:0.0];
-    [[UIColor whiteColor] setStroke];
+    [self.borderColor setStroke];
     [borderPath stroke];
 }
 

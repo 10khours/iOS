@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>TaskColors</key>
+	<array>
+		<dict>
+			<key>Red</key>
+			<integer>106</integer>
+			<key>Green</key>
+			<integer>138</integer>
+			<key>Blue</key>
+			<integer>98</integer>
+		</dict>
+		<dict>
+			<key>Red</key>
+			<integer>241</integer>
+			<key>Green</key>
+			<integer>90</integer>
+			<key>Blue</key>
+			<integer>42</integer>
+		</dict>
+		<dict>
+			<key>Red</key>
+			<integer>106</integer>
+			<key>Green</key>
+			<integer>175</integer>
+			<key>Blue</key>
+			<integer>204</integer>
+		</dict>
+		<dict>
+			<key>Red</key>
+			<integer>218</integer>
+			<key>Green</key>
+			<integer>210</integer>
+			<key>Blue</key>
+			<integer>61</integer>
+		</dict>
+	</array>
+</dict>
+</plist>

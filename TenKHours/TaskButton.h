@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface TaskButton : UIButton
+    @property UIColor *borderColor;
 
 @end

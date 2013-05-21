@@ -35,7 +35,7 @@
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 			</object>
 			<object class="IBUICollectionViewCell" id="54516851">
-				<reference key="NSNextResponder"/>
+				<nil key="NSNextResponder"/>
 				<int key="NSvFlags">1292</int>
 				<array class="NSMutableArray" key="NSSubviews">
 					<object class="IBUIView" id="681959487">
@@ -47,7 +47,6 @@
 								<int key="NSvFlags">1316</int>
 								<string key="NSFrameSize">{140, 141}</string>
 								<reference key="NSSuperview" ref="681959487"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="940721703"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
@@ -85,7 +84,6 @@
 								<int key="NSvFlags">1316</int>
 								<string key="NSFrame">{{22, 90}, {97, 30}}</string>
 								<reference key="NSSuperview" ref="681959487"/>
-								<reference key="NSWindow"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -120,7 +118,6 @@
 								<int key="NSvFlags">1316</int>
 								<string key="NSFrame">{{50, 40}, {40, 40}}</string>
 								<reference key="NSSuperview" ref="681959487"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="675108338"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
@@ -147,7 +144,6 @@
 						</array>
 						<string key="NSFrameSize">{140, 140}</string>
 						<reference key="NSSuperview" ref="54516851"/>
-						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="37154667"/>
 						<object class="NSColor" key="IBUIBackgroundColor" id="246227871">
 							<int key="NSColorSpace">3</int>
@@ -162,8 +158,6 @@
 				</array>
 				<object class="NSPSMatrix" key="NSFrameMatrix"/>
 				<string key="NSFrameSize">{140, 140}</string>
-				<reference key="NSSuperview"/>
-				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="681959487"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
 				<reference key="IBUIBackgroundColor" ref="246227871"/>
@@ -502,7 +496,7 @@
 				<string key="-2.CustomClassName">UIResponder</string>
 				<string key="-2.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="17.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="2.CustomClassName">TaskButton</string>
+				<string key="2.CustomClassName">AddTaskButton</string>
 				<string key="2.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<boolean value="NO" key="2.IBViewMetadataTranslatesAutoresizingMaskIntoConstraints"/>
 				<string key="29.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -586,14 +580,6 @@
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/NSLayoutConstraint.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">TaskButton</string>
-					<string key="superclassName">UIButton</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/TaskButton.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">

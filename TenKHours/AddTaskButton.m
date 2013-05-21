@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Zation. All rights reserved.
 //
 
-#import "TaskButton.h"
+#import "AddTaskButton.h"
 
-@implementation TaskButton
+@implementation AddTaskButton
 
 @synthesize borderColor;
 

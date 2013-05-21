@@ -13,13 +13,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BJa-kO-S50">
                             <size key="itemSize" width="140" height="180"/>
-                            <size key="headerReferenceSize" width="50" height="60"/>
+                            <size key="headerReferenceSize" width="50" height="70"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="15" minY="10" maxX="15" maxY="10"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="StartTaskCell" id="fwo-pL-vix" customClass="StartTaskCell">
-                                <rect key="frame" x="15" y="70" width="140" height="180"/>
+                                <rect key="frame" x="15" y="80" width="140" height="180"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="140" height="180"/>
@@ -28,7 +28,7 @@
                                 </view>
                             </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AddTaskCell" id="4ee-Lu-mdm" customClass="AddTaskCell">
-                                <rect key="frame" x="165" y="70" width="140" height="180"/>
+                                <rect key="frame" x="165" y="80" width="140" height="180"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="140" height="180"/>
@@ -38,13 +38,13 @@
                             </collectionViewCell>
                         </cells>
                         <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Logo" id="Afd-KH-759">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="CvM-YD-UAN"/>
                             </subviews>
                             <constraints>
-                                <constraint firstItem="CvM-YD-UAN" firstAttribute="top" secondItem="Afd-KH-759" secondAttribute="top" type="default" id="a83-iG-flc"/>
+                                <constraint firstItem="CvM-YD-UAN" firstAttribute="centerY" secondItem="Afd-KH-759" secondAttribute="centerY" type="default" id="fWp-y4-3jW"/>
                                 <constraint firstItem="CvM-YD-UAN" firstAttribute="leading" secondItem="Afd-KH-759" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="zYy-I2-SdX"/>
                             </constraints>
                         </collectionReusableView>
@@ -81,10 +81,13 @@
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
+        <class className="StartTaskButton" superclassName="UIButton">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/StartTaskButton.h"/>
+        </class>
         <class className="StartTaskCell" superclassName="UICollectionViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/StartTaskCell.h"/>
             <relationships>
-                <relationship kind="outlet" name="buttonStartTask" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonStartTask" candidateClass="StartTaskButton"/>
                 <relationship kind="outlet" name="labelTaskName" candidateClass="UILabel"/>
             </relationships>
         </class>

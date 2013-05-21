@@ -32,7 +32,7 @@ NSArray *taskColors;
 
 - (void)setTaskCount:(NSInteger)taskCount
 {
-    NSDictionary *taskColorDict = [taskColors objectAtIndex:taskCount - 1];
+    NSDictionary *taskColorDict = [taskColors objectAtIndex:taskCount];
     float red = [[taskColorDict objectForKey:@"Red"] floatValue];
     float green = [[taskColorDict objectForKey:@"Green"] floatValue];
     float blue = [[taskColorDict objectForKey:@"Blue"] floatValue];

@@ -62,7 +62,7 @@ NSMutableArray *tasks;
     } else {
         cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"StartTaskCell" forIndexPath:indexPath];
         StartTaskCell *startTaskCell = (StartTaskCell *)cell;
-        startTaskCell.labelTaskName.text = [tasks objectAtIndex:indexPath.row];
+        [startTaskCell setTaskName:[tasks objectAtIndex:indexPath.row] order:indexPath.row];
     }
     return cell;
 }

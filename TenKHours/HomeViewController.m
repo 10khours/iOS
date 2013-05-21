@@ -8,6 +8,7 @@
 
 #import "HomeViewController.h"
 #import "AddTaskCell.h"
+#import "StartTaskCell.h"
 
 @interface HomeViewController ()
 
@@ -31,6 +32,7 @@ NSMutableArray *tasks;
     [super viewDidLoad];
 	tasks = [NSMutableArray arrayWithObjects:@"Task 1", @"Task 2", @"Task 3", nil];
     [self.collectionView registerClass:[AddTaskCell class] forCellWithReuseIdentifier:@"AddTaskCell"];
+    [self.collectionView registerClass:[StartTaskCell class] forCellWithReuseIdentifier:@"StartTaskCell"];
     self.collectionView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]];
 }
 
@@ -58,9 +60,9 @@ NSMutableArray *tasks;
         AddTaskCell *addTaskCell = (AddTaskCell *)cell;
         [addTaskCell setTaskCount:[tasks count]];
     } else {
-        cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"TaskCell" forIndexPath:indexPath];
-        UILabel *taskName = (UILabel *) [cell viewWithTag:1];
-        taskName.text = [tasks objectAtIndex:indexPath.row];
+        cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"StartTaskCell" forIndexPath:indexPath];
+        StartTaskCell *startTaskCell = (StartTaskCell *)cell;
+        startTaskCell.labelTaskName.text = [tasks objectAtIndex:indexPath.row];
     }
     return cell;
 }

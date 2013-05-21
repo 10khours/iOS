@@ -26,6 +26,8 @@
 		49B68FED17489F9F00CF841D /* AddTaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49B68FEC17489F9F00CF841D /* AddTaskCell.xib */; };
 		49C1805D174A6ABD00A95FE6 /* AddTaskButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C1805C174A6ABD00A95FE6 /* AddTaskButton.m */; };
 		49C1805F174A7F3B00A95FE6 /* SystemConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49C1805E174A7F3B00A95FE6 /* SystemConfig.plist */; };
+		49C18062174B499700A95FE6 /* StartTaskCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C18061174B499700A95FE6 /* StartTaskCell.m */; };
+		49C18064174B49B600A95FE6 /* StartTaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49C18063174B49B600A95FE6 /* StartTaskCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +57,9 @@
 		49C1805B174A6ABD00A95FE6 /* AddTaskButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTaskButton.h; sourceTree = "<group>"; };
 		49C1805C174A6ABD00A95FE6 /* AddTaskButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTaskButton.m; sourceTree = "<group>"; };
 		49C1805E174A7F3B00A95FE6 /* SystemConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SystemConfig.plist; sourceTree = "<group>"; };
+		49C18060174B499700A95FE6 /* StartTaskCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartTaskCell.h; sourceTree = "<group>"; };
+		49C18061174B499700A95FE6 /* StartTaskCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartTaskCell.m; sourceTree = "<group>"; };
+		49C18063174B49B600A95FE6 /* StartTaskCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StartTaskCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,19 +106,16 @@
 		49B68FC017486BE700CF841D /* TenKHours */ = {
 			isa = PBXGroup;
 			children = (
+				49C18066174B49D300A95FE6 /* StartTask */,
+				49C18065174B49BD00A95FE6 /* AddTask */,
 				49B68FDD17486E2E00CF841D /* images */,
 				49B68FC917486BE700CF841D /* AppDelegate.h */,
 				49B68FCA17486BE700CF841D /* AppDelegate.m */,
 				49B68FD217486BE700CF841D /* MainStoryboard.storyboard */,
-				49B68FC117486BE700CF841D /* Supporting Files */,
 				49B68FE61748757200CF841D /* HomeViewController.h */,
 				49B68FE71748757200CF841D /* HomeViewController.m */,
-				49B68FE917489C1A00CF841D /* AddTaskCell.h */,
-				49B68FEA17489C1A00CF841D /* AddTaskCell.m */,
-				49B68FEC17489F9F00CF841D /* AddTaskCell.xib */,
-				49C1805B174A6ABD00A95FE6 /* AddTaskButton.h */,
-				49C1805C174A6ABD00A95FE6 /* AddTaskButton.m */,
 				49C1805E174A7F3B00A95FE6 /* SystemConfig.plist */,
+				49B68FC117486BE700CF841D /* Supporting Files */,
 			);
 			path = TenKHours;
 			sourceTree = "<group>";
@@ -141,6 +143,28 @@
 				49B68FDF17486E2E00CF841D /* logo.png */,
 			);
 			path = images;
+			sourceTree = "<group>";
+		};
+		49C18065174B49BD00A95FE6 /* AddTask */ = {
+			isa = PBXGroup;
+			children = (
+				49B68FE917489C1A00CF841D /* AddTaskCell.h */,
+				49B68FEA17489C1A00CF841D /* AddTaskCell.m */,
+				49B68FEC17489F9F00CF841D /* AddTaskCell.xib */,
+				49C1805B174A6ABD00A95FE6 /* AddTaskButton.h */,
+				49C1805C174A6ABD00A95FE6 /* AddTaskButton.m */,
+			);
+			name = AddTask;
+			sourceTree = "<group>";
+		};
+		49C18066174B49D300A95FE6 /* StartTask */ = {
+			isa = PBXGroup;
+			children = (
+				49C18060174B499700A95FE6 /* StartTaskCell.h */,
+				49C18061174B499700A95FE6 /* StartTaskCell.m */,
+				49C18063174B49B600A95FE6 /* StartTaskCell.xib */,
+			);
+			name = StartTask;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,6 +229,7 @@
 				49B68FE517486FBD00CF841D /* icon@2x.png in Resources */,
 				49B68FED17489F9F00CF841D /* AddTaskCell.xib in Resources */,
 				49C1805F174A7F3B00A95FE6 /* SystemConfig.plist in Resources */,
+				49C18064174B49B600A95FE6 /* StartTaskCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,6 +245,7 @@
 				49B68FE81748757200CF841D /* HomeViewController.m in Sources */,
 				49B68FEB17489C1A00CF841D /* AddTaskCell.m in Sources */,
 				49C1805D174A6ABD00A95FE6 /* AddTaskButton.m in Sources */,
+				49C18062174B499700A95FE6 /* StartTaskCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

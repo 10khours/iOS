@@ -12,6 +12,8 @@
 @interface AddTaskCell : UICollectionViewCell
 
 - (IBAction)addTask:(id)sender;
+- (void)setTaskCount:(NSInteger)taskCount;
+
 @property (weak, nonatomic) IBOutlet UITextField *textFieldNewTaskName;
 @property (weak, nonatomic) IBOutlet TaskButton *buttonAddTask;
 @property (weak, nonatomic) IBOutlet UILabel *addTaskMark;

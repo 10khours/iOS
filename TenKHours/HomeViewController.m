@@ -16,7 +16,6 @@
 @implementation HomeViewController
 
 NSMutableArray *tasks;
-NSArray *taskColors;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,9 +30,6 @@ NSArray *taskColors;
 {
     [super viewDidLoad];
 	tasks = [NSMutableArray arrayWithObjects:@"Task 1", @"Task 2", @"Task 3", nil];
-    NSString *systemConfigPath = [[NSBundle mainBundle] pathForResource:@"SystemConfig" ofType:@"plist"];
-    NSDictionary *systemConfig = [[NSMutableDictionary alloc] initWithContentsOfFile:systemConfigPath];
-    taskColors = [systemConfig objectForKey:@"TaskColors"];
     [self.collectionView registerClass:[AddTaskCell class] forCellWithReuseIdentifier:@"AddTaskCell"];
     self.collectionView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]];
 }
@@ -60,13 +56,7 @@ NSArray *taskColors;
     if (indexPath.row == [tasks count]) {
         cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"AddTaskCell" forIndexPath:indexPath];
         AddTaskCell *addTaskCell = (AddTaskCell *)cell;
-        
-        NSDictionary *borderColor = [taskColors objectAtIndex:[tasks count] -1];
-        float red = [[borderColor valueForKey:@"Red"] floatValue];
-        float blue = [[borderColor valueForKey:@"Blue"] floatValue];
-        float green = [[borderColor valueForKey:@"Green"] floatValue];
-
-        addTaskCell.buttonAddTask.borderColor = [UIColor colorWithRed:red/255 green:green/255 blue:blue/255 alpha:1.0];
+        [addTaskCell setTaskCount:[tasks count]];
     } else {
         cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"TaskCell" forIndexPath:indexPath];
         UILabel *taskName = (UILabel *) [cell viewWithTag:1];

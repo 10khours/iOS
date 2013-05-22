@@ -9,30 +9,33 @@
 #import "HomeViewController.h"
 #import "AddTaskCell.h"
 #import "StartTaskCell.h"
+#import "TaskCollectionHeaderView.h"
 
-@interface HomeViewController ()
+static NSString * kTaskCollectionHeaderIdentifier = @"TASK_COLLECTIONHEADER_INDENTIFIER";
+static NSString * kStartTaskCellIdentifier        = @"START_TASK_CELL_INDETIFIER";
+static NSString * kAddTaskCellIdentifier          = @"ADD_TASK_CELL_INDETIFIER";
+
+@interface HomeViewController () {
+    NSMutableArray *_tasks;
+}
 
 @end
 
 @implementation HomeViewController
 
-NSMutableArray *tasks;
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        
+        _tasks = [[NSMutableArray alloc ] initWithObjects:@"Task 1", @"Task 2", @"Task 3", nil];
     }
     return self;
 }
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	tasks = [NSMutableArray arrayWithObjects:@"Task 1", @"Task 2", @"Task 3", nil];
-    [self.collectionView registerClass:[AddTaskCell class] forCellWithReuseIdentifier:@"AddTaskCell"];
-    [self.collectionView registerClass:[StartTaskCell class] forCellWithReuseIdentifier:@"StartTaskCell"];
+    [self.collectionView registerClass:[AddTaskCell class] forCellWithReuseIdentifier:kAddTaskCellIdentifier];
+    [self.collectionView registerClass:[StartTaskCell class] forCellWithReuseIdentifier:kStartTaskCellIdentifier];
+    [self.collectionView registerClass:[TaskCollectionHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:kTaskCollectionHeaderIdentifier];
     self.collectionView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]];
 }
 
@@ -49,27 +52,33 @@ NSMutableArray *tasks;
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return [tasks count] + 1;
+    return [_tasks count] + 1;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     UICollectionViewCell *cell;
-    if (indexPath.row == [tasks count]) {
-        cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"AddTaskCell" forIndexPath:indexPath];
+    if (indexPath.row == [_tasks count]) {
+        cell = [collectionView dequeueReusableCellWithReuseIdentifier:kAddTaskCellIdentifier forIndexPath:indexPath];
         AddTaskCell *addTaskCell = (AddTaskCell *)cell;
-        [addTaskCell setTaskCount:[tasks count]];
+        [addTaskCell setTaskCount:[_tasks count]];
     } else {
-        cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"StartTaskCell" forIndexPath:indexPath];
+        cell = [collectionView dequeueReusableCellWithReuseIdentifier:kStartTaskCellIdentifier forIndexPath:indexPath];
         StartTaskCell *startTaskCell = (StartTaskCell *)cell;
-        [startTaskCell setTaskName:[tasks objectAtIndex:indexPath.row] order:indexPath.row];
+        [startTaskCell setTaskName:[_tasks objectAtIndex:indexPath.row] order:indexPath.row];
     }
     return cell;
 }
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
-{   
-    return [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"Logo" forIndexPath:indexPath];
+{
+    UICollectionReusableView *reusableview = nil;
+
+    if (kind == UICollectionElementKindSectionHeader) {
+        reusableview = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:kTaskCollectionHeaderIdentifier forIndexPath:indexPath];
+    }
+
+    return reusableview;
 }
 
 @end

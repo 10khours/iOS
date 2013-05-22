@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		496B7310174D110C0082502B /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 496B730F174D110C0082502B /* HomeViewController.xib */; };
+		496B7318174D190B0082502B /* TaskCollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 496B7317174D190B0082502B /* TaskCollectionHeaderView.m */; };
 		49B68FBB17486BE700CF841D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B68FBA17486BE700CF841D /* UIKit.framework */; };
 		49B68FBD17486BE700CF841D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B68FBC17486BE700CF841D /* Foundation.framework */; };
 		49B68FBF17486BE700CF841D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B68FBE17486BE700CF841D /* CoreGraphics.framework */; };
@@ -16,7 +18,6 @@
 		49B68FCD17486BE700CF841D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 49B68FCC17486BE700CF841D /* Default.png */; };
 		49B68FCF17486BE700CF841D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49B68FCE17486BE700CF841D /* Default@2x.png */; };
 		49B68FD117486BE700CF841D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49B68FD017486BE700CF841D /* Default-568h@2x.png */; };
-		49B68FD417486BE700CF841D /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49B68FD217486BE700CF841D /* MainStoryboard.storyboard */; };
 		49B68FE017486E2E00CF841D /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 49B68FDE17486E2E00CF841D /* background.png */; };
 		49B68FE117486E2E00CF841D /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 49B68FDF17486E2E00CF841D /* logo.png */; };
 		49B68FE317486FB800CF841D /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 49B68FE217486FB800CF841D /* icon.png */; };
@@ -32,6 +33,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		496B730F174D110C0082502B /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		496B7316174D190B0082502B /* TaskCollectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskCollectionHeaderView.h; sourceTree = "<group>"; };
+		496B7317174D190B0082502B /* TaskCollectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskCollectionHeaderView.m; sourceTree = "<group>"; };
 		49B68FB717486BE700CF841D /* TenKHours.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TenKHours.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49B68FBA17486BE700CF841D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		49B68FBC17486BE700CF841D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -45,7 +49,6 @@
 		49B68FCC17486BE700CF841D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		49B68FCE17486BE700CF841D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		49B68FD017486BE700CF841D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		49B68FD317486BE700CF841D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		49B68FDE17486E2E00CF841D /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		49B68FDF17486E2E00CF841D /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		49B68FE217486FB800CF841D /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../../icon.png; sourceTree = "<group>"; };
@@ -114,9 +117,11 @@
 				49B68FDD17486E2E00CF841D /* images */,
 				49B68FC917486BE700CF841D /* AppDelegate.h */,
 				49B68FCA17486BE700CF841D /* AppDelegate.m */,
-				49B68FD217486BE700CF841D /* MainStoryboard.storyboard */,
 				49B68FE61748757200CF841D /* HomeViewController.h */,
+				496B730F174D110C0082502B /* HomeViewController.xib */,
 				49B68FE71748757200CF841D /* HomeViewController.m */,
+				496B7316174D190B0082502B /* TaskCollectionHeaderView.h */,
+				496B7317174D190B0082502B /* TaskCollectionHeaderView.m */,
 				49C1805E174A7F3B00A95FE6 /* SystemConfig.plist */,
 				49B68FC117486BE700CF841D /* Supporting Files */,
 			);
@@ -227,7 +232,6 @@
 				49B68FCD17486BE700CF841D /* Default.png in Resources */,
 				49B68FCF17486BE700CF841D /* Default@2x.png in Resources */,
 				49B68FD117486BE700CF841D /* Default-568h@2x.png in Resources */,
-				49B68FD417486BE700CF841D /* MainStoryboard.storyboard in Resources */,
 				49B68FE017486E2E00CF841D /* background.png in Resources */,
 				49B68FE117486E2E00CF841D /* logo.png in Resources */,
 				49B68FE317486FB800CF841D /* icon.png in Resources */,
@@ -235,6 +239,7 @@
 				49B68FED17489F9F00CF841D /* AddTaskCell.xib in Resources */,
 				49C1805F174A7F3B00A95FE6 /* SystemConfig.plist in Resources */,
 				49C18064174B49B600A95FE6 /* StartTaskCell.xib in Resources */,
+				496B7310174D110C0082502B /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +257,7 @@
 				49C1805D174A6ABD00A95FE6 /* AddTaskButton.m in Sources */,
 				49C18062174B499700A95FE6 /* StartTaskCell.m in Sources */,
 				49C18069174B523300A95FE6 /* StartTaskButton.m in Sources */,
+				496B7318174D190B0082502B /* TaskCollectionHeaderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,14 +270,6 @@
 				49B68FC417486BE700CF841D /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		49B68FD217486BE700CF841D /* MainStoryboard.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				49B68FD317486BE700CF841D /* en */,
-			);
-			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

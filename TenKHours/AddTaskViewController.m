@@ -7,12 +7,15 @@
 //
 
 #import "AddTaskViewController.h"
+#import <CoreData/CoreData.h>
 
 @interface AddTaskViewController ()
 
 @end
 
 @implementation AddTaskViewController
+
+@synthesize taskName;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,4 +38,29 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (NSManagedObjectContext *)managedObjectContext
+{
+    NSManagedObjectContext *context = nil;
+    id delegate = [[UIApplication sharedApplication] delegate];
+    if ([delegate performSelector: @selector(managedObjectContext)]) {
+        context = [delegate managedObjectContext];
+    }
+    return context;
+}
+
+- (IBAction)cancel:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (IBAction)add:(id)sender {
+    NSManagedObjectContext *context = [self managedObjectContext];
+    NSManagedObject *newTask = [NSEntityDescription insertNewObjectForEntityForName:@"Task" inManagedObjectContext:context];
+    [newTask setValue:taskName.text forKey:@"name"];
+    NSError *error = nil;
+    if (![context save:&error]) {
+        NSLog(@"Can't save! %@ %@", error, [error localizedDescription]);
+    }
+
+    [self.navigationController popViewControllerAnimated:YES];
+}
 @end

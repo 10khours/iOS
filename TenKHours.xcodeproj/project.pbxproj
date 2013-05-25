@@ -12,6 +12,8 @@
 		493527FF174DC5160030518F /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 493527FE174DC5160030518F /* NavigationViewController.m */; };
 		496B7310174D110C0082502B /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 496B730F174D110C0082502B /* HomeViewController.xib */; };
 		496B7318174D190B0082502B /* TaskCollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 496B7317174D190B0082502B /* TaskCollectionHeaderView.m */; };
+		49B00B961750AB1000139741 /* Task.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 49B00B941750AB1000139741 /* Task.xcdatamodeld */; };
+		49B00B981750B0A600139741 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B00B971750B0A600139741 /* CoreData.framework */; };
 		49B68FBB17486BE700CF841D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B68FBA17486BE700CF841D /* UIKit.framework */; };
 		49B68FBD17486BE700CF841D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B68FBC17486BE700CF841D /* Foundation.framework */; };
 		49B68FBF17486BE700CF841D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B68FBE17486BE700CF841D /* CoreGraphics.framework */; };
@@ -44,6 +46,8 @@
 		496B730F174D110C0082502B /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		496B7316174D190B0082502B /* TaskCollectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskCollectionHeaderView.h; sourceTree = "<group>"; };
 		496B7317174D190B0082502B /* TaskCollectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskCollectionHeaderView.m; sourceTree = "<group>"; };
+		49B00B951750AB1000139741 /* Task.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Task.xcdatamodel; sourceTree = "<group>"; };
+		49B00B971750B0A600139741 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		49B68FB717486BE700CF841D /* TenKHours.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TenKHours.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49B68FBA17486BE700CF841D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		49B68FBC17486BE700CF841D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -81,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49B00B981750B0A600139741 /* CoreData.framework in Frameworks */,
 				49B68FBB17486BE700CF841D /* UIKit.framework in Frameworks */,
 				49B68FBD17486BE700CF841D /* Foundation.framework in Frameworks */,
 				49B68FBF17486BE700CF841D /* CoreGraphics.framework in Frameworks */,
@@ -110,6 +115,7 @@
 		49B68FB917486BE700CF841D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				49B00B971750B0A600139741 /* CoreData.framework */,
 				49B68FBA17486BE700CF841D /* UIKit.framework */,
 				49B68FBC17486BE700CF841D /* Foundation.framework */,
 				49B68FBE17486BE700CF841D /* CoreGraphics.framework */,
@@ -134,6 +140,7 @@
 				49B68FC117486BE700CF841D /* Supporting Files */,
 				493527FD174DC5160030518F /* NavigationViewController.h */,
 				493527FE174DC5160030518F /* NavigationViewController.m */,
+				49B00B941750AB1000139741 /* Task.xcdatamodeld */,
 			);
 			path = TenKHours;
 			sourceTree = "<group>";
@@ -274,6 +281,7 @@
 				496B7318174D190B0082502B /* TaskCollectionHeaderView.m in Sources */,
 				493527FB174DB0060030518F /* AddTaskViewController.m in Sources */,
 				493527FF174DC5160030518F /* NavigationViewController.m in Sources */,
+				49B00B961750AB1000139741 /* Task.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,6 +399,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		49B00B941750AB1000139741 /* Task.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				49B00B951750AB1000139741 /* Task.xcdatamodel */,
+			);
+			currentVersion = 49B00B951750AB1000139741 /* Task.xcdatamodel */;
+			path = Task.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 49B68FAF17486BE700CF841D /* Project object */;
 }

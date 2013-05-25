@@ -10,23 +10,29 @@
 #import "AddTaskCell.h"
 #import "StartTaskCell.h"
 #import "TaskCollectionHeaderView.h"
+#import <CoreData/CoreData.h>
 
 static NSString * kTaskCollectionHeaderIdentifier = @"TASK_COLLECTIONHEADER_INDENTIFIER";
 static NSString * kStartTaskCellIdentifier        = @"START_TASK_CELL_INDETIFIER";
 static NSString * kAddTaskCellIdentifier          = @"ADD_TASK_CELL_INDETIFIER";
 
-@interface HomeViewController () {
-    NSMutableArray *_tasks;
-}
-
-@end
-
 @implementation HomeViewController
+
+@synthesize tasks;
+
+- (NSManagedObjectContext *)managedObjectContext
+{
+    NSManagedObjectContext *context = nil;
+    id delegate = [[UIApplication sharedApplication] delegate];
+    if ([delegate performSelector:@selector(managedObjectContext)]) {
+        context = [delegate managedObjectContext];
+    }
+    return context;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        _tasks = [[NSMutableArray alloc ] initWithObjects:@"Task 1", @"Task 2", @"Task 3", nil];
     }
     return self;
 }
@@ -37,6 +43,14 @@ static NSString * kAddTaskCellIdentifier          = @"ADD_TASK_CELL_INDETIFIER";
     [self.collectionView registerClass:[StartTaskCell class] forCellWithReuseIdentifier:kStartTaskCellIdentifier];
     [self.collectionView registerClass:[TaskCollectionHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:kTaskCollectionHeaderIdentifier];
     self.collectionView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    NSManagedObjectContext *managedObjectContext = [self managedObjectContext];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Task"];
+    self.tasks = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
+    [self.collectionView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -52,20 +66,21 @@ static NSString * kAddTaskCellIdentifier          = @"ADD_TASK_CELL_INDETIFIER";
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return [_tasks count] + 1;
+    NSInteger tasksCount = [self.tasks count] + 1;
+    return tasksCount > 4 ? 4 : tasksCount;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     UICollectionViewCell *cell;
-    if (indexPath.row == [_tasks count]) {
+    if (indexPath.row == [self.tasks count]) {
         cell = [collectionView dequeueReusableCellWithReuseIdentifier:kAddTaskCellIdentifier forIndexPath:indexPath];
         AddTaskCell *addTaskCell = (AddTaskCell *)cell;
-        [addTaskCell setTaskCount:[_tasks count]];
+        [addTaskCell setTaskCount:[self.tasks count]];
     } else {
         cell = [collectionView dequeueReusableCellWithReuseIdentifier:kStartTaskCellIdentifier forIndexPath:indexPath];
         StartTaskCell *startTaskCell = (StartTaskCell *)cell;
-        [startTaskCell setTaskName:[_tasks objectAtIndex:indexPath.row] order:indexPath.row];
+        [startTaskCell setTaskName:[[self.tasks objectAtIndex:indexPath.row] valueForKey:@"name"] order:indexPath.row];
     }
     return cell;
 }

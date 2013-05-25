@@ -8,6 +8,12 @@
 
 #import "AddTaskCell.h"
 
+@interface AddTaskCell () {
+    
+}
+
+@end
+
 @implementation AddTaskCell
 
 @synthesize textFieldNewTaskName;
@@ -40,7 +46,7 @@ NSArray *taskColors;
     
     self.buttonAddTask.borderColor = taskColor;
     [self.addTaskMark setTextColor:taskColor];
-//    [self.buttonAddTask setNeedsDisplay];
+    [self.buttonAddTask setNeedsDisplay];
 }
 
 /*
@@ -53,6 +59,6 @@ NSArray *taskColors;
 */
 
 - (IBAction)addTask:(id)sender {
-    NSLog(@"touch");
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"StartAddingTask" object:self];
 }
 @end

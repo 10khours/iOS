@@ -10,4 +10,6 @@
 
 @interface HomeViewController : UICollectionViewController
 
+@property (strong) NSMutableArray *tasks;
+
 @end

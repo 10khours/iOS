@@ -46,7 +46,7 @@ NSArray *taskColors;
     
     self.buttonAddTask.borderColor = taskColor;
     [self.addTaskMark setTextColor:taskColor];
-//    [self.buttonAddTask setNeedsDisplay];
+    [self.buttonAddTask setNeedsDisplay];
 }
 
 /*

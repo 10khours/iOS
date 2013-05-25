@@ -29,7 +29,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [taskName becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning
@@ -56,6 +60,7 @@
     NSManagedObjectContext *context = [self managedObjectContext];
     NSManagedObject *newTask = [NSEntityDescription insertNewObjectForEntityForName:@"Task" inManagedObjectContext:context];
     [newTask setValue:taskName.text forKey:@"name"];
+    taskName.text = @"";
     NSError *error = nil;
     if (![context save:&error]) {
         NSLog(@"Can't save! %@ %@", error, [error localizedDescription]);

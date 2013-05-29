@@ -7,18 +7,18 @@
 //
 
 #import "NavigationViewController.h"
-
-@interface NavigationViewController ()
-
-@end
+#import "HomeViewController.h"
 
 @implementation NavigationViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)initWithManagedObjectContext:(NSManagedObjectContext *)managedObjectContext
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super init];
     if (self) {
-        // Custom initialization
+        [self setNavigationBarHidden:YES];
+        HomeViewController *homeViewController = [[HomeViewController alloc] initWithNibName:@"HomeViewController" bundle:nil];
+        homeViewController.managedObjectContext = managedObjectContext;
+        [self pushViewController:homeViewController animated:NO];
     }
     return self;
 }

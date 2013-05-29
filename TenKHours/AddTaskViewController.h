@@ -10,6 +10,8 @@
 
 @interface AddTaskViewController : UIViewController
 
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+
 @property (weak, nonatomic) IBOutlet UITextField *taskName;
 
 - (IBAction)cancel:(id)sender;

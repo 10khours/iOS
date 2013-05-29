@@ -19,17 +19,7 @@ static NSString * kAddTaskCellIdentifier          = @"ADD_TASK_CELL_INDETIFIER";
 
 @implementation HomeViewController
 
-@synthesize tasks;
-
-- (NSManagedObjectContext *)managedObjectContext
-{
-    NSManagedObjectContext *context = nil;
-    id delegate = [[UIApplication sharedApplication] delegate];
-    if ([delegate performSelector:@selector(managedObjectContext)]) {
-        context = [delegate managedObjectContext];
-    }
-    return context;
-}
+@synthesize managedObjectContext;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -48,9 +38,8 @@ static NSString * kAddTaskCellIdentifier          = @"ADD_TASK_CELL_INDETIFIER";
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    NSManagedObjectContext *managedObjectContext = [self managedObjectContext];
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Task"];
-    self.tasks = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
+    tasks = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
     [self.collectionView reloadData];
 }
 
@@ -67,21 +56,21 @@ static NSString * kAddTaskCellIdentifier          = @"ADD_TASK_CELL_INDETIFIER";
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    NSInteger tasksCount = [self.tasks count] + 1;
+    NSInteger tasksCount = [tasks count] + 1;
     return tasksCount > 4 ? 4 : tasksCount;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     UICollectionViewCell *cell;
-    if (indexPath.row == [self.tasks count]) {
+    if (indexPath.row == [tasks count]) {
         cell = [collectionView dequeueReusableCellWithReuseIdentifier:kAddTaskCellIdentifier forIndexPath:indexPath];
         AddTaskCell *addTaskCell = (AddTaskCell *)cell;
-        [addTaskCell setTaskCount:[self.tasks count]];
+        [addTaskCell setTaskCount:[tasks count]];
     } else {
         cell = [collectionView dequeueReusableCellWithReuseIdentifier:kStartTaskCellIdentifier forIndexPath:indexPath];
         StartTaskCell *startTaskCell = (StartTaskCell *)cell;
-        [startTaskCell setTaskName:[[self.tasks objectAtIndex:indexPath.row] valueForKey:@"name"] order:indexPath.row];
+        [startTaskCell setTaskName:[[tasks objectAtIndex:indexPath.row] valueForKey:@"name"] order:indexPath.row];
     }
     return cell;
 }
@@ -101,6 +90,7 @@ static NSString * kAddTaskCellIdentifier          = @"ADD_TASK_CELL_INDETIFIER";
 {
     if (indexPath.row == [tasks count]) {
         AddTaskViewController *addTaskViewController = [[AddTaskViewController alloc] initWithNibName:@"AddTaskViewController" bundle:nil];
+        addTaskViewController.managedObjectContext = managedObjectContext;
         [self.navigationController pushViewController:addTaskViewController animated:YES];
     }
 }

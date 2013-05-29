@@ -10,4 +10,6 @@
 
 @interface NavigationViewController : UINavigationController
 
+- (id)initWithManagedObjectContext:(NSManagedObjectContext *)managedObjectContext;
+
 @end

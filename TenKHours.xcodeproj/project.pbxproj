@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4912531B1756551700B0A8E4 /* Record.m in Sources */ = {isa = PBXBuildFile; fileRef = 4912531A1756551700B0A8E4 /* Record.m */; };
+		4912531E1756551700B0A8E4 /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 4912531D1756551700B0A8E4 /* Task.m */; };
 		493527FB174DB0060030518F /* AddTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 493527F9174DB0060030518F /* AddTaskViewController.m */; };
 		493527FC174DB0060030518F /* AddTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 493527FA174DB0060030518F /* AddTaskViewController.xib */; };
 		493527FF174DC5160030518F /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 493527FE174DC5160030518F /* NavigationViewController.m */; };
@@ -38,6 +40,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		491253191756551700B0A8E4 /* Record.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Record.h; sourceTree = "<group>"; };
+		4912531A1756551700B0A8E4 /* Record.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Record.m; sourceTree = "<group>"; };
+		4912531C1756551700B0A8E4 /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
+		4912531D1756551700B0A8E4 /* Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
 		493527F8174DB0060030518F /* AddTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTaskViewController.h; sourceTree = "<group>"; };
 		493527F9174DB0060030518F /* AddTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTaskViewController.m; sourceTree = "<group>"; };
 		493527FA174DB0060030518F /* AddTaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddTaskViewController.xib; sourceTree = "<group>"; };
@@ -95,6 +101,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4912531F17565EC300B0A8E4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4912531C1756551700B0A8E4 /* Task.h */,
+				4912531D1756551700B0A8E4 /* Task.m */,
+				491253191756551700B0A8E4 /* Record.h */,
+				4912531A1756551700B0A8E4 /* Record.m */,
+				49B00B941750AB1000139741 /* Task.xcdatamodeld */,
+				49C1805E174A7F3B00A95FE6 /* SystemConfig.plist */,
+				49B68FDD17486E2E00CF841D /* images */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		49B68FAE17486BE700CF841D = {
 			isa = PBXGroup;
 			children = (
@@ -126,21 +146,19 @@
 		49B68FC017486BE700CF841D /* TenKHours */ = {
 			isa = PBXGroup;
 			children = (
+				4912531F17565EC300B0A8E4 /* Resources */,
 				49C18066174B49D300A95FE6 /* StartTask */,
 				49C18065174B49BD00A95FE6 /* AddTask */,
-				49B68FDD17486E2E00CF841D /* images */,
 				49B68FC917486BE700CF841D /* AppDelegate.h */,
 				49B68FCA17486BE700CF841D /* AppDelegate.m */,
 				49B68FE61748757200CF841D /* HomeViewController.h */,
-				496B730F174D110C0082502B /* HomeViewController.xib */,
 				49B68FE71748757200CF841D /* HomeViewController.m */,
+				496B730F174D110C0082502B /* HomeViewController.xib */,
 				496B7316174D190B0082502B /* TaskCollectionHeaderView.h */,
 				496B7317174D190B0082502B /* TaskCollectionHeaderView.m */,
-				49C1805E174A7F3B00A95FE6 /* SystemConfig.plist */,
-				49B68FC117486BE700CF841D /* Supporting Files */,
 				493527FD174DC5160030518F /* NavigationViewController.h */,
 				493527FE174DC5160030518F /* NavigationViewController.m */,
-				49B00B941750AB1000139741 /* Task.xcdatamodeld */,
+				49B68FC117486BE700CF841D /* Supporting Files */,
 			);
 			path = TenKHours;
 			sourceTree = "<group>";
@@ -282,6 +300,8 @@
 				493527FF174DC5160030518F /* NavigationViewController.m in Sources */,
 				49B00B961750AB1000139741 /* Task.xcdatamodeld in Sources */,
 				4957F70017535BF100299233 /* AddTaskCircle.m in Sources */,
+				4912531B1756551700B0A8E4 /* Record.m in Sources */,
+				4912531E1756551700B0A8E4 /* Task.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

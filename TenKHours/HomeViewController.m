@@ -10,6 +10,7 @@
 #import "AddTaskCell.h"
 #import "StartTaskCell.h"
 #import "TaskCollectionHeaderView.h"
+#import "AddTaskViewController.h"
 #import <CoreData/CoreData.h>
 
 static NSString * kTaskCollectionHeaderIdentifier = @"TASK_COLLECTIONHEADER_INDENTIFIER";
@@ -94,6 +95,14 @@ static NSString * kAddTaskCellIdentifier          = @"ADD_TASK_CELL_INDETIFIER";
     }
 
     return reusableview;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == [tasks count]) {
+        AddTaskViewController *addTaskViewController = [[AddTaskViewController alloc] initWithNibName:@"AddTaskViewController" bundle:nil];
+        [self.navigationController pushViewController:addTaskViewController animated:YES];
+    }
 }
 
 @end

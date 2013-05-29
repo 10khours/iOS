@@ -9,11 +9,9 @@
 #import "AppDelegate.h"
 #import "NavigationViewController.h"
 #import "HomeViewController.h"
-#import "AddTaskViewController.h"
 
 @interface AppDelegate () {
     NavigationViewController *_navigationViewController;
-    AddTaskViewController *_addTaskViewController;
 }
 
 @end
@@ -33,19 +31,11 @@
     [navigationViewController setNavigationBarHidden:YES];
     self.window.rootViewController = navigationViewController;
     HomeViewController *homeViewController = [[HomeViewController alloc] initWithNibName:@"HomeViewController" bundle:nil];
-    AddTaskViewController *addTaskViewController = [[AddTaskViewController alloc] initWithNibName:@"AddTaskViewController" bundle:nil];
-    _addTaskViewController = addTaskViewController;
+
     [navigationViewController pushViewController:homeViewController animated:NO];
     [self.window makeKeyAndVisible];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(navigationToAddTaskView) name:@"StartAddingTask" object:nil];
-    
     return YES;
-}
-
-- (void)navigationToAddTaskView
-{
-    [_navigationViewController pushViewController:_addTaskViewController animated:YES];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

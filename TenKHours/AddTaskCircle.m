@@ -1,14 +1,14 @@
 //
-//  TaskButton.m
+//  AddTaskCircle.m
 //  TenKHours
 //
-//  Created by zation on 5/20/13.
+//  Created by zation on 5/27/13.
 //  Copyright (c) 2013 Zation. All rights reserved.
 //
 
-#import "AddTaskButton.h"
+#import "AddTaskCircle.h"
 
-@implementation AddTaskButton
+@implementation AddTaskCircle
 
 @synthesize borderColor;
 
@@ -16,7 +16,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-
+        self.backgroundColor = [UIColor blackColor];
     }
     return self;
 }

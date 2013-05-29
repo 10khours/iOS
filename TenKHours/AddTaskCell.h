@@ -7,15 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AddTaskButton.h"
+#import "AddTaskCircle.h"
 
 @interface AddTaskCell : UICollectionViewCell
 
-- (IBAction)addTask:(id)sender;
 - (void)setTaskCount:(NSInteger)taskCount;
 
-@property (weak, nonatomic) IBOutlet UITextField *textFieldNewTaskName;
-@property (weak, nonatomic) IBOutlet AddTaskButton *buttonAddTask;
+@property (weak, nonatomic) IBOutlet AddTaskCircle *addTaskCircle;
 @property (weak, nonatomic) IBOutlet UILabel *addTaskMark;
 
 @end

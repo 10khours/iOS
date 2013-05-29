@@ -8,12 +8,6 @@
 
 #import "AddTaskCell.h"
 
-@interface AddTaskCell () {
-    
-}
-
-@end
-
 @implementation AddTaskCell
 
 @synthesize addTaskCircle;
@@ -55,8 +49,4 @@ NSArray *taskColors;
     // Drawing code
 }
 */
-
-- (IBAction)addTask:(id)sender {
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"StartAddingTask" object:self];
-}
 @end

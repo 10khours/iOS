@@ -9,10 +9,6 @@
 #import "AddTaskViewController.h"
 #import "Task.h"
 
-@interface AddTaskViewController ()
-
-@end
-
 @implementation AddTaskViewController
 
 @synthesize managedObjectContext;

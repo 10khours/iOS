@@ -37,6 +37,10 @@
 		49C18062174B499700A95FE6 /* StartTaskCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C18061174B499700A95FE6 /* StartTaskCell.m */; };
 		49C18064174B49B600A95FE6 /* StartTaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49C18063174B49B600A95FE6 /* StartTaskCell.xib */; };
 		49C18069174B523300A95FE6 /* StartTaskButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C18068174B523300A95FE6 /* StartTaskButton.m */; };
+		49C56179175701E1003FA8C8 /* TaskProgressView.h in Sources */ = {isa = PBXBuildFile; fileRef = 49C561711756FF62003FA8C8 /* TaskProgressView.h */; };
+		49C5617A175701E1003FA8C8 /* TaskProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C561721756FF62003FA8C8 /* TaskProgressView.m */; };
+		49C5617B175701E1003FA8C8 /* TaskShowingViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 49C561731756FF62003FA8C8 /* TaskShowingViewController.h */; };
+		49C5617C175701E1003FA8C8 /* TaskShowingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C561741756FF62003FA8C8 /* TaskShowingViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -307,6 +311,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49C56179175701E1003FA8C8 /* TaskProgressView.h in Sources */,
+				49C5617A175701E1003FA8C8 /* TaskProgressView.m in Sources */,
+				49C5617B175701E1003FA8C8 /* TaskShowingViewController.h in Sources */,
+				49C5617C175701E1003FA8C8 /* TaskShowingViewController.m in Sources */,
 				49B68FC717486BE700CF841D /* main.m in Sources */,
 				49B68FCB17486BE700CF841D /* AppDelegate.m in Sources */,
 				49B68FE81748757200CF841D /* HomeViewController.m in Sources */,

@@ -1,14 +1,14 @@
 //
-//  TaskButton.h
+//  AddTaskCircle.h
 //  TenKHours
 //
-//  Created by zation on 5/20/13.
+//  Created by zation on 5/27/13.
 //  Copyright (c) 2013 Zation. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface AddTaskButton : UIButton
+@interface AddTaskCircle : UIView
 
 @property UIColor *borderColor;
 

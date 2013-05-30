@@ -39,6 +39,7 @@ NSArray *taskColors;
     self.labelTaskName.text = taskName;
     [self.labelTaskName setTextColor:taskColor];
     self.buttonStartTask.fillColor = taskColor;
+    [self.buttonStartTask setNeedsDisplay];
 }
 
 /*

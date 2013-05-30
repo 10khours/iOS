@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HomeViewController : UICollectionViewController
+@interface HomeViewController : UICollectionViewController {
+    NSMutableArray *tasks;
+}
+
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 
 @end

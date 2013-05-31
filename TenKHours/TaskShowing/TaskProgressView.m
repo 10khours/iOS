@@ -34,6 +34,21 @@ static NSInteger kLineWidth = 20;
     return self;
 }
 
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        [self gatherData];
+    }
+    return self;
+}
+
+- (void)gatherData {
+    _percent = 0;
+    _total = 0;
+    _startAngle = M_PI * 1.5;
+    _endAngle = _startAngle + M_PI * 2;
+}
+
 - (void)drawRect:(CGRect)rect
 {
     _total += 0.1;
@@ -47,31 +62,16 @@ static NSInteger kLineWidth = 20;
                        clockwise:YES];
 
     bezierPath.lineWidth = kLineWidth;
-    [[UIColor blueColor] setStroke];
+    bezierPath.lineCapStyle = kCGLineCapRound;
+    [self.color setStroke];
     [bezierPath stroke];
-
+    
     CGRect textRect = CGRectMake((rect.size.width / 2.0) - 100/2.0, (rect.size.height / 2.0) - 45/2.0, 100, 45);
     [[UIColor blackColor] setFill];
     [content drawInRect: textRect
                    withFont:[UIFont fontWithName: @"Helvetica-Bold" size:30]
               lineBreakMode: NSLineBreakByWordWrapping
                   alignment: NSTextAlignmentCenter];
-
-    [self.layer removeAllAnimations];
-    CAShapeLayer *shapeLayer = [CAShapeLayer layer];
-
-    shapeLayer.path = [bezierPath CGPath];
-    shapeLayer.strokeColor = [[UIColor blueColor] CGColor];
-    shapeLayer.fillColor = nil;
-    shapeLayer.lineWidth = kLineWidth;
-    shapeLayer.lineJoin = kCALineJoinBevel;
-    [self.layer addSublayer:shapeLayer];
-
-    CABasicAnimation *pathAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
-    pathAnimation.duration = 0.1;
-    pathAnimation.fromValue = @(0.0f);
-    pathAnimation.toValue = @(1.0f);
-    [shapeLayer addAnimation:pathAnimation forKey:@"strokeEnd"];
 }
 
 @end

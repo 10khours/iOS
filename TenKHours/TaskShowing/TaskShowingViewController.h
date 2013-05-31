@@ -10,4 +10,6 @@
 
 @interface TaskShowingViewController : UIViewController
 
+@property (nonatomic, strong) UIColor *color;
+
 @end

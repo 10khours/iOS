@@ -7,13 +7,12 @@
 //
 
 #import "AddTaskCell.h"
+#import "CommonHelper.h"
 
 @implementation AddTaskCell
 
 @synthesize addTaskCircle;
 @synthesize addTaskMark;
-
-NSArray *taskColors;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -21,21 +20,13 @@ NSArray *taskColors;
     if (self) {
         NSArray *nibs = [[NSBundle mainBundle] loadNibNamed:@"AddTaskCell" owner:self options:nil];
         self = [nibs objectAtIndex:0];
-        NSString *systemConfigPath = [[NSBundle mainBundle] pathForResource:@"SystemConfig" ofType:@"plist"];
-        NSDictionary *systemConfig = [[NSMutableDictionary alloc] initWithContentsOfFile:systemConfigPath];
-        taskColors = [systemConfig objectForKey:@"TaskColors"];
     }
     return self;
 }
 
 - (void)setTaskCount:(NSInteger)taskCount
 {
-    NSDictionary *taskColorDict = [taskColors objectAtIndex:taskCount];
-    float red = [[taskColorDict objectForKey:@"Red"] floatValue];
-    float green = [[taskColorDict objectForKey:@"Green"] floatValue];
-    float blue = [[taskColorDict objectForKey:@"Blue"] floatValue];
-    UIColor *taskColor = [UIColor colorWithRed:red / 255 green:green / 255 blue:blue / 255 alpha:1.0];
-    
+    UIColor *taskColor = [CommonHelper colorFromTaskColor:[[CommonHelper defaultTaskColors] objectAtIndex:taskCount]];    
     self.addTaskCircle.borderColor = taskColor;
     [self.addTaskMark setTextColor:taskColor];
     [self.addTaskCircle setNeedsDisplay];

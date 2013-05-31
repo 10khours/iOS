@@ -11,6 +11,8 @@
 #import "StartTaskCell.h"
 #import "TaskCollectionHeaderView.h"
 #import "AddTaskViewController.h"
+#import "TaskShowingViewController.h"
+#import "CommonHelper.h"
 #import <CoreData/CoreData.h>
 
 static NSString * kTaskCollectionHeaderIdentifier = @"TASK_COLLECTIONHEADER_INDENTIFIER";
@@ -92,6 +94,11 @@ static NSString * kAddTaskCellIdentifier          = @"ADD_TASK_CELL_INDETIFIER";
         AddTaskViewController *addTaskViewController = [[AddTaskViewController alloc] initWithNibName:@"AddTaskViewController" bundle:nil];
         addTaskViewController.managedObjectContext = managedObjectContext;
         [self.navigationController pushViewController:addTaskViewController animated:YES];
+    } else {
+        TaskShowingViewController *taskShowingViewController = [[TaskShowingViewController alloc] initWithNibName:@"TaskShowingViewController" bundle:nil];
+        
+        taskShowingViewController.color = [CommonHelper colorFromTaskColor:[[CommonHelper defaultTaskColors] objectAtIndex:indexPath.row] ];
+        [self.navigationController pushViewController:taskShowingViewController animated:YES];
     }
 }
 

@@ -11,9 +11,9 @@
 
 @interface TaskShowingViewController () {
     NSTimer *_timer;
-    TaskProgressView *_progressView;
 }
 
+@property (weak, nonatomic) IBOutlet TaskProgressView *progressView;
 @end
 
 @implementation TaskShowingViewController
@@ -31,9 +31,8 @@
 {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]];
-    _progressView = [[TaskProgressView alloc] initWithFrame:CGRectMake(30, 120, 261, 266)];
-    _progressView.percent = 0;
-    [self.view addSubview:_progressView];
+    self.progressView.percent = 0.f;
+    self.progressView.color = self.color;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -52,11 +51,15 @@
 }
 
 - (void)increaseTime {
-    _progressView.percent = _progressView.percent + 0.1;
-    if(_progressView.percent >= 60) {
-        _progressView.percent = 0.0;
+    self.progressView.percent = self.progressView.percent + 0.1;
+    if(self.progressView.percent >= 60) {
+        self.progressView.percent = 0.0;
     }
-    [_progressView setNeedsDisplay];
+    [self.progressView setNeedsDisplay];
 }
 
+- (IBAction)stopTimer:(id)sender {
+    [_timer invalidate];
+    [self.navigationController popViewControllerAnimated:YES];
+}
 @end

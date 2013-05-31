@@ -11,5 +11,6 @@
 @interface TaskProgressView : UIView
 
 @property (nonatomic, assign) float percent;
+@property (nonatomic, strong) UIColor *color;
 
 @end

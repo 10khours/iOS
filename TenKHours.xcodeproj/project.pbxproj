@@ -11,7 +11,6 @@
 		4912531E1756551700B0A8E4 /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 4912531D1756551700B0A8E4 /* Task.m */; };
 		493527FB174DB0060030518F /* AddTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 493527F9174DB0060030518F /* AddTaskViewController.m */; };
 		493527FC174DB0060030518F /* AddTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 493527FA174DB0060030518F /* AddTaskViewController.xib */; };
-		493527FF174DC5160030518F /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 493527FE174DC5160030518F /* NavigationViewController.m */; };
 		4957F70017535BF100299233 /* AddTaskCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4957F6FF17535BF100299233 /* AddTaskCircle.m */; };
 		496B7310174D110C0082502B /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 496B730F174D110C0082502B /* HomeViewController.xib */; };
 		496B7318174D190B0082502B /* TaskCollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 496B7317174D190B0082502B /* TaskCollectionHeaderView.m */; };
@@ -58,8 +57,6 @@
 		493527F8174DB0060030518F /* AddTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTaskViewController.h; sourceTree = "<group>"; };
 		493527F9174DB0060030518F /* AddTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTaskViewController.m; sourceTree = "<group>"; };
 		493527FA174DB0060030518F /* AddTaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddTaskViewController.xib; sourceTree = "<group>"; };
-		493527FD174DC5160030518F /* NavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationViewController.h; sourceTree = "<group>"; };
-		493527FE174DC5160030518F /* NavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationViewController.m; sourceTree = "<group>"; };
 		4957F6FE17535BF100299233 /* AddTaskCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTaskCircle.h; sourceTree = "<group>"; };
 		4957F6FF17535BF100299233 /* AddTaskCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTaskCircle.m; sourceTree = "<group>"; };
 		496B730F174D110C0082502B /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
@@ -194,8 +191,6 @@
 				496B730F174D110C0082502B /* HomeViewController.xib */,
 				496B7316174D190B0082502B /* TaskCollectionHeaderView.h */,
 				496B7317174D190B0082502B /* TaskCollectionHeaderView.m */,
-				493527FD174DC5160030518F /* NavigationViewController.h */,
-				493527FE174DC5160030518F /* NavigationViewController.m */,
 				49B68FC117486BE700CF841D /* Supporting Files */,
 				1B8943D6D44D330FFBDCE50C /* TaskShowing */,
 			);
@@ -350,7 +345,6 @@
 				49C18069174B523300A95FE6 /* StartTaskButton.m in Sources */,
 				496B7318174D190B0082502B /* TaskCollectionHeaderView.m in Sources */,
 				493527FB174DB0060030518F /* AddTaskViewController.m in Sources */,
-				493527FF174DC5160030518F /* NavigationViewController.m in Sources */,
 				49B00B961750AB1000139741 /* Task.xcdatamodeld in Sources */,
 				4957F70017535BF100299233 /* AddTaskCircle.m in Sources */,
 				4912531B1756551700B0A8E4 /* Record.m in Sources */,

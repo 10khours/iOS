@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "NavigationViewController.h"
 #import "HomeViewController.h"
 #import "TaskShowingViewController.h"
 
@@ -17,8 +16,13 @@
 {
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    NavigationViewController *navigationController = [[NavigationViewController alloc] initWithManagedObjectContext:[self managedObjectContext]];
+    UINavigationController *navigationController = [[UINavigationController alloc] init];
     self.window.rootViewController = navigationController;
+    [navigationController setNavigationBarHidden:YES];
+    
+    HomeViewController *homeViewController = [[HomeViewController alloc] initWithNibName:@"HomeViewController" bundle:nil];
+    homeViewController.managedObjectContext = [self managedObjectContext];
+    [navigationController pushViewController:homeViewController animated:NO];
     
     [self.window makeKeyAndVisible];
     

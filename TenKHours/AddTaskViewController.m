@@ -7,11 +7,11 @@
 //
 
 #import "AddTaskViewController.h"
+#import "AppDelegate.h"
 #import "Task.h"
 
 @implementation AddTaskViewController
 
-@synthesize managedObjectContext;
 @synthesize taskName;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -26,6 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -44,12 +45,13 @@
 }
 
 - (IBAction)add:(id)sender {
-    Task *newTask = (Task *)[NSEntityDescription insertNewObjectForEntityForName:@"Task" inManagedObjectContext:managedObjectContext];
+    _managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
+    Task *newTask = (Task *)[NSEntityDescription insertNewObjectForEntityForName:@"Task" inManagedObjectContext:_managedObjectContext];
     [newTask setName:taskName.text];
     [newTask setTotal:0];
     taskName.text = @"";
     NSError *error = nil;
-    if (![managedObjectContext save:&error]) {
+    if (![_managedObjectContext save:&error]) {
         NSLog(@"Can't save! %@ %@", error, [error localizedDescription]);
     }
 

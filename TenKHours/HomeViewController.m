@@ -11,6 +11,7 @@
 #import "StartTaskCell.h"
 #import "TaskCollectionHeaderView.h"
 #import "AddTaskViewController.h"
+#import "AppDelegate.h"
 #import "TaskShowingViewController.h"
 #import "CommonHelper.h"
 #import <CoreData/CoreData.h>
@@ -20,8 +21,6 @@ static NSString * kStartTaskCellIdentifier        = @"START_TASK_CELL_INDETIFIER
 static NSString * kAddTaskCellIdentifier          = @"ADD_TASK_CELL_INDETIFIER";
 
 @implementation HomeViewController
-
-@synthesize managedObjectContext;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -36,12 +35,13 @@ static NSString * kAddTaskCellIdentifier          = @"ADD_TASK_CELL_INDETIFIER";
     [self.collectionView registerClass:[StartTaskCell class] forCellWithReuseIdentifier:kStartTaskCellIdentifier];
     [self.collectionView registerClass:[TaskCollectionHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:kTaskCollectionHeaderIdentifier];
     self.collectionView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]];
+    _managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Task"];
-    tasks = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
+    tasks = [[_managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
     [self.collectionView reloadData];
 }
 
@@ -92,7 +92,6 @@ static NSString * kAddTaskCellIdentifier          = @"ADD_TASK_CELL_INDETIFIER";
 {
     if (indexPath.row == [tasks count]) {
         AddTaskViewController *addTaskViewController = [[AddTaskViewController alloc] initWithNibName:@"AddTaskViewController" bundle:nil];
-        addTaskViewController.managedObjectContext = managedObjectContext;
         [self.navigationController pushViewController:addTaskViewController animated:YES];
     } else {
         TaskShowingViewController *taskShowingViewController = [[TaskShowingViewController alloc] initWithNibName:@"TaskShowingViewController" bundle:nil];

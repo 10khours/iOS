@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AddTaskViewController : UIViewController
-
-@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+@interface AddTaskViewController : UIViewController {
+    NSManagedObjectContext *_managedObjectContext;
+}
 
 @property (weak, nonatomic) IBOutlet UITextField *taskName;
 

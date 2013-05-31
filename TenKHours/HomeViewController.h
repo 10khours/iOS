@@ -10,8 +10,7 @@
 
 @interface HomeViewController : UICollectionViewController {
     NSMutableArray *tasks;
+    NSManagedObjectContext *_managedObjectContext;
 }
-
-@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 
 @end

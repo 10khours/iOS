@@ -21,7 +21,6 @@
     [navigationController setNavigationBarHidden:YES];
     
     HomeViewController *homeViewController = [[HomeViewController alloc] initWithNibName:@"HomeViewController" bundle:nil];
-    homeViewController.managedObjectContext = [self managedObjectContext];
     [navigationController pushViewController:homeViewController animated:NO];
     
     [self.window makeKeyAndVisible];

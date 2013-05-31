@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface HomeViewController : UICollectionViewController {
-    NSMutableArray *tasks;
+    NSMutableArray *_tasks;
     NSManagedObjectContext *_managedObjectContext;
 }
 

@@ -40,13 +40,9 @@
 		49C5617A175701E1003FA8C8 /* TaskProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C561721756FF62003FA8C8 /* TaskProgressView.m */; };
 		49C5617B175701E1003FA8C8 /* TaskShowingViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 49C561731756FF62003FA8C8 /* TaskShowingViewController.h */; };
 		49C5617C175701E1003FA8C8 /* TaskShowingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C561741756FF62003FA8C8 /* TaskShowingViewController.m */; };
-<<<<<<< HEAD
 		49FE0111175726C000F796C9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89771ABA17515A4A00C63D2A /* QuartzCore.framework */; };
 		49FE018C17588F7400F796C9 /* TaskShowingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49FE018B17588F7400F796C9 /* TaskShowingViewController.xib */; };
 		49FE0194175899D600F796C9 /* CommonHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FE0193175899D600F796C9 /* CommonHelper.m */; };
-=======
-		49FE28A917588D92003CECC7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89771ABA17515A4A00C63D2A /* QuartzCore.framework */; };
->>>>>>> 5e3f1d263f8077b64b4a7acb9aca220379c8c9f8
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -107,11 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
-				49FE0111175726C000F796C9 /* QuartzCore.framework in Frameworks */,
-=======
 				49FE28A917588D92003CECC7 /* QuartzCore.framework in Frameworks */,
->>>>>>> 5e3f1d263f8077b64b4a7acb9aca220379c8c9f8
 				49B00B981750B0A600139741 /* CoreData.framework in Frameworks */,
 				49B68FBB17486BE700CF841D /* UIKit.framework in Frameworks */,
 				49B68FBD17486BE700CF841D /* Foundation.framework in Frameworks */,

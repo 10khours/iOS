@@ -41,7 +41,7 @@ static NSString * kAddTaskCellIdentifier          = @"ADD_TASK_CELL_INDETIFIER";
 - (void)viewDidAppear:(BOOL)animated
 {
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Task"];
-    tasks = [[_managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
+    _tasks = [[_managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
     [self.collectionView reloadData];
 }
 
@@ -58,21 +58,21 @@ static NSString * kAddTaskCellIdentifier          = @"ADD_TASK_CELL_INDETIFIER";
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    NSInteger tasksCount = [tasks count] + 1;
+    NSInteger tasksCount = [_tasks count] + 1;
     return tasksCount > 4 ? 4 : tasksCount;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     UICollectionViewCell *cell;
-    if (indexPath.row == [tasks count]) {
+    if (indexPath.row == [_tasks count]) {
         cell = [collectionView dequeueReusableCellWithReuseIdentifier:kAddTaskCellIdentifier forIndexPath:indexPath];
         AddTaskCell *addTaskCell = (AddTaskCell *)cell;
-        [addTaskCell setTaskCount:[tasks count]];
+        [addTaskCell setTaskCount:[_tasks count]];
     } else {
         cell = [collectionView dequeueReusableCellWithReuseIdentifier:kStartTaskCellIdentifier forIndexPath:indexPath];
         StartTaskCell *startTaskCell = (StartTaskCell *)cell;
-        [startTaskCell setTaskName:[[tasks objectAtIndex:indexPath.row] valueForKey:@"name"] order:indexPath.row];
+        [startTaskCell setTaskName:[[_tasks objectAtIndex:indexPath.row] valueForKey:@"name"] order:indexPath.row];
     }
     return cell;
 }
@@ -90,7 +90,7 @@ static NSString * kAddTaskCellIdentifier          = @"ADD_TASK_CELL_INDETIFIER";
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == [tasks count]) {
+    if (indexPath.row == [_tasks count]) {
         AddTaskViewController *addTaskViewController = [[AddTaskViewController alloc] initWithNibName:@"AddTaskViewController" bundle:nil];
         [self.navigationController pushViewController:addTaskViewController animated:YES];
     } else {

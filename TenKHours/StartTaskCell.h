@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "StartTaskButton.h"
 
-@interface StartTaskCell : UICollectionViewCell
+@interface StartTaskCell : UICollectionViewCell {
+    NSArray *_taskColors;
+}
 
 - (void)setTaskName:(NSString *)taskName order:(NSInteger)order;
 

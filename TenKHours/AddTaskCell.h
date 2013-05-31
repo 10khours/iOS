@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "AddTaskCircle.h"
 
-@interface AddTaskCell : UICollectionViewCell
+@interface AddTaskCell : UICollectionViewCell {
+    NSArray *_taskColors;
+}
 
 - (void)setTaskCount:(NSInteger)taskCount;
 

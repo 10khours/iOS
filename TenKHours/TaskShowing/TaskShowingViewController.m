@@ -7,22 +7,18 @@
 //
 
 #import "TaskShowingViewController.h"
-#import "TaskProgressView.h"
-
-@interface TaskShowingViewController () {
-    NSTimer *_timer;
-}
-
-@property (weak, nonatomic) IBOutlet TaskProgressView *progressView;
-@end
+#import <QuartzCore/QuartzCore.h>
 
 @implementation TaskShowingViewController
+
+@synthesize buttonStop;
+@synthesize color;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        
     }
     return self;
 }
@@ -33,6 +29,8 @@
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]];
     self.progressView.percent = 0.f;
     self.progressView.color = self.color;
+    buttonStop.backgroundColor = color;
+    buttonStop.layer.cornerRadius = 10;
 }
 
 - (void)viewDidAppear:(BOOL)animated {

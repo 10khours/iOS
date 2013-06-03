@@ -11,7 +11,7 @@
 
 @implementation StartTaskCell
 
-@synthesize buttonStartTask;
+@synthesize startTaskCircle;
 @synthesize labelTaskName;
 
 - (id)initWithFrame:(CGRect)frame
@@ -29,8 +29,8 @@
     UIColor *taskColor = [CommonHelper colorFromTaskColor:[[CommonHelper defaultTaskColors] objectAtIndex:order]];
     self.labelTaskName.text = taskName;
     [self.labelTaskName setTextColor:taskColor];
-    self.buttonStartTask.fillColor = taskColor;
-    [self.buttonStartTask setNeedsDisplay];
+    self.startTaskCircle.fillColor = taskColor;
+    [self.startTaskCircle setNeedsDisplay];
 }
 
 /*

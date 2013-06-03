@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4912531B1756551700B0A8E4 /* Record.m in Sources */ = {isa = PBXBuildFile; fileRef = 4912531A1756551700B0A8E4 /* Record.m */; };
 		4912531E1756551700B0A8E4 /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 4912531D1756551700B0A8E4 /* Task.m */; };
+		492079ED175C933F00D5BA15 /* StartTaskCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 492079EC175C933F00D5BA15 /* StartTaskCircle.m */; };
 		493527FB174DB0060030518F /* AddTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 493527F9174DB0060030518F /* AddTaskViewController.m */; };
 		493527FC174DB0060030518F /* AddTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 493527FA174DB0060030518F /* AddTaskViewController.xib */; };
 		4957F70017535BF100299233 /* AddTaskCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4957F6FF17535BF100299233 /* AddTaskCircle.m */; };
@@ -35,12 +36,10 @@
 		49C1805F174A7F3B00A95FE6 /* SystemConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49C1805E174A7F3B00A95FE6 /* SystemConfig.plist */; };
 		49C18062174B499700A95FE6 /* StartTaskCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C18061174B499700A95FE6 /* StartTaskCell.m */; };
 		49C18064174B49B600A95FE6 /* StartTaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49C18063174B49B600A95FE6 /* StartTaskCell.xib */; };
-		49C18069174B523300A95FE6 /* StartTaskButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C18068174B523300A95FE6 /* StartTaskButton.m */; };
 		49C56179175701E1003FA8C8 /* TaskProgressView.h in Sources */ = {isa = PBXBuildFile; fileRef = 49C561711756FF62003FA8C8 /* TaskProgressView.h */; };
 		49C5617A175701E1003FA8C8 /* TaskProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C561721756FF62003FA8C8 /* TaskProgressView.m */; };
 		49C5617B175701E1003FA8C8 /* TaskShowingViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 49C561731756FF62003FA8C8 /* TaskShowingViewController.h */; };
 		49C5617C175701E1003FA8C8 /* TaskShowingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C561741756FF62003FA8C8 /* TaskShowingViewController.m */; };
-		49FE0111175726C000F796C9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89771ABA17515A4A00C63D2A /* QuartzCore.framework */; };
 		49FE018C17588F7400F796C9 /* TaskShowingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49FE018B17588F7400F796C9 /* TaskShowingViewController.xib */; };
 		49FE0194175899D600F796C9 /* CommonHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FE0193175899D600F796C9 /* CommonHelper.m */; };
 /* End PBXBuildFile section */
@@ -50,6 +49,8 @@
 		4912531A1756551700B0A8E4 /* Record.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Record.m; sourceTree = "<group>"; };
 		4912531C1756551700B0A8E4 /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
 		4912531D1756551700B0A8E4 /* Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
+		492079EB175C933F00D5BA15 /* StartTaskCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartTaskCircle.h; sourceTree = "<group>"; };
+		492079EC175C933F00D5BA15 /* StartTaskCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartTaskCircle.m; sourceTree = "<group>"; };
 		493527F8174DB0060030518F /* AddTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTaskViewController.h; sourceTree = "<group>"; };
 		493527F9174DB0060030518F /* AddTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTaskViewController.m; sourceTree = "<group>"; };
 		493527FA174DB0060030518F /* AddTaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddTaskViewController.xib; sourceTree = "<group>"; };
@@ -86,8 +87,6 @@
 		49C18060174B499700A95FE6 /* StartTaskCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartTaskCell.h; sourceTree = "<group>"; };
 		49C18061174B499700A95FE6 /* StartTaskCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartTaskCell.m; sourceTree = "<group>"; };
 		49C18063174B49B600A95FE6 /* StartTaskCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StartTaskCell.xib; sourceTree = "<group>"; };
-		49C18067174B523300A95FE6 /* StartTaskButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartTaskButton.h; sourceTree = "<group>"; };
-		49C18068174B523300A95FE6 /* StartTaskButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartTaskButton.m; sourceTree = "<group>"; };
 		49C561711756FF62003FA8C8 /* TaskProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TaskProgressView.h; sourceTree = "<group>"; };
 		49C561721756FF62003FA8C8 /* TaskProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TaskProgressView.m; sourceTree = "<group>"; };
 		49C561731756FF62003FA8C8 /* TaskShowingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TaskShowingViewController.h; sourceTree = "<group>"; };
@@ -103,7 +102,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49FE28A917588D92003CECC7 /* QuartzCore.framework in Frameworks */,
 				49B00B981750B0A600139741 /* CoreData.framework in Frameworks */,
 				49B68FBB17486BE700CF841D /* UIKit.framework in Frameworks */,
 				49B68FBD17486BE700CF841D /* Foundation.framework in Frameworks */,
@@ -235,8 +233,8 @@
 				49C18060174B499700A95FE6 /* StartTaskCell.h */,
 				49C18061174B499700A95FE6 /* StartTaskCell.m */,
 				49C18063174B49B600A95FE6 /* StartTaskCell.xib */,
-				49C18067174B523300A95FE6 /* StartTaskButton.h */,
-				49C18068174B523300A95FE6 /* StartTaskButton.m */,
+				492079EB175C933F00D5BA15 /* StartTaskCircle.h */,
+				492079EC175C933F00D5BA15 /* StartTaskCircle.m */,
 			);
 			name = StartTask;
 			sourceTree = "<group>";
@@ -334,7 +332,6 @@
 				49B68FE81748757200CF841D /* HomeViewController.m in Sources */,
 				49B68FEB17489C1A00CF841D /* AddTaskCell.m in Sources */,
 				49C18062174B499700A95FE6 /* StartTaskCell.m in Sources */,
-				49C18069174B523300A95FE6 /* StartTaskButton.m in Sources */,
 				496B7318174D190B0082502B /* TaskCollectionHeaderView.m in Sources */,
 				493527FB174DB0060030518F /* AddTaskViewController.m in Sources */,
 				49B00B961750AB1000139741 /* Task.xcdatamodeld in Sources */,
@@ -342,6 +339,7 @@
 				4912531B1756551700B0A8E4 /* Record.m in Sources */,
 				4912531E1756551700B0A8E4 /* Task.m in Sources */,
 				49FE0194175899D600F796C9 /* CommonHelper.m in Sources */,
+				492079ED175C933F00D5BA15 /* StartTaskCircle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

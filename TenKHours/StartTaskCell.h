@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "StartTaskButton.h"
+#import "StartTaskCircle.h"
 
 @interface StartTaskCell : UICollectionViewCell {
     NSArray *_taskColors;
@@ -16,7 +16,7 @@
 - (void)setTaskName:(NSString *)taskName order:(NSInteger)order;
 
 @property (weak, nonatomic) IBOutlet UILabel *labelTaskName;
-@property (weak, nonatomic) IBOutlet StartTaskButton *buttonStartTask;
+@property (weak, nonatomic) IBOutlet StartTaskCircle *startTaskCircle;
 
 
 @end

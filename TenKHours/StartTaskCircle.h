@@ -1,14 +1,14 @@
 //
-//  StartTaskButton.h
+//  StartTaskCircle.h
 //  TenKHours
 //
-//  Created by zation on 5/21/13.
+//  Created by zation on 6/3/13.
 //  Copyright (c) 2013 Zation. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface StartTaskButton : UIButton
+@interface StartTaskCircle : UIView
 
 @property UIColor *fillColor;
 

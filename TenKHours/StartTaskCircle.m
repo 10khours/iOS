@@ -1,14 +1,14 @@
 //
-//  StartTaskButton.m
+//  StartTaskCircle.m
 //  TenKHours
 //
-//  Created by zation on 5/21/13.
+//  Created by zation on 6/3/13.
 //  Copyright (c) 2013 Zation. All rights reserved.
 //
 
-#import "StartTaskButton.h"
+#import "StartTaskCircle.h"
 
-@implementation StartTaskButton
+@implementation StartTaskCircle
 
 @synthesize fillColor;
 
@@ -36,7 +36,7 @@
     [[UIColor whiteColor] setStroke];
     [self.fillColor setFill];
     [borderPath fill];
-
+    
     [borderPath stroke];
 }
 

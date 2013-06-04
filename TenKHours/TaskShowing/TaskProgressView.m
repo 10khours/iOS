@@ -9,7 +9,7 @@
 #import "TaskProgressView.h"
 #import <QuartzCore/QuartzCore.h>
 
-static NSInteger kLineWidth = 20;
+static NSInteger lineWidth = 10;
 
 @interface TaskProgressView () {
     CGFloat _startAngle;
@@ -54,15 +54,17 @@ static NSInteger kLineWidth = 20;
     _total += 0.1;
     NSString *content = [NSString stringWithFormat:@"%.1f", _total];
     UIBezierPath *bezierPath = [UIBezierPath bezierPath];
+    CGPoint center = CGPointMake(rect.size.width / 2, rect.size.height / 2);
+    float radius = rect.size.width / 2 - lineWidth * 2;
 
-    [bezierPath addArcWithCenter:CGPointMake(rect.size.width / 2, rect.size.height / 2)
-                          radius:rect.size.width / 2 - kLineWidth
+    [bezierPath addArcWithCenter:center
+                          radius:radius
                       startAngle:_startAngle
                         endAngle:_startAngle + (_endAngle - _startAngle) * (self.percent / 60.0)
                        clockwise:YES];
 
-    bezierPath.lineWidth = kLineWidth;
     bezierPath.lineCapStyle = kCGLineCapRound;
+    bezierPath.lineWidth = lineWidth;
     [self.color setStroke];
     [bezierPath stroke];
     

@@ -13,7 +13,9 @@
 }
 
 @property (nonatomic, strong) UIColor *color;
+@property (nonatomic, strong) NSString *taskName;
 @property (weak, nonatomic) IBOutlet TaskProgressView *progressView;
 @property (weak, nonatomic) IBOutlet UIButton *buttonStop;
+@property (weak, nonatomic) IBOutlet UILabel *labelTaskName;
 
 @end

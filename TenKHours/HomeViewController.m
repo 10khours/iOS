@@ -97,6 +97,7 @@ static NSString * kAddTaskCellIdentifier          = @"ADD_TASK_CELL_INDETIFIER";
         TaskShowingViewController *taskShowingViewController = [[TaskShowingViewController alloc] initWithNibName:@"TaskShowingViewController" bundle:nil];
         
         taskShowingViewController.color = [CommonHelper colorFromTaskColor:[[CommonHelper defaultTaskColors] objectAtIndex:indexPath.row] ];
+        taskShowingViewController.taskName = [[_tasks objectAtIndex:indexPath.row] valueForKey:@"name"];
         [self.navigationController pushViewController:taskShowingViewController animated:YES];
     }
 }

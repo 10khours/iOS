@@ -13,6 +13,8 @@
 
 @synthesize buttonStop;
 @synthesize color;
+@synthesize taskName;
+@synthesize labelTaskName;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,6 +31,10 @@
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]];
     self.progressView.percent = 0.f;
     self.progressView.color = self.color;
+    
+    [labelTaskName setTextColor:color];
+    [labelTaskName setText:taskName];
+    
     buttonStop.backgroundColor = color;
     buttonStop.layer.cornerRadius = 10;
 }

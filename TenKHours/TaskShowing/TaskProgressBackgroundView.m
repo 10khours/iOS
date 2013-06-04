@@ -14,7 +14,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        NSLog(@"123123123");
+
     }
     return self;
 }
@@ -22,7 +22,6 @@
 - (void)drawRect:(CGRect)rect
 {
     CGRect bounds = [self bounds];
-    NSLog(@"123123123");
     
     CGPoint center = CGPointMake(rect.size.width / 2, rect.size.height / 2);
     NSInteger lineWidth = 10;
@@ -31,7 +30,6 @@
     UIBezierPath *borderPath = [UIBezierPath bezierPathWithArcCenter:center radius:radius startAngle:0 endAngle:M_PI * 2 clockwise:YES];
     [borderPath setLineWidth:lineWidth];
     [[UIColor colorWithRed:0 green:0 blue:0 alpha:0.2] setStroke];
-//    [[UIColor whiteColor] setStroke];
     [borderPath stroke];
 }
 

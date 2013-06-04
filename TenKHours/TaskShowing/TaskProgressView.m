@@ -7,6 +7,7 @@
 //
 
 #import "TaskProgressView.h"
+#import "math.h"
 #import <QuartzCore/QuartzCore.h>
 
 static NSInteger lineWidth = 10;
@@ -52,7 +53,14 @@ static NSInteger lineWidth = 10;
 - (void)drawRect:(CGRect)rect
 {
     _total += 0.1;
-    NSString *content = [NSString stringWithFormat:@"%.1f", _total];
+    
+    int displaySecounds = (int)roundf(_total) % 60;
+    int displayMinutes = 0;
+    if (_total > 59) {
+        displayMinutes = roundf(_total / 60);
+    }
+    
+    NSString *content = [NSString stringWithFormat:@"%02d:%02d", displayMinutes, displaySecounds];
     UIBezierPath *bezierPath = [UIBezierPath bezierPath];
     CGPoint center = CGPointMake(rect.size.width / 2, rect.size.height / 2);
     float radius = rect.size.width / 2 - lineWidth * 2;
@@ -68,10 +76,10 @@ static NSInteger lineWidth = 10;
     [self.color setStroke];
     [bezierPath stroke];
     
-    CGRect textRect = CGRectMake((rect.size.width / 2.0) - 100/2.0, (rect.size.height / 2.0) - 45/2.0, 100, 45);
-    [[UIColor blackColor] setFill];
+    CGRect textRect = CGRectMake((rect.size.width / 2.0) - 200/2.0, (rect.size.height / 2.0) - 45/2.0, 200, 45);
+    [[UIColor whiteColor] setFill];
     [content drawInRect: textRect
-                   withFont:[UIFont fontWithName: @"Helvetica-Bold" size:30]
+                   withFont:[UIFont fontWithName: @"Helvetica-Bold" size:54]
               lineBreakMode: NSLineBreakByWordWrapping
                   alignment: NSTextAlignmentCenter];
 }

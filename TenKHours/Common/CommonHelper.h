@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Task.h"
 
 @interface CommonHelper : NSObject
 
-+ (NSArray *)defaultTaskColors;
-+ (UIColor *)colorFromTaskColor:(NSDictionary *)taskColor;
++ (NSArray *)getDefaultTaskColors;
++ (UIColor *)getColorFromTaskColor:(NSDictionary *)taskColor;
 
 @end

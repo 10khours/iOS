@@ -8,12 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "StartTaskCircle.h"
+#import "Task.h"
 
-@interface StartTaskCell : UICollectionViewCell {
-    NSArray *_taskColors;
-}
+@interface StartTaskCell : UICollectionViewCell
 
-- (void)setTaskName:(NSString *)taskName order:(NSInteger)order;
+- (void)setTask:(Task *)task;
 
 @property (weak, nonatomic) IBOutlet UILabel *labelTaskName;
 @property (weak, nonatomic) IBOutlet StartTaskCircle *startTaskCircle;

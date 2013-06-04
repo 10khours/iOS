@@ -8,12 +8,19 @@
 
 #import "Task.h"
 #import "Record.h"
-
+#import "CommonHelper.h"
 
 @implementation Task
 
 @dynamic name;
 @dynamic total;
 @dynamic record;
+@dynamic order;
+
+- (UIColor *)getColor
+{
+    NSDictionary *taskColorDict = [[CommonHelper getDefaultTaskColors] objectAtIndex:[self.order integerValue]];
+    return [CommonHelper getColorFromTaskColor:taskColorDict];
+}
 
 @end

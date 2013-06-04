@@ -13,9 +13,11 @@
 
 @interface Task : NSManagedObject
 
-@property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSNumber * total;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSNumber *total;
 @property (nonatomic, retain) NSSet *record;
+@property (nonatomic, retain) NSNumber *order;
+
 @end
 
 @interface Task (CoreDataGeneratedAccessors)
@@ -24,5 +26,6 @@
 - (void)removeRecordObject:(Record *)value;
 - (void)addRecord:(NSSet *)values;
 - (void)removeRecord:(NSSet *)values;
+- (UIColor *)getColor;
 
 @end

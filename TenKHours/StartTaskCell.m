@@ -24,10 +24,10 @@
     return self;
 }
 
-- (void)setTaskName:(NSString *)taskName order:(NSInteger)order
-{    
-    UIColor *taskColor = [CommonHelper colorFromTaskColor:[[CommonHelper defaultTaskColors] objectAtIndex:order]];
-    self.labelTaskName.text = taskName;
+- (void)setTask:(Task *)task
+{
+    UIColor *taskColor = [task getColor];
+    self.labelTaskName.text = task.name;
     [self.labelTaskName setTextColor:taskColor];
     self.startTaskCircle.fillColor = taskColor;
     [self.startTaskCircle setNeedsDisplay];

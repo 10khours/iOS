@@ -26,7 +26,7 @@
 
 - (void)setTaskCount:(NSInteger)taskCount
 {
-    UIColor *taskColor = [CommonHelper colorFromTaskColor:[[CommonHelper defaultTaskColors] objectAtIndex:taskCount]];    
+    UIColor *taskColor = [CommonHelper getColorFromTaskColor:[[CommonHelper getDefaultTaskColors] objectAtIndex:taskCount]];
     self.addTaskCircle.borderColor = taskColor;
     [self.addTaskMark setTextColor:taskColor];
     [self.addTaskCircle setNeedsDisplay];

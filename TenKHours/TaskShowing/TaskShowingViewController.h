@@ -7,13 +7,13 @@
 //
 
 #import "TaskProgressView.h"
+#import "Task.h"
 
 @interface TaskShowingViewController : UIViewController {
     NSTimer *_timer;
 }
 
-@property (nonatomic, strong) UIColor *color;
-@property (nonatomic, strong) NSString *taskName;
+@property (nonatomic, strong) Task *task;
 @property (weak, nonatomic) IBOutlet TaskProgressView *progressView;
 @property (weak, nonatomic) IBOutlet UIButton *buttonStop;
 @property (weak, nonatomic) IBOutlet UILabel *labelTaskName;

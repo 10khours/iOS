@@ -12,7 +12,8 @@
 
 @implementation AddTaskViewController
 
-@synthesize taskName;
+@synthesize textFieldTaskName;
+@synthesize taskCount;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,7 +32,7 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    [taskName becomeFirstResponder];
+    [textFieldTaskName becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning
@@ -47,9 +48,10 @@
 - (IBAction)add:(id)sender {
     _managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
     Task *newTask = (Task *)[NSEntityDescription insertNewObjectForEntityForName:@"Task" inManagedObjectContext:_managedObjectContext];
-    [newTask setName:taskName.text];
+    [newTask setName:textFieldTaskName.text];
     [newTask setTotal:0];
-    taskName.text = @"";
+    [newTask setOrder:taskCount];
+    textFieldTaskName.text = @"";
     NSError *error = nil;
     if (![_managedObjectContext save:&error]) {
         NSLog(@"Can't save! %@ %@", error, [error localizedDescription]);

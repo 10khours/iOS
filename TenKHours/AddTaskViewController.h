@@ -12,7 +12,8 @@
     NSManagedObjectContext *_managedObjectContext;
 }
 
-@property (weak, nonatomic) IBOutlet UITextField *taskName;
+@property (weak, nonatomic) IBOutlet UITextField *textFieldTaskName;
+@property (strong, nonatomic) NSNumber *taskCount;
 
 - (IBAction)cancel:(id)sender;
 - (IBAction)add:(id)sender;

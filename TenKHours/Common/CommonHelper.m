@@ -10,13 +10,13 @@
 
 @implementation CommonHelper
 
-+ (NSArray *)defaultTaskColors {
++ (NSArray *)getDefaultTaskColors {
     NSString *systemConfigPath = [[NSBundle mainBundle] pathForResource:@"SystemConfig" ofType:@"plist"];
     NSDictionary *systemConfig = [[NSMutableDictionary alloc] initWithContentsOfFile:systemConfigPath];
     return [systemConfig objectForKey:@"TaskColors"];
 }
 
-+ (UIColor *)colorFromTaskColor:(NSDictionary *)taskColor {
++ (UIColor *)getColorFromTaskColor:(NSDictionary *)taskColor {
     float red = [[taskColor objectForKey:@"Red"] floatValue];
     float green = [[taskColor objectForKey:@"Green"] floatValue];
     float blue = [[taskColor objectForKey:@"Blue"] floatValue];

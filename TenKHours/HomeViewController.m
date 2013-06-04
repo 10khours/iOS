@@ -72,7 +72,7 @@ static NSString * kAddTaskCellIdentifier          = @"ADD_TASK_CELL_INDETIFIER";
     } else {
         cell = [collectionView dequeueReusableCellWithReuseIdentifier:kStartTaskCellIdentifier forIndexPath:indexPath];
         StartTaskCell *startTaskCell = (StartTaskCell *)cell;
-        [startTaskCell setTaskName:[[_tasks objectAtIndex:indexPath.row] valueForKey:@"name"] order:indexPath.row];
+        [startTaskCell setTask:[_tasks objectAtIndex:indexPath.row]];
     }
     return cell;
 }
@@ -92,12 +92,12 @@ static NSString * kAddTaskCellIdentifier          = @"ADD_TASK_CELL_INDETIFIER";
 {
     if (indexPath.row == [_tasks count]) {
         AddTaskViewController *addTaskViewController = [[AddTaskViewController alloc] initWithNibName:@"AddTaskViewController" bundle:nil];
+        addTaskViewController.taskCount = [NSNumber numberWithInt:[_tasks count]];
         [self.navigationController pushViewController:addTaskViewController animated:YES];
     } else {
         TaskShowingViewController *taskShowingViewController = [[TaskShowingViewController alloc] initWithNibName:@"TaskShowingViewController" bundle:nil];
         
-        taskShowingViewController.color = [CommonHelper colorFromTaskColor:[[CommonHelper defaultTaskColors] objectAtIndex:indexPath.row] ];
-        taskShowingViewController.taskName = [[_tasks objectAtIndex:indexPath.row] valueForKey:@"name"];
+        taskShowingViewController.task = [_tasks objectAtIndex:indexPath.row];
         [self.navigationController pushViewController:taskShowingViewController animated:YES];
     }
 }

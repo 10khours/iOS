@@ -28,7 +28,7 @@
     center.x = bounds.origin.x + bounds.size.width / 2.0;
     center.y = bounds.origin.y + bounds.size.height / 2.0;
     NSInteger lineWidth = 5;
-    float radius = bounds.size.width / 2.0 - lineWidth;
+    float radius = bounds.size.width / 2.0 - lineWidth - 3;
     
     UIBezierPath *borderPath = [UIBezierPath bezierPathWithArcCenter:center radius:radius startAngle:0 endAngle:M_PI * 2 clockwise:YES];
     [borderPath setLineWidth:lineWidth];

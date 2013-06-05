@@ -16,14 +16,15 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
     }
     return self;
 }
 
 - (void)drawRect:(CGRect)rect
 {
+    
     CGRect bounds = [self bounds];
+    NSLog(@"width: %f, height: %f", bounds.size.width, bounds.size.height);
     
     CGPoint center;
     center.x = bounds.origin.x + bounds.size.width / 2.0;

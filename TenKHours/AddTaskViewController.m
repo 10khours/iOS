@@ -9,30 +9,43 @@
 #import "AddTaskViewController.h"
 #import "AppDelegate.h"
 #import "Task.h"
+#import "CommonHelper.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation AddTaskViewController
 
 @synthesize textFieldTaskName;
 @synthesize taskCount;
+@synthesize buttonAdd;
+@synthesize buttonCancel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        
     }
     return self;
 }
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
+    UIColor *taskColor = [CommonHelper getColorFromTaskColor:[[CommonHelper getDefaultTaskColors] objectAtIndex: [taskCount integerValue]]];
     
+    buttonCancel.backgroundColor = [UIColor grayColor];
+    buttonCancel.layer.cornerRadius = 5;
+
+    buttonAdd.backgroundColor = taskColor;
+    buttonAdd.layer.cornerRadius = 5;
+    
+    [textFieldTaskName becomeFirstResponder];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]];
+    [super viewDidLoad];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    [textFieldTaskName becomeFirstResponder];
+    
 }
 
 - (void)didReceiveMemoryWarning

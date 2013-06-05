@@ -14,7 +14,7 @@
 @interface Task : NSManagedObject
 
 @property (nonatomic, retain) NSString *name;
-@property (nonatomic, retain) NSNumber *total;
+@property (nonatomic) NSTimeInterval total;
 @property (nonatomic, retain) NSSet *record;
 @property (nonatomic, retain) NSNumber *order;
 

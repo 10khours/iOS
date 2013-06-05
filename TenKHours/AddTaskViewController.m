@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "Task.h"
 #import "CommonHelper.h"
+#import "Record.h"
 #import <QuartzCore/QuartzCore.h>
 
 @implementation AddTaskViewController
@@ -18,6 +19,8 @@
 @synthesize taskCount;
 @synthesize buttonAdd;
 @synthesize buttonCancel;
+@synthesize textFieldhours;
+@synthesize textFieldMinutes;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -62,8 +65,19 @@
     _managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
     Task *newTask = (Task *)[NSEntityDescription insertNewObjectForEntityForName:@"Task" inManagedObjectContext:_managedObjectContext];
     [newTask setName:textFieldTaskName.text];
-    [newTask setTotal:0];
+    [newTask setTotal:0.0];
     [newTask setOrder:taskCount];
+    Record *newRecord = (Record *)[NSEntityDescription insertNewObjectForEntityForName:@"Record" inManagedObjectContext:_managedObjectContext];
+    [newRecord setDate:[NSDate date]];
+    double minutes = [textFieldMinutes.text doubleValue];
+    double hours = [textFieldhours.text doubleValue];
+    if (hours > 0 || minutes > 0) {
+        [newRecord setTime:(hours * 3600 + minutes * 60)];
+    } else {
+        [newRecord setTime:0];
+    }
+    [newTask addRecordObject:newRecord];
+    
     textFieldTaskName.text = @"";
     NSError *error = nil;
     if (![_managedObjectContext save:&error]) {

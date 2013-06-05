@@ -13,11 +13,14 @@
     NSManagedObjectContext *_managedObjectContext;
 }
 
-@property (weak, nonatomic) IBOutlet UITextField *textFieldTaskName;
 @property (strong, nonatomic) NSNumber *taskCount;
 
+@property (weak, nonatomic) IBOutlet UITextField *textFieldTaskName;
 @property (weak, nonatomic) IBOutlet UIButton *buttonCancel;
 @property (weak, nonatomic) IBOutlet UIButton *buttonAdd;
+@property (weak, nonatomic) IBOutlet UITextField *textFieldhours;
+@property (weak, nonatomic) IBOutlet UITextField *textFieldMinutes;
+
 - (IBAction)cancel:(id)sender;
 - (IBAction)add:(id)sender;
 @end

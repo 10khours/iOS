@@ -13,8 +13,8 @@
 
 @interface Record : NSManagedObject
 
-@property (nonatomic, retain) NSDate * date;
-@property (nonatomic, retain) NSNumber * time;
+@property (nonatomic, retain) NSDate *date;
+@property (nonatomic) NSTimeInterval time;
 @property (nonatomic, retain) Task *task;
 
 @end

@@ -67,16 +67,15 @@
     [newTask setName:textFieldTaskName.text];
     [newTask setTotal:0.0];
     [newTask setOrder:taskCount];
-    Record *newRecord = (Record *)[NSEntityDescription insertNewObjectForEntityForName:@"Record" inManagedObjectContext:_managedObjectContext];
-    [newRecord setDate:[NSDate date]];
+    
     double minutes = [textFieldMinutes.text doubleValue];
     double hours = [textFieldhours.text doubleValue];
     if (hours > 0 || minutes > 0) {
+        Record *newRecord = (Record *)[NSEntityDescription insertNewObjectForEntityForName:@"Record" inManagedObjectContext:_managedObjectContext];
+        [newRecord setDate:[NSDate date]];
         [newRecord setTime:(hours * 3600 + minutes * 60)];
-    } else {
-        [newRecord setTime:0];
+        [newTask addRecordsObject:newRecord];
     }
-    [newTask addRecordObject:newRecord];
     
     textFieldTaskName.text = @"";
     NSError *error = nil;

@@ -7,6 +7,8 @@
 //
 
 #import "TaskShowingViewController.h"
+#import "Record.h"
+#import "AppDelegate.h"
 #import <QuartzCore/QuartzCore.h>
 
 @implementation TaskShowingViewController
@@ -46,6 +48,7 @@
                                             selector:@selector(increaseTime)
                                             userInfo:nil
                                              repeats:YES];
+    _startDate = [NSDate date];
 }
 
 - (void)didReceiveMemoryWarning
@@ -63,6 +66,20 @@
 }
 
 - (IBAction)stopTimer:(id)sender {
+    NSManagedObjectContext *managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
+    NSDate *now = [NSDate date];
+    NSTimeInterval duration = [now timeIntervalSinceDate:_startDate];
+
+    Record *record = (Record *)[NSEntityDescription insertNewObjectForEntityForName:@"Record" inManagedObjectContext:managedObjectContext];
+    [record setDate:now];
+    [record setTime:duration];
+    [record setTask:task];
+    
+    NSError *error = nil;
+    if (![managedObjectContext save:&error]) {
+        NSLog(@"Can't save! %@ %@", error, [error localizedDescription]);
+    }
+    
     [_timer invalidate];
     [self.navigationController popViewControllerAnimated:YES];
 }

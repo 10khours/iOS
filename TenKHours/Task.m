@@ -14,7 +14,7 @@
 
 @dynamic name;
 @dynamic total;
-@dynamic record;
+@dynamic records;
 @dynamic order;
 
 - (UIColor *)getColor

@@ -11,6 +11,7 @@
 
 @interface TaskShowingViewController : UIViewController {
     NSTimer *_timer;
+    NSDate *_startDate;
 }
 
 @property (nonatomic, strong) Task *task;

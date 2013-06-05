@@ -15,17 +15,17 @@
 
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic) NSTimeInterval total;
-@property (nonatomic, retain) NSSet *record;
+@property (nonatomic, retain) NSSet *records;
 @property (nonatomic, retain) NSNumber *order;
 
 @end
 
 @interface Task (CoreDataGeneratedAccessors)
 
-- (void)addRecordObject:(Record *)value;
-- (void)removeRecordObject:(Record *)value;
-- (void)addRecord:(NSSet *)values;
-- (void)removeRecord:(NSSet *)values;
+- (void)addRecordsObject:(Record *)value;
+- (void)removeRecordsObject:(Record *)value;
+- (void)addRecords:(NSSet *)values;
+- (void)removeRecords:(NSSet *)values;
 - (UIColor *)getColor;
 
 @end

@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TaskProgressView : UIView
+@interface TaskProgressView : UIView {
+    CGFloat _startAngle;
+    CGFloat _endAngle;
+    float  _total;
+}
 
 @property (nonatomic, assign) float percent;
 @property (nonatomic, strong) UIColor *color;

@@ -12,14 +12,6 @@
 
 static NSInteger lineWidth = 10;
 
-@interface TaskProgressView () {
-    CGFloat _startAngle;
-    CGFloat _endAngle;
-    float  _total;
-}
-
-@end
-
 @implementation TaskProgressView
 
 - (id)initWithFrame:(CGRect)frame

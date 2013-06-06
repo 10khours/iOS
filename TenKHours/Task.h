@@ -26,6 +26,9 @@
 - (void)removeRecordsObject:(Record *)value;
 - (void)addRecords:(NSSet *)values;
 - (void)removeRecords:(NSSet *)values;
+
 - (UIColor *)getColor;
+- (void)addRecordWithStartDate:(NSDate *)startDate endDate:(NSDate *)endDate;
+- (void)addRecordWithStartDate:(NSDate *)startDate duration:(NSTimeInterval)duration;
 
 @end

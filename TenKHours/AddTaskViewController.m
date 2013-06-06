@@ -71,10 +71,7 @@
     double minutes = [textFieldMinutes.text doubleValue];
     double hours = [textFieldhours.text doubleValue];
     if (hours > 0 || minutes > 0) {
-        Record *newRecord = (Record *)[NSEntityDescription insertNewObjectForEntityForName:@"Record" inManagedObjectContext:_managedObjectContext];
-        [newRecord setDate:[NSDate date]];
-        [newRecord setTime:(hours * 3600 + minutes * 60)];
-        [newTask addRecordsObject:newRecord];
+        [newTask addRecordWithStartDate:[NSDate date] duration:(hours * 3600 + minutes * 60)];
     }
     
     textFieldTaskName.text = @"";

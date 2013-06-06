@@ -66,19 +66,7 @@
 }
 
 - (IBAction)stopTimer:(id)sender {
-    NSManagedObjectContext *managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
-    NSDate *now = [NSDate date];
-    NSTimeInterval duration = [now timeIntervalSinceDate:_startDate];
-
-    Record *record = (Record *)[NSEntityDescription insertNewObjectForEntityForName:@"Record" inManagedObjectContext:managedObjectContext];
-    [record setDate:now];
-    [record setTime:duration];
-    [record setTask:task];
-    
-    NSError *error = nil;
-    if (![managedObjectContext save:&error]) {
-        NSLog(@"Can't save! %@ %@", error, [error localizedDescription]);
-    }
+    [self.task addRecordWithStartDate:_startDate endDate:[NSDate date]];
     
     [_timer invalidate];
     [self.navigationController popViewControllerAnimated:YES];

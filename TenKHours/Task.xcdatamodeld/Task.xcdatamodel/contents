@@ -9,10 +9,10 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="order" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="total" optional="YES" attributeType="Double" defaultValueString="0" syncable="YES"/>
-        <relationship name="records" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Record" inverseName="task" inverseEntity="Record" syncable="YES"/>
+        <relationship name="records" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Record" inverseName="task" inverseEntity="Record" syncable="YES"/>
     </entity>
     <elements>
         <element name="Record" positionX="133" positionY="192" width="128" height="88"/>
-        <element name="Task" positionX="322" positionY="189" width="128" height="103"/>
+        <element name="Task" positionX="322" positionY="189" width="128" height="105"/>
     </elements>
 </model>

@@ -16,6 +16,11 @@
 		4957F70017535BF100299233 /* AddTaskCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4957F6FF17535BF100299233 /* AddTaskCircle.m */; };
 		496B7310174D110C0082502B /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 496B730F174D110C0082502B /* HomeViewController.xib */; };
 		496B7318174D190B0082502B /* TaskCollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 496B7317174D190B0082502B /* TaskCollectionHeaderView.m */; };
+		49A7F4A91769C6AD00D8D1FC /* TaskChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A7F4A71769C6AD00D8D1FC /* TaskChartViewController.m */; };
+		49A7F4AA1769C6AD00D8D1FC /* TaskChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49A7F4A81769C6AD00D8D1FC /* TaskChartViewController.xib */; };
+		49A7F4AF176AA56C00D8D1FC /* TaskChart.html in Resources */ = {isa = PBXBuildFile; fileRef = 49A7F4AD176AA56C00D8D1FC /* TaskChart.html */; };
+		49A7F4B1176ACA2700D8D1FC /* TaskChart.js in Resources */ = {isa = PBXBuildFile; fileRef = 49A7F4AE176AA56C00D8D1FC /* TaskChart.js */; };
+		49A7F4B2176ACA2700D8D1FC /* Chart.js in Resources */ = {isa = PBXBuildFile; fileRef = 49A7F4AB1769EA6500D8D1FC /* Chart.js */; };
 		49B00B961750AB1000139741 /* Task.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 49B00B941750AB1000139741 /* Task.xcdatamodeld */; };
 		49B00B981750B0A600139741 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B00B971750B0A600139741 /* CoreData.framework */; };
 		49B68FBB17486BE700CF841D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B68FBA17486BE700CF841D /* UIKit.framework */; };
@@ -60,6 +65,12 @@
 		496B730F174D110C0082502B /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		496B7316174D190B0082502B /* TaskCollectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskCollectionHeaderView.h; sourceTree = "<group>"; };
 		496B7317174D190B0082502B /* TaskCollectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskCollectionHeaderView.m; sourceTree = "<group>"; };
+		49A7F4A61769C6AD00D8D1FC /* TaskChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskChartViewController.h; sourceTree = "<group>"; };
+		49A7F4A71769C6AD00D8D1FC /* TaskChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskChartViewController.m; sourceTree = "<group>"; };
+		49A7F4A81769C6AD00D8D1FC /* TaskChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskChartViewController.xib; sourceTree = "<group>"; };
+		49A7F4AB1769EA6500D8D1FC /* Chart.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = Chart.js; sourceTree = "<group>"; };
+		49A7F4AD176AA56C00D8D1FC /* TaskChart.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = TaskChart.html; sourceTree = "<group>"; };
+		49A7F4AE176AA56C00D8D1FC /* TaskChart.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = TaskChart.js; sourceTree = "<group>"; };
 		49B00B951750AB1000139741 /* Task.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Task.xcdatamodel; sourceTree = "<group>"; };
 		49B00B971750B0A600139741 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		49B68FB717486BE700CF841D /* TenKHours.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TenKHours.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,6 +152,19 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		49A7F4A51769C68500D8D1FC /* TaskChart */ = {
+			isa = PBXGroup;
+			children = (
+				49A7F4AD176AA56C00D8D1FC /* TaskChart.html */,
+				49A7F4AE176AA56C00D8D1FC /* TaskChart.js */,
+				49A7F4AB1769EA6500D8D1FC /* Chart.js */,
+				49A7F4A61769C6AD00D8D1FC /* TaskChartViewController.h */,
+				49A7F4A71769C6AD00D8D1FC /* TaskChartViewController.m */,
+				49A7F4A81769C6AD00D8D1FC /* TaskChartViewController.xib */,
+			);
+			path = TaskChart;
+			sourceTree = "<group>";
+		};
 		49B68FAE17486BE700CF841D = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +197,7 @@
 		49B68FC017486BE700CF841D /* TenKHours */ = {
 			isa = PBXGroup;
 			children = (
+				49A7F4A51769C68500D8D1FC /* TaskChart */,
 				49FE0191175899C800F796C9 /* Common */,
 				4912531F17565EC300B0A8E4 /* Resources */,
 				49C18066174B49D300A95FE6 /* StartTask */,
@@ -316,6 +341,10 @@
 				496B7310174D110C0082502B /* HomeViewController.xib in Resources */,
 				493527FC174DB0060030518F /* AddTaskViewController.xib in Resources */,
 				49FE018C17588F7400F796C9 /* TaskShowingViewController.xib in Resources */,
+				49A7F4B1176ACA2700D8D1FC /* TaskChart.js in Resources */,
+				49A7F4B2176ACA2700D8D1FC /* Chart.js in Resources */,
+				49A7F4AA1769C6AD00D8D1FC /* TaskChartViewController.xib in Resources */,
+				49A7F4AF176AA56C00D8D1FC /* TaskChart.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +371,7 @@
 				49FE0194175899D600F796C9 /* CommonHelper.m in Sources */,
 				492079ED175C933F00D5BA15 /* StartTaskCircle.m in Sources */,
 				492079F0175DD02700D5BA15 /* TaskProgressBackgroundView.m in Sources */,
+				49A7F4A91769C6AD00D8D1FC /* TaskChartViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

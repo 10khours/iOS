@@ -63,13 +63,17 @@
 - (void)chartWithTask:(Task *)task {
     NSMutableArray *dates = [NSMutableArray array];
     NSMutableArray *times = [NSMutableArray array];
-    for (Record *record in task.records) {
+    NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:YES];
+    NSArray *records = [task.records sortedArrayUsingDescriptors:[NSArray arrayWithObject:descriptor]];
+    double currentTotalTime = 0;
+    for (Record *record in records) {
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         [formatter setDateFormat:@"MM-dd"];
         [formatter setTimeZone:[NSTimeZone localTimeZone]];
         NSString *date = [NSString stringWithFormat:@"%@", [formatter stringFromDate:record.date]];
         [dates addObject:date];
-        [times addObject:@(round(record.time))];
+        currentTotalTime += record.time;
+        [times addObject:@(round(currentTotalTime))];
     }
     NSString *datesString = [dates componentsJoinedByString:@","];
     NSString *timesString = [times componentsJoinedByString:@","];

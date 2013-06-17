@@ -11,8 +11,11 @@
 #import <CoreData/CoreData.h>
 #import "Task.h"
 #import "Record.h"
+#import "TaskSwitcher.h"
 
-@interface TaskChartViewController ()
+@interface TaskChartViewController () {
+    NSArray *tasks;
+}
 
 - (void)chartWithTask:(Task *)task;
 
@@ -44,6 +47,25 @@
     NSString* htmlString = [NSString stringWithContentsOfFile:htmlFile encoding:NSUTF8StringEncoding error:nil];
     self.webView.delegate = self;
     [self.webView loadHTMLString:htmlString baseURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]]];
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Task"];
+    NSManagedObjectContext *managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
+    tasks = [managedObjectContext executeFetchRequest:fetchRequest error:nil];
+    
+    CGFloat taskSwitcherY = 10;
+    for (int i = 0; i < [tasks count]; i++) {
+        TaskSwitcher *taskSwitcher = [[TaskSwitcher alloc] init];
+        CGRect taskSwitcherFrame = CGRectMake(10, taskSwitcherY, 80, 50);
+        taskSwitcher.frame = taskSwitcherFrame;
+        taskSwitcherY += 60;
+        [taskSwitcher setTask:[tasks objectAtIndex:i]];
+        [self.view addSubview:taskSwitcher];
+        if (i == 0) {
+            [taskSwitcher activate];
+        }
+    }
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onSwitch:) name:@"switch" object:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -58,6 +80,12 @@
 
 - (NSUInteger)supportedInterfaceOrientations {
     return UIInterfaceOrientationMaskLandscape;
+}
+
+- (void)onSwitch:(NSNotification *)notification
+{
+    Task *task = [notification.userInfo objectForKey:@"task"];
+    [self chartWithTask:task];
 }
 
 - (void)chartWithTask:(Task *)task {
@@ -83,9 +111,6 @@
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Task"];
-    NSManagedObjectContext *managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
-    NSArray *tasks = [managedObjectContext executeFetchRequest:fetchRequest error:nil];
     [self chartWithTask:tasks[0]];
 }
 

@@ -11,6 +11,8 @@
 		4912531E1756551700B0A8E4 /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 4912531D1756551700B0A8E4 /* Task.m */; };
 		492079ED175C933F00D5BA15 /* StartTaskCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 492079EC175C933F00D5BA15 /* StartTaskCircle.m */; };
 		492079F0175DD02700D5BA15 /* TaskProgressBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 492079EF175DD02600D5BA15 /* TaskProgressBackgroundView.m */; };
+		4922BCF9176F31B700B7BE23 /* TaskSwitcher.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4922BCF8176F31B700B7BE23 /* TaskSwitcher.xib */; };
+		4922BCFC176F356B00B7BE23 /* TaskSwitcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 4922BCFB176F356B00B7BE23 /* TaskSwitcher.m */; };
 		493527FB174DB0060030518F /* AddTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 493527F9174DB0060030518F /* AddTaskViewController.m */; };
 		493527FC174DB0060030518F /* AddTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 493527FA174DB0060030518F /* AddTaskViewController.xib */; };
 		4957F70017535BF100299233 /* AddTaskCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4957F6FF17535BF100299233 /* AddTaskCircle.m */; };
@@ -57,6 +59,9 @@
 		492079EC175C933F00D5BA15 /* StartTaskCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartTaskCircle.m; sourceTree = "<group>"; };
 		492079EE175DD02600D5BA15 /* TaskProgressBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskProgressBackgroundView.h; sourceTree = "<group>"; };
 		492079EF175DD02600D5BA15 /* TaskProgressBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskProgressBackgroundView.m; sourceTree = "<group>"; };
+		4922BCF8176F31B700B7BE23 /* TaskSwitcher.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskSwitcher.xib; sourceTree = "<group>"; };
+		4922BCFA176F356B00B7BE23 /* TaskSwitcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskSwitcher.h; sourceTree = "<group>"; };
+		4922BCFB176F356B00B7BE23 /* TaskSwitcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskSwitcher.m; sourceTree = "<group>"; };
 		493527F8174DB0060030518F /* AddTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTaskViewController.h; sourceTree = "<group>"; };
 		493527F9174DB0060030518F /* AddTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTaskViewController.m; sourceTree = "<group>"; };
 		493527FA174DB0060030518F /* AddTaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddTaskViewController.xib; sourceTree = "<group>"; };
@@ -161,6 +166,9 @@
 				49A7F4A61769C6AD00D8D1FC /* TaskChartViewController.h */,
 				49A7F4A71769C6AD00D8D1FC /* TaskChartViewController.m */,
 				49A7F4A81769C6AD00D8D1FC /* TaskChartViewController.xib */,
+				4922BCF8176F31B700B7BE23 /* TaskSwitcher.xib */,
+				4922BCFA176F356B00B7BE23 /* TaskSwitcher.h */,
+				4922BCFB176F356B00B7BE23 /* TaskSwitcher.m */,
 			);
 			path = TaskChart;
 			sourceTree = "<group>";
@@ -345,6 +353,7 @@
 				49A7F4B2176ACA2700D8D1FC /* Chart.js in Resources */,
 				49A7F4AA1769C6AD00D8D1FC /* TaskChartViewController.xib in Resources */,
 				49A7F4AF176AA56C00D8D1FC /* TaskChart.html in Resources */,
+				4922BCF9176F31B700B7BE23 /* TaskSwitcher.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,6 +381,7 @@
 				492079ED175C933F00D5BA15 /* StartTaskCircle.m in Sources */,
 				492079F0175DD02700D5BA15 /* TaskProgressBackgroundView.m in Sources */,
 				49A7F4A91769C6AD00D8D1FC /* TaskChartViewController.m in Sources */,
+				4922BCFC176F356B00B7BE23 /* TaskSwitcher.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

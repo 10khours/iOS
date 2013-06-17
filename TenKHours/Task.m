@@ -10,6 +10,8 @@
 #import "Record.h"
 #import "CommonHelper.h"
 #import "AppDelegate.h"
+#define minutesMax 6000
+#define hoursMax 360000
 
 @implementation Task
 
@@ -28,6 +30,34 @@
 {
     NSDictionary *taskColorDict = [[CommonHelper getDefaultTaskColors] objectAtIndex:[self.order integerValue]];
     return [NSString stringWithFormat:@"rgb(%@, %@, %@)", [taskColorDict objectForKey:@"Red"], [taskColorDict objectForKey:@"Green"], [taskColorDict objectForKey:@"Blue"]];
+}
+
+- (NSString *)getReadableTime
+{
+    double readableTime = self.total;
+    
+    if (readableTime > minutesMax && readableTime <= hoursMax) {
+        readableTime = round(readableTime / 60);
+    }
+    else if (readableTime > hoursMax) {
+        readableTime = round(readableTime / 3600);
+    }
+    
+    return [NSString stringWithFormat:@"%d", (int)round(readableTime)];
+}
+
+- (NSString *)getReadableUnit
+{
+    NSString *readableUnit = @"sec";
+    
+    if (self.total > minutesMax && self.total <= hoursMax) {
+        readableUnit = @"min";
+    }
+    else if (self.total > hoursMax) {
+        readableUnit = @"hour";
+    }
+    
+    return readableUnit;
 }
 
 -(BOOL)isDate:(NSDate*)date sameDayAsAnotherDate:(NSDate*)anotherDate

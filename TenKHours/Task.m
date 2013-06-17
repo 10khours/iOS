@@ -24,6 +24,12 @@
     return [CommonHelper getColorFromTaskColor:taskColorDict];
 }
 
+- (NSString *)getColorString
+{
+    NSDictionary *taskColorDict = [[CommonHelper getDefaultTaskColors] objectAtIndex:[self.order integerValue]];
+    return [NSString stringWithFormat:@"rgb(%@, %@, %@)", [taskColorDict objectForKey:@"Red"], [taskColorDict objectForKey:@"Green"], [taskColorDict objectForKey:@"Blue"]];
+}
+
 -(BOOL)isDate:(NSDate*)date sameDayAsAnotherDate:(NSDate*)anotherDate
 {
     NSCalendar* calendar = [NSCalendar currentCalendar];

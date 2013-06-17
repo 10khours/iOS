@@ -32,6 +32,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.webView.scrollView.scrollEnabled = NO;
+    self.webView.scrollView.bounces = NO;
+    
+    [self.webView setOpaque:NO];
+    
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]];
     NSString *htmlFile = [[NSBundle mainBundle] pathForResource:@"TaskChart" ofType:@"html"];
     self.webView.backgroundColor = [UIColor clearColor];
@@ -70,7 +75,7 @@
     NSString *timesString = [times componentsJoinedByString:@","];
 
     [self.webView stringByEvaluatingJavaScriptFromString:
-     [NSString stringWithFormat:@"showChart('%@', '%@')", datesString, timesString]];
+    [NSString stringWithFormat:@"showChart('%@', '%@', '%@')", datesString, timesString, [task getColorString]]];
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {

@@ -32,6 +32,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]];
     NSString *htmlFile = [[NSBundle mainBundle] pathForResource:@"TaskChart" ofType:@"html"];
     self.webView.backgroundColor = [UIColor clearColor];
     self.webView.scalesPageToFit = YES;
@@ -77,6 +78,13 @@
     NSManagedObjectContext *managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
     NSArray *tasks = [managedObjectContext executeFetchRequest:fetchRequest error:nil];
     [self chartWithTask:tasks[0]];
+}
+
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    if (toInterfaceOrientation == UIInterfaceOrientationPortrait) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 @end

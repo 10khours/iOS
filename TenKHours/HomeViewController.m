@@ -14,6 +14,7 @@
 #import "AppDelegate.h"
 #import "TaskShowingViewController.h"
 #import "CommonHelper.h"
+#import "TaskChartViewController.h"
 #import <CoreData/CoreData.h>
 
 static NSString * kTaskCollectionHeaderIdentifier = @"TASK_COLLECTIONHEADER_INDENTIFIER";
@@ -99,6 +100,14 @@ static NSString * kAddTaskCellIdentifier          = @"ADD_TASK_CELL_INDETIFIER";
         
         taskShowingViewController.task = [_tasks objectAtIndex:indexPath.row];
         [self.navigationController pushViewController:taskShowingViewController animated:YES];
+    }
+}
+
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    if (toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft || toInterfaceOrientation == UIInterfaceOrientationLandscapeRight) {
+        TaskChartViewController *taskChartViewController = [[TaskChartViewController alloc] initWithNibName:@"TaskChartViewController" bundle:nil];
+        [self.navigationController pushViewController:taskChartViewController animated:YES];
     }
 }
 

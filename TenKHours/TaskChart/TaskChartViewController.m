@@ -94,7 +94,9 @@
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
-    [self chartWithTask:tasks[0]];
+    if (tasks.count > 0) {
+        [self chartWithTask:tasks[0]];        
+    }
 }
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration

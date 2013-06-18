@@ -32,32 +32,42 @@
     return [NSString stringWithFormat:@"rgb(%@, %@, %@)", [taskColorDict objectForKey:@"Red"], [taskColorDict objectForKey:@"Green"], [taskColorDict objectForKey:@"Blue"]];
 }
 
-- (NSString *)getReadableTime
+- (NSDictionary *)getReadableTimeAndUnit
 {
     double readableTime = self.total;
-    
-    if (readableTime > minutesMax && readableTime <= hoursMax) {
-        readableTime = round(readableTime / 60);
-    }
-    else if (readableTime > hoursMax) {
-        readableTime = round(readableTime / 3600);
-    }
-    
-    return [NSString stringWithFormat:@"%d", (int)round(readableTime)];
-}
-
-- (NSString *)getReadableUnit
-{
     NSString *readableUnit = @"sec";
     
-    if (self.total > minutesMax && self.total <= hoursMax) {
+    if (readableTime > minutesMax && readableTime <= hoursMax) {
+        readableTime = readableTime / 60;
         readableUnit = @"min";
     }
-    else if (self.total > hoursMax) {
+    else if (readableTime > hoursMax) {
+        readableTime = readableTime / 3600;
         readableUnit = @"hour";
     }
     
-    return readableUnit;
+    return [NSDictionary dictionaryWithObjectsAndKeys:[NSString stringWithFormat:@"%d", (int)round(readableTime)], @"time", readableUnit, @"unit", nil];
+}
+
+- (NSDictionary *)getReadableRecords
+{
+    NSMutableArray *dates = [NSMutableArray array];
+    NSMutableArray *times = [NSMutableArray array];
+    NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:YES];
+    NSArray *records = [self.records sortedArrayUsingDescriptors:[NSArray arrayWithObject:descriptor]];
+    double currentTotalTime = 0;
+    for (Record *record in records) {
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"MM-dd"];
+        [formatter setTimeZone:[NSTimeZone localTimeZone]];
+        NSString *date = [NSString stringWithFormat:@"%@", [formatter stringFromDate:record.date]];
+        [dates addObject:date];
+        currentTotalTime += record.time;
+        [times addObject:@(round(currentTotalTime))];
+    }
+    NSString *datesString = [dates componentsJoinedByString:@","];
+    NSString *timesString = [times componentsJoinedByString:@","];
+    return [NSDictionary dictionaryWithObjectsAndKeys:datesString, @"dates", timesString, @"times", nil];
 }
 
 -(BOOL)isDate:(NSDate*)date sameDayAsAnotherDate:(NSDate*)anotherDate

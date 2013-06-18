@@ -27,8 +27,8 @@
 - (void)addRecords:(NSSet *)values;
 - (void)removeRecords:(NSSet *)values;
 - (NSString *)getColorString;
-- (NSString *)getReadableTime;
-- (NSString *)getReadableUnit;
+- (NSDictionary *)getReadableRecords;
+- (NSDictionary *)getReadableTimeAndUnit;
 
 - (UIColor *)getColor;
 - (void)addRecordWithStartDate:(NSDate *)startDate endDate:(NSDate *)endDate;

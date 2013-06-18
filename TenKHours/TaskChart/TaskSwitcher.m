@@ -19,11 +19,12 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        NSArray *nibs = [[NSBundle mainBundle] loadNibNamed:@"TaskSwitcher" owner:self options:nil];
-        self = [nibs objectAtIndex:0];
+        UINib *nib = [UINib nibWithNibName:@"TaskSwitcher" bundle:nil];        
+        self = [[nib instantiateWithOwner:self options:nil] objectAtIndex:0];
         self.backgroundColor = [UIColor clearColor];
         self.buttonSwitcher.layer.cornerRadius = 5;
         self.buttonSwitcher.layer.borderWidth = 2;
+        self.frame = frame;
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onSwitch:) name:@"switch" object:nil];
     }
     return self;
@@ -67,5 +68,9 @@
 
 - (IBAction)touchToActivate:(id)sender {
     [[NSNotificationCenter defaultCenter] postNotificationName:@"switch" object:nil userInfo:[NSDictionary dictionaryWithObject:_task forKey:@"task"]];
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 @end

@@ -54,15 +54,13 @@
     
     CGFloat taskSwitcherY = 10;
     for (int i = 0; i < [tasks count]; i++) {
-        TaskSwitcher *taskSwitcher = [[TaskSwitcher alloc] init];
-        CGRect taskSwitcherFrame = CGRectMake(10, taskSwitcherY, 80, 50);
-        taskSwitcher.frame = taskSwitcherFrame;
+        TaskSwitcher *taskSwitcher = [[TaskSwitcher alloc] initWithFrame:CGRectMake(10, taskSwitcherY, 80, 50)];
         taskSwitcherY += 60;
         [taskSwitcher setTask:[tasks objectAtIndex:i]];
-        [self.view addSubview:taskSwitcher];
         if (i == 0) {
             [taskSwitcher activate];
         }
+        [self.view addSubview:taskSwitcher];
     }
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onSwitch:) name:@"switch" object:nil];

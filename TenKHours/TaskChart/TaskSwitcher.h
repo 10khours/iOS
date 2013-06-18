@@ -10,7 +10,8 @@
 #import "Task.h"
 
 @interface TaskSwitcher : UIView {
-    Task *_task;
+    @private
+        Task *_task;
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *labelTotalTime;

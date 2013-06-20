@@ -55,15 +55,33 @@
     NSMutableArray *times = [NSMutableArray array];
     NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:YES];
     NSArray *records = [self.records sortedArrayUsingDescriptors:[NSArray arrayWithObject:descriptor]];
-    double currentTotalTime = 0;
+    
     for (Record *record in records) {
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         [formatter setDateFormat:@"MM-dd"];
         [formatter setTimeZone:[NSTimeZone localTimeZone]];
         NSString *date = [NSString stringWithFormat:@"%@", [formatter stringFromDate:record.date]];
         [dates addObject:date];
-        currentTotalTime += record.time;
-        [times addObject:@(round(currentTotalTime))];
+        
+    }
+    
+    double currentTotalTime = 0;
+    double total = self.total;
+    if (total > minutesMax && total <= hoursMax) {
+        for (Record *record in records) {
+            currentTotalTime += record.time;
+            [times addObject:@(round(currentTotalTime / 60))];
+        }
+    } else if (total > hoursMax) {
+        for (Record *record in records) {
+            currentTotalTime += record.time;
+            [times addObject:@(round(currentTotalTime / 3600))];
+        }
+    } else {
+        for (Record *record in records) {
+            currentTotalTime += record.time;
+            [times addObject:@(round(currentTotalTime))];
+        }
     }
     NSString *datesString = [dates componentsJoinedByString:@","];
     NSString *timesString = [times componentsJoinedByString:@","];

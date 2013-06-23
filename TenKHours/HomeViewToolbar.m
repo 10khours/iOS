@@ -9,6 +9,7 @@
 #import "HomeViewToolbar.h"
 #import "TaskChartViewController.h"
 #import "AppDelegate.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation HomeViewToolbar
 
@@ -18,18 +19,15 @@
     if (self) {
         NSArray *nibs = [[NSBundle mainBundle] loadNibNamed:@"HomeViewToolbar" owner:self options:nil];
         self = [nibs objectAtIndex:0];
+        
+        self.layer.masksToBounds = NO;
+        self.layer.shadowOffset = CGSizeMake(0, 0);
+        self.layer.shadowRadius = 10;
+        self.layer.shadowOpacity = 0.8;
     }
     return self;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
 
 - (IBAction)share:(id)sender {
 }

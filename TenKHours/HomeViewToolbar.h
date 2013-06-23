@@ -11,5 +11,6 @@
 @interface HomeViewToolbar : UIView
 
 - (IBAction)share:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *buttonShare;
 
 @end

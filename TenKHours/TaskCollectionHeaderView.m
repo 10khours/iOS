@@ -8,6 +8,7 @@
 
 #import "TaskCollectionHeaderView.h"
 #import "HomeViewToolbar.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation TaskCollectionHeaderView
 
@@ -18,7 +19,7 @@ HomeViewToolbar *_toolbar;
     UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
     HomeViewToolbar *toolbar = [[HomeViewToolbar alloc] init];
     CGRect toolbarFrame = toolbar.frame;
-    toolbarFrame.origin.y = 80;
+    toolbarFrame.origin.y = 90;
     toolbarFrame.origin.x = keyWindow.frame.size.width - toolbarFrame.size.width;
     toolbar.frame = toolbarFrame;
     _toolbar = toolbar;

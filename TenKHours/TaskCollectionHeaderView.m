@@ -7,17 +7,33 @@
 //
 
 #import "TaskCollectionHeaderView.h"
+#import "HomeViewToolbar.h"
 
 @implementation TaskCollectionHeaderView
+
+HomeViewToolbar *_toolbar;
+
+- (void)initializeToolbar
+{
+    UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
+    HomeViewToolbar *toolbar = [[HomeViewToolbar alloc] init];
+    CGRect toolbarFrame = toolbar.frame;
+    toolbarFrame.origin.y = 80;
+    toolbarFrame.origin.x = keyWindow.frame.size.width - toolbarFrame.size.width;
+    toolbar.frame = toolbarFrame;
+    _toolbar = toolbar;
+    toolbar.hidden = YES;
+    toolbar.alpha = 0;
+    [keyWindow addSubview:toolbar];
+}
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        UIImage *headerLogo = [UIImage imageNamed:@"logo.png"];
-        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 5, 280, 60)];
-        imageView.image = headerLogo;
-        [self addSubview:imageView];
+        UINib *nib = [UINib nibWithNibName:@"TaskCollectionHeaderView" bundle:nil];
+        self = [[nib instantiateWithOwner:self options:nil] objectAtIndex:0];
+        
     }
     return self;
 }
@@ -31,4 +47,21 @@
 }
 */
 
+- (IBAction)showFunctions:(id)sender {
+    if (_toolbar == nil) {
+        [self initializeToolbar];
+    }
+    if (_toolbar.hidden) {
+        _toolbar.hidden = NO;
+        [UIView animateWithDuration:.5 animations:^{
+            _toolbar.alpha = 1;
+        }];
+    } else {
+        [UIView animateWithDuration:.5 animations:^{
+            _toolbar.alpha = 0;
+        } completion:^(BOOL finished){
+            _toolbar.hidden = YES;
+        }];
+    }
+}
 @end

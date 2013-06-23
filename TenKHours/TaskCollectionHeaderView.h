@@ -10,4 +10,6 @@
 
 @interface TaskCollectionHeaderView : UICollectionReusableView
 
+@property (weak, nonatomic) IBOutlet UIButton *buttonFunction;
+- (IBAction)showFunctions:(id)sender;
 @end

@@ -18,6 +18,8 @@
 		4957F70017535BF100299233 /* AddTaskCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4957F6FF17535BF100299233 /* AddTaskCircle.m */; };
 		496B7310174D110C0082502B /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 496B730F174D110C0082502B /* HomeViewController.xib */; };
 		496B7318174D190B0082502B /* TaskCollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 496B7317174D190B0082502B /* TaskCollectionHeaderView.m */; };
+		499BB1201776F25300BE9E5A /* TaskCollectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 499BB11F1776F25300BE9E5A /* TaskCollectionHeaderView.xib */; };
+		499BB1221776F58F00BE9E5A /* function.png in Resources */ = {isa = PBXBuildFile; fileRef = 499BB1211776F58F00BE9E5A /* function.png */; };
 		49A7F4A91769C6AD00D8D1FC /* TaskChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A7F4A71769C6AD00D8D1FC /* TaskChartViewController.m */; };
 		49A7F4AA1769C6AD00D8D1FC /* TaskChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49A7F4A81769C6AD00D8D1FC /* TaskChartViewController.xib */; };
 		49A7F4AF176AA56C00D8D1FC /* TaskChart.html in Resources */ = {isa = PBXBuildFile; fileRef = 49A7F4AD176AA56C00D8D1FC /* TaskChart.html */; };
@@ -46,6 +48,8 @@
 		49C18064174B49B600A95FE6 /* StartTaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49C18063174B49B600A95FE6 /* StartTaskCell.xib */; };
 		49C5617A175701E1003FA8C8 /* TaskProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C561721756FF62003FA8C8 /* TaskProgressView.m */; };
 		49C5617C175701E1003FA8C8 /* TaskShowingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C561741756FF62003FA8C8 /* TaskShowingViewController.m */; };
+		49FAABEB1775D30100A26EF1 /* HomeViewToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FAABEA1775D30100A26EF1 /* HomeViewToolbar.m */; };
+		49FAABED1775D31700A26EF1 /* HomeViewToolbar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49FAABEC1775D31700A26EF1 /* HomeViewToolbar.xib */; };
 		49FE018C17588F7400F796C9 /* TaskShowingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49FE018B17588F7400F796C9 /* TaskShowingViewController.xib */; };
 		49FE0194175899D600F796C9 /* CommonHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FE0193175899D600F796C9 /* CommonHelper.m */; };
 /* End PBXBuildFile section */
@@ -70,6 +74,8 @@
 		496B730F174D110C0082502B /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		496B7316174D190B0082502B /* TaskCollectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskCollectionHeaderView.h; sourceTree = "<group>"; };
 		496B7317174D190B0082502B /* TaskCollectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskCollectionHeaderView.m; sourceTree = "<group>"; };
+		499BB11F1776F25300BE9E5A /* TaskCollectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskCollectionHeaderView.xib; sourceTree = "<group>"; };
+		499BB1211776F58F00BE9E5A /* function.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = function.png; sourceTree = "<group>"; };
 		49A7F4A61769C6AD00D8D1FC /* TaskChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskChartViewController.h; sourceTree = "<group>"; };
 		49A7F4A71769C6AD00D8D1FC /* TaskChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskChartViewController.m; sourceTree = "<group>"; };
 		49A7F4A81769C6AD00D8D1FC /* TaskChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskChartViewController.xib; sourceTree = "<group>"; };
@@ -108,6 +114,9 @@
 		49C561721756FF62003FA8C8 /* TaskProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TaskProgressView.m; sourceTree = "<group>"; };
 		49C561731756FF62003FA8C8 /* TaskShowingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TaskShowingViewController.h; sourceTree = "<group>"; };
 		49C561741756FF62003FA8C8 /* TaskShowingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TaskShowingViewController.m; sourceTree = "<group>"; };
+		49FAABE91775D30100A26EF1 /* HomeViewToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewToolbar.h; sourceTree = "<group>"; };
+		49FAABEA1775D30100A26EF1 /* HomeViewToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewToolbar.m; sourceTree = "<group>"; };
+		49FAABEC1775D31700A26EF1 /* HomeViewToolbar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewToolbar.xib; sourceTree = "<group>"; };
 		49FE018B17588F7400F796C9 /* TaskShowingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskShowingViewController.xib; sourceTree = "<group>"; };
 		49FE0192175899D600F796C9 /* CommonHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonHelper.h; sourceTree = "<group>"; };
 		49FE0193175899D600F796C9 /* CommonHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonHelper.m; sourceTree = "<group>"; };
@@ -215,8 +224,12 @@
 				49B68FE61748757200CF841D /* HomeViewController.h */,
 				49B68FE71748757200CF841D /* HomeViewController.m */,
 				496B730F174D110C0082502B /* HomeViewController.xib */,
+				49FAABE91775D30100A26EF1 /* HomeViewToolbar.h */,
+				49FAABEA1775D30100A26EF1 /* HomeViewToolbar.m */,
+				49FAABEC1775D31700A26EF1 /* HomeViewToolbar.xib */,
 				496B7316174D190B0082502B /* TaskCollectionHeaderView.h */,
 				496B7317174D190B0082502B /* TaskCollectionHeaderView.m */,
+				499BB11F1776F25300BE9E5A /* TaskCollectionHeaderView.xib */,
 				49B68FC117486BE700CF841D /* Supporting Files */,
 				1B8943D6D44D330FFBDCE50C /* TaskShowing */,
 			);
@@ -240,6 +253,7 @@
 		49B68FDD17486E2E00CF841D /* images */ = {
 			isa = PBXGroup;
 			children = (
+				499BB1211776F58F00BE9E5A /* function.png */,
 				49B68FE217486FB800CF841D /* icon.png */,
 				49B68FE417486FBD00CF841D /* icon@2x.png */,
 				49B68FDE17486E2E00CF841D /* background.png */,
@@ -354,6 +368,9 @@
 				49A7F4AA1769C6AD00D8D1FC /* TaskChartViewController.xib in Resources */,
 				49A7F4AF176AA56C00D8D1FC /* TaskChart.html in Resources */,
 				4922BCF9176F31B700B7BE23 /* TaskSwitcher.xib in Resources */,
+				49FAABED1775D31700A26EF1 /* HomeViewToolbar.xib in Resources */,
+				499BB1201776F25300BE9E5A /* TaskCollectionHeaderView.xib in Resources */,
+				499BB1221776F58F00BE9E5A /* function.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +399,7 @@
 				492079F0175DD02700D5BA15 /* TaskProgressBackgroundView.m in Sources */,
 				49A7F4A91769C6AD00D8D1FC /* TaskChartViewController.m in Sources */,
 				4922BCFC176F356B00B7BE23 /* TaskSwitcher.m in Sources */,
+				49FAABEB1775D30100A26EF1 /* HomeViewToolbar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

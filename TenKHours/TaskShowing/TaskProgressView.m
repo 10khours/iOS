@@ -52,7 +52,7 @@ static NSInteger lineWidth = 10;
         displayMinutes = roundf(_total / 60);
     }
     
-    NSString *content = [NSString stringWithFormat:@"%02d:%02d", displayMinutes, displaySecounds];
+    NSString *content = [NSString stringWithFormat:@"%02d : %02d", displayMinutes, displaySecounds];
     UIBezierPath *bezierPath = [UIBezierPath bezierPath];
     CGPoint center = CGPointMake(rect.size.width / 2, rect.size.height / 2);
     float radius = rect.size.width / 2 - lineWidth * 2;
@@ -71,7 +71,7 @@ static NSInteger lineWidth = 10;
     CGRect textRect = CGRectMake((rect.size.width / 2.0) - 200/2.0, (rect.size.height / 2.0) - 36, 200, 54);
     [[UIColor whiteColor] setFill];
     [content drawInRect: textRect
-                   withFont:[UIFont fontWithName: @"HelveticaNeue-Bold" size:54]
+                   withFont:[UIFont fontWithName: @"HelveticaNeue-CondensedBold" size:54]
               lineBreakMode: NSLineBreakByWordWrapping
                   alignment: NSTextAlignmentCenter];
 }

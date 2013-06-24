@@ -68,7 +68,7 @@ static NSInteger lineWidth = 10;
     [self.color setStroke];
     [bezierPath stroke];
     
-    CGRect textRect = CGRectMake((rect.size.width / 2.0) - 200/2.0, (rect.size.height / 2.0) - 45/2.0, 200, 45);
+    CGRect textRect = CGRectMake((rect.size.width / 2.0) - 200/2.0, (rect.size.height / 2.0) - 36, 200, 54);
     [[UIColor whiteColor] setFill];
     [content drawInRect: textRect
                    withFont:[UIFont fontWithName: @"HelveticaNeue-Bold" size:54]

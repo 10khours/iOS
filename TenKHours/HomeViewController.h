@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "TaskCollectionHeaderView.h"
+#import "HomeViewToolbar.h"
 
-@interface HomeViewController : UICollectionViewController <HeaderButtonDelegate>{
+@interface HomeViewController : UICollectionViewController <HeaderButtonDelegate, ToolBarButtonDelegate>{
     NSMutableArray *_tasks;
     NSManagedObjectContext *_managedObjectContext;
 }

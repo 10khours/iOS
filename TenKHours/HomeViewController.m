@@ -21,6 +21,7 @@
 static NSString * kTaskCollectionHeaderIdentifier = @"TASK_COLLECTIONHEADER_INDENTIFIER";
 static NSString * kStartTaskCellIdentifier        = @"START_TASK_CELL_INDETIFIER";
 static NSString * kAddTaskCellIdentifier          = @"ADD_TASK_CELL_INDETIFIER";
+static NSInteger const kHeightOfToolBar           = 50;
 
 @interface HomeViewController () {
     HomeViewToolbar *_toolbar;
@@ -56,8 +57,10 @@ static NSString * kAddTaskCellIdentifier          = @"ADD_TASK_CELL_INDETIFIER";
     CGRect toolbarFrame = _toolbar.frame;
     toolbarFrame.origin.y = 70;
     toolbarFrame.origin.x = self.view.frame.size.width - toolbarFrame.size.width;
+    toolbarFrame.size.height = 50;
     _toolbar.frame = toolbarFrame;
     _toolbar.hidden = YES;
+    _toolbar.delegate = self;
     [self.view addSubview:_toolbar];
 }
 
@@ -154,4 +157,12 @@ static NSString * kAddTaskCellIdentifier          = @"ADD_TASK_CELL_INDETIFIER";
     }
 }
 
+- (void)handleChartButtonClick {
+    TaskChartViewController *taskChartViewController = [[TaskChartViewController alloc] initWithNibName:@"TaskChartViewController" bundle:nil];
+    [self.navigationController pushViewController:taskChartViewController animated:YES];
+}
+
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
+    _toolbar.frame = CGRectMake(_toolbar.frame.origin.x, _toolbar.frame.origin.y, _toolbar.frame.size.width, kHeightOfToolBar);
+}
 @end

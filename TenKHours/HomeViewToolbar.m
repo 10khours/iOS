@@ -21,14 +21,15 @@
         self = [nibs objectAtIndex:0];
         
         self.layer.masksToBounds = NO;
-        self.layer.shadowOffset = CGSizeMake(0, 0);
+        self.layer.shadowOffset = CGSizeMake(5, 5);
         self.layer.shadowRadius = 10;
         self.layer.shadowOpacity = 0.8;
     }
     return self;
 }
 
-
-- (IBAction)share:(id)sender {
+- (void)chart:(id)sender {
+    [self.delegate handleChartButtonClick];
 }
+
 @end

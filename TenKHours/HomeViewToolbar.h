@@ -8,9 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol ToolBarButtonDelegate <NSObject>
+
+- (void)handleChartButtonClick;
+
+@end
+
 @interface HomeViewToolbar : UIView
 
-- (IBAction)share:(id)sender;
-@property (weak, nonatomic) IBOutlet UIButton *buttonShare;
+@property (weak, nonatomic) id<ToolBarButtonDelegate> delegate;
+
+- (IBAction)chart:(id)sender;
 
 @end

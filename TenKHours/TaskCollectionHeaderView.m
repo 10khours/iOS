@@ -34,7 +34,6 @@ HomeViewToolbar *_toolbar;
     if (self) {
         UINib *nib = [UINib nibWithNibName:@"TaskCollectionHeaderView" bundle:nil];
         self = [[nib instantiateWithOwner:self options:nil] objectAtIndex:0];
-        
     }
     return self;
 }
@@ -49,20 +48,6 @@ HomeViewToolbar *_toolbar;
 */
 
 - (IBAction)showFunctions:(id)sender {
-    if (_toolbar == nil) {
-        [self initializeToolbar];
-    }
-    if (_toolbar.hidden) {
-        _toolbar.hidden = NO;
-        [UIView animateWithDuration:.5 animations:^{
-            _toolbar.alpha = 1;
-        }];
-    } else {
-        [UIView animateWithDuration:.5 animations:^{
-            _toolbar.alpha = 0;
-        } completion:^(BOOL finished){
-            _toolbar.hidden = YES;
-        }];
-    }
+    [self.delegate handleRightButtonClick];
 }
 @end

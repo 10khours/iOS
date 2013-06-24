@@ -16,10 +16,19 @@
 #import "CommonHelper.h"
 #import "TaskChartViewController.h"
 #import <CoreData/CoreData.h>
+#import "HomeViewToolbar.h"
 
 static NSString * kTaskCollectionHeaderIdentifier = @"TASK_COLLECTIONHEADER_INDENTIFIER";
 static NSString * kStartTaskCellIdentifier        = @"START_TASK_CELL_INDETIFIER";
 static NSString * kAddTaskCellIdentifier          = @"ADD_TASK_CELL_INDETIFIER";
+
+@interface HomeViewController () {
+    HomeViewToolbar *_toolbar;
+}
+
+- (void)initializeToolbar;
+
+@end
 
 @implementation HomeViewController
 
@@ -39,6 +48,37 @@ static NSString * kAddTaskCellIdentifier          = @"ADD_TASK_CELL_INDETIFIER";
     
     self.collectionView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]];
     _managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
+    [self initializeToolbar];
+}
+
+- (void)initializeToolbar {
+    _toolbar = [[HomeViewToolbar alloc] init];
+    CGRect toolbarFrame = _toolbar.frame;
+    toolbarFrame.origin.y = 70;
+    toolbarFrame.origin.x = self.view.frame.size.width - toolbarFrame.size.width;
+    _toolbar.frame = toolbarFrame;
+    _toolbar.hidden = YES;
+    [self.view addSubview:_toolbar];
+}
+
+- (void)handleRightButtonClick {
+    if (_toolbar.hidden) {
+        _toolbar.hidden = NO;
+        [UIView animateWithDuration:.5 animations:^{
+            _toolbar.alpha = 1;
+        }];
+    } else {
+        [UIView animateWithDuration:.5 animations:^{
+            _toolbar.alpha = 0;
+        } completion:^(BOOL finished){
+            _toolbar.hidden = YES;
+        }];
+    }
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    _toolbar.hidden = YES;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -86,6 +126,7 @@ static NSString * kAddTaskCellIdentifier          = @"ADD_TASK_CELL_INDETIFIER";
 
     if (kind == UICollectionElementKindSectionHeader) {
         reuseableview = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:kTaskCollectionHeaderIdentifier forIndexPath:indexPath];
+        ((TaskCollectionHeaderView *)reuseableview).delegate = self;
     }
 
     return reuseableview;

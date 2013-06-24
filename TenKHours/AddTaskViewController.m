@@ -35,7 +35,6 @@
 {
     UIColor *taskColor = [CommonHelper getColorFromTaskColor:[[CommonHelper getDefaultTaskColors] objectAtIndex: [taskCount integerValue]]];
     
-    buttonCancel.backgroundColor = [UIColor grayColor];
     buttonCancel.layer.cornerRadius = 5;
 
     buttonAdd.backgroundColor = taskColor;

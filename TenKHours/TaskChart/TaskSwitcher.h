@@ -17,9 +17,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelTotalTime;
 @property (weak, nonatomic) IBOutlet UILabel *labelUnit;
 @property (weak, nonatomic) IBOutlet UIButton *buttonSwitcher;
-- (IBAction)touchToActivate:(id)sender;
 
 - (void)setTask:(Task *)task;
-- (void)activate;
-
 @end

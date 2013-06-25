@@ -25,7 +25,6 @@
         self.buttonSwitcher.layer.cornerRadius = 5;
         self.buttonSwitcher.layer.borderWidth = 2;
         self.frame = frame;
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onSwitch:) name:@"switch" object:nil];
     }
     return self;
 }
@@ -33,28 +32,11 @@
 - (void)setTask:(Task *)task
 {
     UIColor *taskColor = [task getColor];
-    self.buttonSwitcher.layer.borderColor = taskColor.CGColor;
-    self.buttonSwitcher.backgroundColor = taskColor;
-    
+    self.buttonSwitcher.layer.borderColor = taskColor.CGColor;    
     NSDictionary *readableTimeAndUnit = [task getReadableTimeAndUnit];
     labelTotalTime.text = [readableTimeAndUnit objectForKey:@"time"];
     labelUnit.text = [readableTimeAndUnit objectForKey:@"unit"];
     _task = task;
-}
-
-- (void)activate
-{
-    self.buttonSwitcher.backgroundColor = [UIColor clearColor];
-}
-
-- (void)onSwitch:(NSNotification *)notification
-{
-    Task *task = [notification.userInfo objectForKey:@"task"];
-    if (task.order == _task.order) {
-        [self activate];
-    } else {
-        self.buttonSwitcher.backgroundColor = [_task getColor];
-    }
 }
 
 /*
@@ -65,12 +47,4 @@
     // Drawing code
 }
 */
-
-- (IBAction)touchToActivate:(id)sender {
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"switch" object:nil userInfo:[NSDictionary dictionaryWithObject:_task forKey:@"task"]];
-}
-
-- (void)dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
 @end

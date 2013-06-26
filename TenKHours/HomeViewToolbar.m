@@ -21,6 +21,7 @@
         self = [nibs objectAtIndex:0];
         
         self.layer.masksToBounds = NO;
+        self.layer.shadowColor = [UIColor colorWithHue:0 saturation:0.04 brightness:0.19 alpha:1].CGColor;
         self.layer.shadowOffset = CGSizeMake(5, 5);
         self.layer.shadowRadius = 10;
         self.layer.shadowOpacity = 0.8;

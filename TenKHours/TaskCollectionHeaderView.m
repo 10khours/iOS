@@ -14,20 +14,6 @@
 
 HomeViewToolbar *_toolbar;
 
-- (void)initializeToolbar
-{
-    UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
-    HomeViewToolbar *toolbar = [[HomeViewToolbar alloc] init];
-    CGRect toolbarFrame = toolbar.frame;
-    toolbarFrame.origin.y = 90;
-    toolbarFrame.origin.x = keyWindow.frame.size.width - toolbarFrame.size.width;
-    toolbar.frame = toolbarFrame;
-    _toolbar = toolbar;
-    toolbar.hidden = YES;
-    toolbar.alpha = 0;
-    [keyWindow addSubview:toolbar];
-}
-
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];

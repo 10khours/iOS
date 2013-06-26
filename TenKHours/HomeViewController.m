@@ -55,7 +55,7 @@ static NSInteger const kHeightOfToolBar           = 50;
 - (void)initializeToolbar {
     _toolbar = [[HomeViewToolbar alloc] init];
     CGRect toolbarFrame = _toolbar.frame;
-    toolbarFrame.origin.y = 70;
+    toolbarFrame.origin.y = 60;
     toolbarFrame.origin.x = self.view.frame.size.width - toolbarFrame.size.width;
     toolbarFrame.size.height = 50;
     _toolbar.frame = toolbarFrame;

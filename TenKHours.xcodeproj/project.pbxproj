@@ -18,6 +18,7 @@
 		4957F70017535BF100299233 /* AddTaskCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4957F6FF17535BF100299233 /* AddTaskCircle.m */; };
 		496B7310174D110C0082502B /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 496B730F174D110C0082502B /* HomeViewController.xib */; };
 		496B7318174D190B0082502B /* TaskCollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 496B7317174D190B0082502B /* TaskCollectionHeaderView.m */; };
+		4990D467177D2F9D004729B5 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4990D466177D2F9D004729B5 /* Social.framework */; };
 		499BB1201776F25300BE9E5A /* TaskCollectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 499BB11F1776F25300BE9E5A /* TaskCollectionHeaderView.xib */; };
 		499BB1221776F58F00BE9E5A /* function.png in Resources */ = {isa = PBXBuildFile; fileRef = 499BB1211776F58F00BE9E5A /* function.png */; };
 		49A7F4A91769C6AD00D8D1FC /* TaskChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A7F4A71769C6AD00D8D1FC /* TaskChartViewController.m */; };
@@ -74,6 +75,7 @@
 		496B730F174D110C0082502B /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		496B7316174D190B0082502B /* TaskCollectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskCollectionHeaderView.h; sourceTree = "<group>"; };
 		496B7317174D190B0082502B /* TaskCollectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskCollectionHeaderView.m; sourceTree = "<group>"; };
+		4990D466177D2F9D004729B5 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		499BB11F1776F25300BE9E5A /* TaskCollectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskCollectionHeaderView.xib; sourceTree = "<group>"; };
 		499BB1211776F58F00BE9E5A /* function.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = function.png; sourceTree = "<group>"; };
 		49A7F4A61769C6AD00D8D1FC /* TaskChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskChartViewController.h; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4990D467177D2F9D004729B5 /* Social.framework in Frameworks */,
 				49B00B981750B0A600139741 /* CoreData.framework in Frameworks */,
 				49B68FBB17486BE700CF841D /* UIKit.framework in Frameworks */,
 				49B68FBD17486BE700CF841D /* Foundation.framework in Frameworks */,
@@ -185,6 +188,7 @@
 		49B68FAE17486BE700CF841D = {
 			isa = PBXGroup;
 			children = (
+				4990D466177D2F9D004729B5 /* Social.framework */,
 				49B68FC017486BE700CF841D /* TenKHours */,
 				49B68FB917486BE700CF841D /* Frameworks */,
 				49B68FB817486BE700CF841D /* Products */,

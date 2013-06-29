@@ -10,7 +10,7 @@
 
 @protocol ToolBarButtonDelegate <NSObject>
 
-- (void)handleChartButtonClick;
+- (void)handleShareButtonClick;
 
 @end
 
@@ -18,6 +18,6 @@
 
 @property (weak, nonatomic) id<ToolBarButtonDelegate> delegate;
 
-- (IBAction)chart:(id)sender;
+- (IBAction)share:(id)sender;
 
 @end

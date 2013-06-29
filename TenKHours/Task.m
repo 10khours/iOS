@@ -32,7 +32,7 @@
     return [NSString stringWithFormat:@"rgb(%@, %@, %@)", [taskColorDict objectForKey:@"Red"], [taskColorDict objectForKey:@"Green"], [taskColorDict objectForKey:@"Blue"]];
 }
 
-- (NSDictionary *)getReadableTimeAndUnit
+- (NSDictionary *)getReadableTimeAndUnitTotal
 {
     double readableTime = self.total;
     NSString *readableUnit = @"sec";
@@ -44,6 +44,27 @@
     else if (readableTime > hoursMax) {
         readableTime = readableTime / 3600;
         readableUnit = @"hour";
+    }
+    
+    return [NSDictionary dictionaryWithObjectsAndKeys:[NSString stringWithFormat:@"%d", (int)round(readableTime)], @"time", readableUnit, @"unit", nil];
+}
+
+- (NSDictionary *)getReadableTimeAndUnitToday
+{
+    double readableTime = 0;
+    NSString *readableUnit = @"秒";
+    
+    Record *record = [self recordInSameDayOf:[NSDate date]];
+    
+    if (record != nil) {
+        if (readableTime > minutesMax && readableTime <= hoursMax) {
+            readableTime = readableTime / 60;
+            readableUnit = @"分钟";
+        }
+        else if (readableTime > hoursMax) {
+            readableTime = readableTime / 3600;
+            readableUnit = @"小时";
+        }
     }
     
     return [NSDictionary dictionaryWithObjectsAndKeys:[NSString stringWithFormat:@"%d", (int)round(readableTime)], @"time", readableUnit, @"unit", nil];

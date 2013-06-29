@@ -29,8 +29,8 @@
     return self;
 }
 
-- (void)chart:(id)sender {
-    [self.delegate handleChartButtonClick];
+- (void)share:(id)sender {
+    [self.delegate handleShareButtonClick];
 }
 
 @end

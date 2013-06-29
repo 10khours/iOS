@@ -17,6 +17,7 @@
 #import "TaskChartViewController.h"
 #import <CoreData/CoreData.h>
 #import "HomeViewToolbar.h"
+#import <Social/Social.h>
 
 static NSString * kTaskCollectionHeaderIdentifier = @"TASK_COLLECTIONHEADER_INDENTIFIER";
 static NSString * kStartTaskCellIdentifier        = @"START_TASK_CELL_INDETIFIER";
@@ -157,9 +158,30 @@ static NSInteger const kHeightOfToolBar           = 50;
     }
 }
 
-- (void)handleChartButtonClick {
-    TaskChartViewController *taskChartViewController = [[TaskChartViewController alloc] initWithNibName:@"TaskChartViewController" bundle:nil];
-    [self.navigationController pushViewController:taskChartViewController animated:YES];
+- (void)handleShareButtonClick {
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeSinaWeibo]) {
+        SLComposeViewController *sinaSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeSinaWeibo];
+        NSMutableString *initialText = [[NSMutableString alloc] init];
+        
+        for (Task *task in _tasks) {
+            NSDictionary *readableTimeAndUnitTotal = [task getReadableTimeAndUnitTotal];
+            NSDictionary *readableTimeAndUnitToday = [task getReadableTimeAndUnitToday];
+            [initialText appendString:[NSString stringWithFormat:@"今天练习 %@ %d %@，总共 %d %@；",
+                                       task.name,
+                                       [[readableTimeAndUnitToday objectForKey:@"time"] intValue],
+                                       [readableTimeAndUnitToday objectForKey:@"unit"],
+                                       [[readableTimeAndUnitTotal objectForKey:@"time"] intValue],
+                                       [readableTimeAndUnitTotal objectForKey:@"unit"]]];
+        }
+        if ([_tasks count] == 0) {
+            [initialText appendString:@"我开始使用10K Hours啦 https://itunes.apple.com/us/app/10k-hours/id663834346"];
+        } else {
+            [initialText deleteCharactersInRange:NSMakeRange([initialText length] - 1, 1)];
+            [initialText appendString:@"。https://itunes.apple.com/us/app/10k-hours/id663834346"];
+        }
+        [sinaSheet setInitialText:initialText];
+        [self presentViewController:sinaSheet animated:YES completion:nil];
+    }
 }
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {

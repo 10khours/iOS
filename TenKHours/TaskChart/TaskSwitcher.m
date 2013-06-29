@@ -33,7 +33,7 @@
 {
     UIColor *taskColor = [task getColor];
     self.buttonSwitcher.layer.borderColor = taskColor.CGColor;    
-    NSDictionary *readableTimeAndUnit = [task getReadableTimeAndUnit];
+    NSDictionary *readableTimeAndUnit = [task getReadableTimeAndUnitTotal];
     labelTotalTime.text = [readableTimeAndUnit objectForKey:@"time"];
     labelUnit.text = [readableTimeAndUnit objectForKey:@"unit"];
     _task = task;

@@ -9,14 +9,24 @@
 #import <UIKit/UIKit.h>
 #import "Task.h"
 
-@interface TaskSwitcher : UIView {
-    @private
-        Task *_task;
-}
+@protocol TaskSwitcherDelegate <NSObject>
+
+- (void)handleSwitch:(Task *)task;
+
+@end
+
+@interface TaskSwitcher : UIView
+
+@property (weak, nonatomic) id<TaskSwitcherDelegate> delegate;
 
 @property (weak, nonatomic) IBOutlet UILabel *labelTotalTime;
 @property (weak, nonatomic) IBOutlet UILabel *labelUnit;
-@property (weak, nonatomic) IBOutlet UIButton *buttonSwitcher;
+@property (weak, nonatomic) IBOutlet UIView *viewFlip;
+@property (weak, nonatomic) IBOutlet UIView *viewInfo;
+@property (weak, nonatomic) Task *task;
+@property (nonatomic) BOOL isActive;
 
-- (void)setTask:(Task *)task;
+- (void)setupTask:(Task *)_task;
+- (void)activate;
+- (void)inActivate;
 @end

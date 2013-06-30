@@ -11,15 +11,11 @@
 #import <CoreData/CoreData.h>
 #import "Task.h"
 #import "Record.h"
-#import "TaskSwitcher.h"
 #import <QuartzCore/QuartzCore.h>
 
 @interface TaskChartViewController () {
-    NSArray *tasks;
-    NSMutableArray *_containViews;
-    NSMutableArray *_switchViews;
-    NSMutableArray *_flipViews;
-    NSInteger _lastShowTask;
+    NSArray *_tasks;
+    NSMutableArray *_taskSwitchers;
 }
 
 - (void)chartWithTask:(Task *)task;
@@ -32,9 +28,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        _containViews = [NSMutableArray arrayWithCapacity:4];
-        _switchViews = [NSMutableArray arrayWithCapacity:4];
-        _flipViews = [NSMutableArray arrayWithCapacity:4];
         // Custom initialization
     }
     return self;
@@ -58,38 +51,32 @@
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Task"];
     NSManagedObjectContext *managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
-    tasks = [managedObjectContext executeFetchRequest:fetchRequest error:nil];
+    _tasks = [managedObjectContext executeFetchRequest:fetchRequest error:nil];
+    _taskSwitchers = [[NSMutableArray alloc] initWithCapacity:4];
     
     CGFloat taskSwitcherY = 10;
-    [_containViews removeAllObjects];
-    for (int i = 0; i < [tasks count]; i++) {
-        UIView *containsView = [[UIView alloc] initWithFrame:CGRectMake(10, taskSwitcherY, 80, 50)];
-        containsView.backgroundColor = [UIColor clearColor];
-        TaskSwitcher *taskSwitcher = [[TaskSwitcher alloc] initWithFrame:containsView.bounds];
-        [taskSwitcher setTask:tasks[i]];
-        UIView *flipView = [[UIView alloc] initWithFrame:containsView.bounds];
-        flipView.layer.cornerRadius = 5;
-        flipView.backgroundColor = [tasks[i] getColor];
+    for (int i = 0; i < [_tasks count]; i++) {
+        TaskSwitcher *taskSwitcher = [[TaskSwitcher alloc] initWithFrame:CGRectMake(10, taskSwitcherY, 80, 50)];
+        [taskSwitcher setupTask:[_tasks objectAtIndex:i]];
+        [_taskSwitchers addObject:taskSwitcher];
+        taskSwitcher.delegate = self;
+        [self.view addSubview:taskSwitcher];
         taskSwitcherY += 60;
-        if (i == 0) {
-            _lastShowTask = 0;
-            [containsView addSubview:taskSwitcher];
-        } else {
-            [containsView addSubview:flipView];
-        }
-        __weak UIView *weakView = containsView;
-        [_containViews addObject:weakView];
-        __weak UIView *weakSwitch = taskSwitcher;
-        [_switchViews addObject: weakSwitch];
-        __weak UIView *weakFlipView = flipView;
-        [_flipViews addObject: weakFlipView];
-        [self.view addSubview:containsView];
     }
-    
-    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self
-                                                                                    action:@selector(respondToTapGesture:)];
-    tapRecognizer.numberOfTapsRequired = 1;
-    [self.view addGestureRecognizer:tapRecognizer];
+}
+
+- (void)handleSwitch:(Task *)task
+{
+    for (TaskSwitcher *taskSwitcher in _taskSwitchers) {
+        if (taskSwitcher.task.order == task.order) {
+            if (!taskSwitcher.isActive) {
+                [self chartWithTask:task];
+            }
+            [taskSwitcher activate];
+        } else {
+            [taskSwitcher inActivate];
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -106,23 +93,6 @@
     return UIInterfaceOrientationMaskLandscape;
 }
 
-- (void)respondToTapGesture:(UITapGestureRecognizer *)recognizer {
-    CGPoint location = [recognizer locationInView:self.view];
-    for (int i = 0; i < _containViews.count; i++) {
-        if (CGRectContainsPoint([_containViews[i] frame], location)) {
-            if (_lastShowTask != i) {
-                [UIView transitionFromView:[_containViews[_lastShowTask] subviews][0] toView:_flipViews[_lastShowTask] duration:1.0 options:UIViewAnimationOptionTransitionFlipFromLeft completion:^(BOOL finished) {
-                    
-                }];
-                [UIView transitionFromView:[_containViews[i] subviews][0] toView:_switchViews[i] duration:1.0 options:UIViewAnimationOptionTransitionFlipFromRight completion:^(BOOL finished) {
-                }];
-                _lastShowTask = i;
-            }
-            break;
-        }
-    }
-}
-
 - (void)chartWithTask:(Task *)task {
     NSDictionary *readableRecords = [task getReadableRecords];
 
@@ -131,8 +101,9 @@
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
-    if (tasks.count > 0) {
-        [self chartWithTask:tasks[0]];        
+    if (_tasks.count > 0) {
+        [self chartWithTask:_tasks[0]];
+        [_taskSwitchers[0] activate];
     }
 }
 

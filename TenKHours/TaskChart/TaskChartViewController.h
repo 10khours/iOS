@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TaskSwitcher.h"
 
-@interface TaskChartViewController : UIViewController <UIWebViewDelegate>
+@interface TaskChartViewController : UIViewController <UIWebViewDelegate, TaskSwitcherDelegate>
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @end

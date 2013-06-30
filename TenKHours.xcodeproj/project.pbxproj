@@ -47,8 +47,11 @@
 		49C18064174B49B600A95FE6 /* StartTaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49C18063174B49B600A95FE6 /* StartTaskCell.xib */; };
 		49C5617A175701E1003FA8C8 /* TaskProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C561721756FF62003FA8C8 /* TaskProgressView.m */; };
 		49C5617C175701E1003FA8C8 /* TaskShowingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C561741756FF62003FA8C8 /* TaskShowingViewController.m */; };
-		49E921E2178019D600492DA4 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 49E921E1178019D600492DA4 /* icon.png */; };
-		49E921E4178019DB00492DA4 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49E921E3178019DB00492DA4 /* icon@2x.png */; };
+		49E921E6178028B800492DA4 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 49E921E5178028B800492DA4 /* icon.png */; };
+		49E921E8178028BC00492DA4 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49E921E7178028BC00492DA4 /* icon@2x.png */; };
+		49EF2E5D178051A4003E6303 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49EF2E5C178051A4003E6303 /* Default@2x.png */; };
+		49EF2E5F17805294003E6303 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 49EF2E5E17805294003E6303 /* Default.png */; };
+		49EF2E61178052E7003E6303 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49EF2E60178052E7003E6303 /* Default-568h@2x.png */; };
 		49FAABEB1775D30100A26EF1 /* HomeViewToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FAABEA1775D30100A26EF1 /* HomeViewToolbar.m */; };
 		49FAABED1775D31700A26EF1 /* HomeViewToolbar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49FAABEC1775D31700A26EF1 /* HomeViewToolbar.xib */; };
 		49FE018C17588F7400F796C9 /* TaskShowingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49FE018B17588F7400F796C9 /* TaskShowingViewController.xib */; };
@@ -114,8 +117,11 @@
 		49C561721756FF62003FA8C8 /* TaskProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TaskProgressView.m; sourceTree = "<group>"; };
 		49C561731756FF62003FA8C8 /* TaskShowingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TaskShowingViewController.h; sourceTree = "<group>"; };
 		49C561741756FF62003FA8C8 /* TaskShowingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TaskShowingViewController.m; sourceTree = "<group>"; };
-		49E921E1178019D600492DA4 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../../icon.png; sourceTree = "<group>"; };
-		49E921E3178019DB00492DA4 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "../../icon@2x.png"; sourceTree = "<group>"; };
+		49E921E5178028B800492DA4 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../../icon.png; sourceTree = "<group>"; };
+		49E921E7178028BC00492DA4 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "../../icon@2x.png"; sourceTree = "<group>"; };
+		49EF2E5C178051A4003E6303 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../../Default@2x.png"; sourceTree = "<group>"; };
+		49EF2E5E17805294003E6303 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../../Default.png; sourceTree = "<group>"; };
+		49EF2E60178052E7003E6303 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../../Default-568h@2x.png"; sourceTree = "<group>"; };
 		49FAABE91775D30100A26EF1 /* HomeViewToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewToolbar.h; sourceTree = "<group>"; };
 		49FAABEA1775D30100A26EF1 /* HomeViewToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewToolbar.m; sourceTree = "<group>"; };
 		49FAABEC1775D31700A26EF1 /* HomeViewToolbar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewToolbar.xib; sourceTree = "<group>"; };
@@ -188,7 +194,6 @@
 		49B68FAE17486BE700CF841D = {
 			isa = PBXGroup;
 			children = (
-				4990D466177D2F9D004729B5 /* Social.framework */,
 				49B68FC017486BE700CF841D /* TenKHours */,
 				49B68FB917486BE700CF841D /* Frameworks */,
 				49B68FB817486BE700CF841D /* Products */,
@@ -206,6 +211,7 @@
 		49B68FB917486BE700CF841D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4990D466177D2F9D004729B5 /* Social.framework */,
 				89771ABA17515A4A00C63D2A /* QuartzCore.framework */,
 				49B00B971750B0A600139741 /* CoreData.framework */,
 				49B68FBA17486BE700CF841D /* UIKit.framework */,
@@ -257,8 +263,11 @@
 		49B68FDD17486E2E00CF841D /* images */ = {
 			isa = PBXGroup;
 			children = (
-				49E921E3178019DB00492DA4 /* icon@2x.png */,
-				49E921E1178019D600492DA4 /* icon.png */,
+				49EF2E60178052E7003E6303 /* Default-568h@2x.png */,
+				49EF2E5E17805294003E6303 /* Default.png */,
+				49EF2E5C178051A4003E6303 /* Default@2x.png */,
+				49E921E7178028BC00492DA4 /* icon@2x.png */,
+				49E921E5178028B800492DA4 /* icon.png */,
 				499BB1211776F58F00BE9E5A /* function.png */,
 				49B68FDE17486E2E00CF841D /* background.png */,
 				49B68FDF17486E2E00CF841D /* logo.png */,
@@ -373,8 +382,11 @@
 				49FAABED1775D31700A26EF1 /* HomeViewToolbar.xib in Resources */,
 				499BB1201776F25300BE9E5A /* TaskCollectionHeaderView.xib in Resources */,
 				499BB1221776F58F00BE9E5A /* function.png in Resources */,
-				49E921E2178019D600492DA4 /* icon.png in Resources */,
-				49E921E4178019DB00492DA4 /* icon@2x.png in Resources */,
+				49E921E6178028B800492DA4 /* icon.png in Resources */,
+				49E921E8178028BC00492DA4 /* icon@2x.png in Resources */,
+				49EF2E5D178051A4003E6303 /* Default@2x.png in Resources */,
+				49EF2E5F17805294003E6303 /* Default.png in Resources */,
+				49EF2E61178052E7003E6303 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

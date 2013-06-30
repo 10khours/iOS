@@ -20,6 +20,32 @@
 @dynamic records;
 @dynamic order;
 
+//- (void)setupDurations:(NSArray *)durations
+//{
+//    NSManagedObjectContext *managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
+//    
+//    NSDate *now = [NSDate date];
+//    for (NSNumber *duration in durations) {
+//        [self addRecordWithStartDate:now duration:[duration integerValue]];
+//        now = [self addDays:1 toDate:now];
+//    }
+//    
+//    NSError *error = nil;
+//    if (![managedObjectContext save:&error]) {
+//        NSLog(@"Can't save! %@ %@", error, [error localizedDescription]);
+//    }
+//}
+//
+//- (NSDate *)addDays:(int)days toDate:(NSDate *)date
+//{   
+//    NSDateComponents *components = [[NSDateComponents alloc] init];
+//    [components setDay:days];
+//    
+//    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+//    
+//    return [calendar dateByAddingComponents:components toDate:date options:0];
+//}
+
 - (UIColor *)getColor
 {
     NSDictionary *taskColorDict = [[CommonHelper getDefaultTaskColors] objectAtIndex:[self.order integerValue]];

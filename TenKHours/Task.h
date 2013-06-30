@@ -34,5 +34,6 @@
 - (UIColor *)getColor;
 - (void)addRecordWithStartDate:(NSDate *)startDate endDate:(NSDate *)endDate;
 - (void)addRecordWithStartDate:(NSDate *)startDate duration:(NSTimeInterval)duration;
+//- (void)setupDurations:(NSArray *)durations; // This is used to setup test data.
 
 @end

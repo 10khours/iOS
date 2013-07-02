@@ -18,6 +18,7 @@
 #import <CoreData/CoreData.h>
 #import "HomeViewToolbar.h"
 #import <Social/Social.h>
+#import <QuartzCore/QuartzCore.h>
 
 static NSString * kTaskCollectionHeaderIdentifier = @"TASK_COLLECTIONHEADER_INDENTIFIER";
 static NSString * kStartTaskCellIdentifier        = @"START_TASK_CELL_INDETIFIER";
@@ -26,6 +27,7 @@ static NSInteger const kHeightOfToolBar           = 50;
 
 @interface HomeViewController () {
     HomeViewToolbar *_toolbar;
+    UIView *_overlay;
 }
 
 - (void)initializeToolbar;

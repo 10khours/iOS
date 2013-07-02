@@ -9,6 +9,9 @@
 #import "AppDelegate.h"
 #import "HomeViewController.h"
 #import "TaskShowingViewController.h"
+#import "WalkThroughViewController.h"
+
+#define FIRST_RUN @"FIRST_RUN"
 
 @implementation AppDelegate
 
@@ -20,9 +23,17 @@
     self.window.rootViewController = navigationController;
     [navigationController setNavigationBarHidden:YES];
     
-    HomeViewController *homeViewController = [[HomeViewController alloc] initWithNibName:@"HomeViewController" bundle:nil];
-    [navigationController pushViewController:homeViewController animated:NO];
-    
+    if (![[NSUserDefaults standardUserDefaults] valueForKey:FIRST_RUN]) {
+        [[NSUserDefaults standardUserDefaults] setValue:[NSDate date] forKey:FIRST_RUN];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        WalkThroughViewController *walkThroughCon = [[WalkThroughViewController alloc] initWithNibName:nil bundle:nil];
+        walkThroughCon.contentList = @[@"guide-add.png", @"guide-count.png", @"guide-rotate.png", @"guide-stop.png"];
+        [navigationController pushViewController:walkThroughCon animated:NO];
+    } else {
+        HomeViewController *homeViewController = [[HomeViewController alloc] initWithNibName:@"HomeViewController" bundle:nil];
+        [navigationController pushViewController:homeViewController animated:NO];
+    }
+
     [self.window makeKeyAndVisible];
     
     return YES;

@@ -29,6 +29,10 @@
 		4990D467177D2F9D004729B5 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4990D466177D2F9D004729B5 /* Social.framework */; };
 		499BB1201776F25300BE9E5A /* TaskCollectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 499BB11F1776F25300BE9E5A /* TaskCollectionHeaderView.xib */; };
 		499BB1221776F58F00BE9E5A /* function.png in Resources */ = {isa = PBXBuildFile; fileRef = 499BB1211776F58F00BE9E5A /* function.png */; };
+		49A170E317831EBC009EF4A6 /* guide-add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A170DF17831EBC009EF4A6 /* guide-add@2x.png */; };
+		49A170E417831EBC009EF4A6 /* guide-count@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A170E017831EBC009EF4A6 /* guide-count@2x.png */; };
+		49A170E517831EBC009EF4A6 /* guide-rotate@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A170E117831EBC009EF4A6 /* guide-rotate@2x.png */; };
+		49A170E617831EBC009EF4A6 /* guide-stop@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A170E217831EBC009EF4A6 /* guide-stop@2x.png */; };
 		49A7F4A91769C6AD00D8D1FC /* TaskChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A7F4A71769C6AD00D8D1FC /* TaskChartViewController.m */; };
 		49A7F4AA1769C6AD00D8D1FC /* TaskChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49A7F4A81769C6AD00D8D1FC /* TaskChartViewController.xib */; };
 		49A7F4AF176AA56C00D8D1FC /* TaskChart.html in Resources */ = {isa = PBXBuildFile; fileRef = 49A7F4AD176AA56C00D8D1FC /* TaskChart.html */; };
@@ -98,6 +102,10 @@
 		4990D466177D2F9D004729B5 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		499BB11F1776F25300BE9E5A /* TaskCollectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskCollectionHeaderView.xib; sourceTree = "<group>"; };
 		499BB1211776F58F00BE9E5A /* function.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = function.png; sourceTree = "<group>"; };
+		49A170DF17831EBC009EF4A6 /* guide-add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guide-add@2x.png"; sourceTree = "<group>"; };
+		49A170E017831EBC009EF4A6 /* guide-count@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guide-count@2x.png"; sourceTree = "<group>"; };
+		49A170E117831EBC009EF4A6 /* guide-rotate@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guide-rotate@2x.png"; sourceTree = "<group>"; };
+		49A170E217831EBC009EF4A6 /* guide-stop@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guide-stop@2x.png"; sourceTree = "<group>"; };
 		49A7F4A61769C6AD00D8D1FC /* TaskChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskChartViewController.h; sourceTree = "<group>"; };
 		49A7F4A71769C6AD00D8D1FC /* TaskChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskChartViewController.m; sourceTree = "<group>"; };
 		49A7F4A81769C6AD00D8D1FC /* TaskChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskChartViewController.xib; sourceTree = "<group>"; };
@@ -281,6 +289,10 @@
 		49B68FDD17486E2E00CF841D /* images */ = {
 			isa = PBXGroup;
 			children = (
+				49A170DF17831EBC009EF4A6 /* guide-add@2x.png */,
+				49A170E017831EBC009EF4A6 /* guide-count@2x.png */,
+				49A170E117831EBC009EF4A6 /* guide-rotate@2x.png */,
+				49A170E217831EBC009EF4A6 /* guide-stop@2x.png */,
 				490854C8178171F40064DAE3 /* guide-add.png */,
 				490854C9178171F50064DAE3 /* guide-count.png */,
 				490854CA178171F90064DAE3 /* guide-rotate.png */,
@@ -419,6 +431,10 @@
 				490854CE178172040064DAE3 /* guide-rotate.png in Resources */,
 				490854CF178172040064DAE3 /* guide-stop.png in Resources */,
 				498355161782678000ECC3E9 /* WalkThroughViewController.xib in Resources */,
+				49A170E317831EBC009EF4A6 /* guide-add@2x.png in Resources */,
+				49A170E417831EBC009EF4A6 /* guide-count@2x.png in Resources */,
+				49A170E517831EBC009EF4A6 /* guide-rotate@2x.png in Resources */,
+				49A170E617831EBC009EF4A6 /* guide-stop@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

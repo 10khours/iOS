@@ -37,13 +37,12 @@
         [controllers addObject:[NSNull null]];
     }
     self.viewControllers = controllers;
-    self.scrollView.pagingEnabled = YES;
-    self.scrollView.contentSize = CGSizeMake(CGRectGetWidth(self.scrollView.frame) * numberPages,
-                                             CGRectGetHeight(self.scrollView.frame));
-    self.scrollView.showsHorizontalScrollIndicator = NO;
-    self.scrollView.showsVerticalScrollIndicator = NO;
+    self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width * ( numberPages + 1 ),
+                                             self.scrollView.frame.size.height / 2);
+
     self.scrollView.scrollsToTop = NO;
     self.scrollView.delegate = self;
+    NSLog(@"%f, %f", self.scrollView.frame.size.height, self.scrollView.frame.size.width);
 
     self.pageControl.numberOfPages = numberPages;
     self.pageControl.currentPage = 0;
@@ -87,8 +86,7 @@
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    if (self.pageControl.currentPage == self.contentList.count - 1 &&
-        self.scrollView.contentOffset.x == CGRectGetWidth(self.scrollView.frame) * (self.contentList.count - 1)) {
+    if (self.pageControl.currentPage == self.contentList.count - 1) {
         HomeViewController *homeViewController = [[HomeViewController alloc] initWithNibName:@"HomeViewController" bundle:nil];
         
         [UIView beginAnimations:@"View Flip" context:nil];

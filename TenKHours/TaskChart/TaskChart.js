@@ -3,13 +3,30 @@ canvas.width  = window.innerWidth;
 canvas.height = window.innerHeight;
 var ctx = canvas.getContext("2d");
 var chart = new Chart(ctx);
+var maxLables = 7;
 
 function showChart(dates, times, color) {
     var labels = dates.split(',');
+    var labelsLength = labels.length;
+    var displayLabels = [];
+    
+    if (labelsLength > maxLables) {
+        var displayLabelsStep = Math.round(labelsLength / maxLables);
+        for (var i = 0; i < labelsLength; i++) {
+            if (i % displayLabelsStep === 0) {
+                displayLabels.push(labels[i]);
+            } else {
+                displayLabels.push('');
+            }
+        }
+    } else {
+        displayLabels = labels;
+    }
+    
     var dataInDataSets = times.split(',').map(Number);
     
     var data = {
-    labels: labels,
+    labels: displayLabels,
     datasets: [{
                fillColor: 'rgba(255,255,255,0.1)',
                strokeColor: color,

@@ -46,9 +46,6 @@
 		49B68FC517486BE700CF841D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49B68FC317486BE700CF841D /* InfoPlist.strings */; };
 		49B68FC717486BE700CF841D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B68FC617486BE700CF841D /* main.m */; };
 		49B68FCB17486BE700CF841D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B68FCA17486BE700CF841D /* AppDelegate.m */; };
-		49B68FCD17486BE700CF841D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 49B68FCC17486BE700CF841D /* Default.png */; };
-		49B68FCF17486BE700CF841D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49B68FCE17486BE700CF841D /* Default@2x.png */; };
-		49B68FD117486BE700CF841D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49B68FD017486BE700CF841D /* Default-568h@2x.png */; };
 		49B68FE017486E2E00CF841D /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 49B68FDE17486E2E00CF841D /* background.png */; };
 		49B68FE117486E2E00CF841D /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 49B68FDF17486E2E00CF841D /* logo.png */; };
 		49B68FE81748757200CF841D /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B68FE71748757200CF841D /* HomeViewController.m */; };
@@ -124,9 +121,6 @@
 		49B68FC817486BE700CF841D /* TenKHours-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TenKHours-Prefix.pch"; sourceTree = "<group>"; };
 		49B68FC917486BE700CF841D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		49B68FCA17486BE700CF841D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		49B68FCC17486BE700CF841D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		49B68FCE17486BE700CF841D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		49B68FD017486BE700CF841D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		49B68FDE17486E2E00CF841D /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		49B68FDF17486E2E00CF841D /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		49B68FE61748757200CF841D /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
@@ -279,9 +273,6 @@
 				49B68FC317486BE700CF841D /* InfoPlist.strings */,
 				49B68FC617486BE700CF841D /* main.m */,
 				49B68FC817486BE700CF841D /* TenKHours-Prefix.pch */,
-				49B68FCC17486BE700CF841D /* Default.png */,
-				49B68FCE17486BE700CF841D /* Default@2x.png */,
-				49B68FD017486BE700CF841D /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -402,9 +393,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				49B68FC517486BE700CF841D /* InfoPlist.strings in Resources */,
-				49B68FCD17486BE700CF841D /* Default.png in Resources */,
-				49B68FCF17486BE700CF841D /* Default@2x.png in Resources */,
-				49B68FD117486BE700CF841D /* Default-568h@2x.png in Resources */,
 				49B68FE017486E2E00CF841D /* background.png in Resources */,
 				49B68FE117486E2E00CF841D /* logo.png in Resources */,
 				49B68FED17489F9F00CF841D /* AddTaskCell.xib in Resources */,

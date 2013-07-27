@@ -19,10 +19,7 @@ static NSInteger lineWidth = 10;
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor clearColor];
-        _percent = 0;
-        _total = 0;
-        _startAngle = M_PI * 1.5;
-        _endAngle = _startAngle + M_PI * 2;
+        [self gatherData];
     }
     return self;
 }
@@ -36,20 +33,17 @@ static NSInteger lineWidth = 10;
 }
 
 - (void)gatherData {
-    _percent = 0;
-    _total = 0;
+    self.total = 0;
     _startAngle = M_PI * 1.5;
     _endAngle = _startAngle + M_PI * 2;
 }
 
 - (void)drawRect:(CGRect)rect
 {
-    _total += 0.1;
-    
-    int displaySecounds = (int)roundf(_total) % 60;
+    int displaySecounds = (int)roundf(self.total) % 60;
     int displayMinutes = 0;
-    if (_total > 59) {
-        displayMinutes = roundf(_total / 60);
+    if (self.total > 59) {
+        displayMinutes = roundf(self.total / 60);
     }
     
     NSString *content = [NSString stringWithFormat:@"%02d : %02d", displayMinutes, displaySecounds];
@@ -60,7 +54,7 @@ static NSInteger lineWidth = 10;
     [bezierPath addArcWithCenter:center
                           radius:radius
                       startAngle:_startAngle
-                        endAngle:_startAngle + (_endAngle - _startAngle) * (self.percent / 60.0)
+                        endAngle:_startAngle + (_endAngle - _startAngle) * (self.seconds / 60.0)
                        clockwise:YES];
 
     bezierPath.lineCapStyle = kCGLineCapRound;

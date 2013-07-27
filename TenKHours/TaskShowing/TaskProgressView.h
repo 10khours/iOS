@@ -11,10 +11,10 @@
 @interface TaskProgressView : UIView {
     CGFloat _startAngle;
     CGFloat _endAngle;
-    float  _total;
 }
 
-@property (nonatomic, assign) float percent;
+@property (nonatomic, assign) float total;
+@property (nonatomic, assign) float seconds;
 @property (nonatomic, strong) UIColor *color;
 
 @end

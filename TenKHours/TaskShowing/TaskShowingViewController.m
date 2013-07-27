@@ -30,7 +30,7 @@
 {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]];
-    self.progressView.percent = 0.f;
+    self.progressView.seconds = 0.f;
     UIColor *taskColor = [self.task getColor];
     self.progressView.color = taskColor;
     
@@ -58,10 +58,9 @@
 }
 
 - (void)increaseTime {
-    self.progressView.percent = self.progressView.percent + 0.1;
-    if(self.progressView.percent >= 60) {
-        self.progressView.percent = 0.0;
-    }
+    float seconds = (float)[[NSDate date] timeIntervalSinceDate:_startDate];
+    self.progressView.seconds = fmodf(seconds, 60);
+    self.progressView.total = seconds;
     [self.progressView setNeedsDisplay];
 }
 
@@ -71,4 +70,5 @@
     [_timer invalidate];
     [self.navigationController popViewControllerAnimated:YES];
 }
+
 @end

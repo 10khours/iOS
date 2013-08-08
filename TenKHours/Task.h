@@ -30,6 +30,7 @@
 - (NSDictionary *)getReadableRecords;
 - (NSDictionary *)getReadableTimeAndUnitTotal;
 - (NSDictionary *)getReadableTimeAndUnitToday;
+- (void)modifyName:(NSString *)newName;
 
 - (UIColor *)getColor;
 - (void)addRecordWithStartDate:(NSDate *)startDate endDate:(NSDate *)endDate;

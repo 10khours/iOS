@@ -19,6 +19,7 @@
 #import "HomeViewToolbar.h"
 #import <Social/Social.h>
 #import <QuartzCore/QuartzCore.h>
+#import "EditTaskViewController.h"
 
 static NSString * kTaskCollectionHeaderIdentifier = @"TASK_COLLECTIONHEADER_INDENTIFIER";
 static NSString * kStartTaskCellIdentifier        = @"START_TASK_CELL_INDETIFIER";
@@ -53,6 +54,11 @@ static NSInteger const kHeightOfToolBar           = 50;
     self.collectionView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]];
     _managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
     [self initializeToolbar];
+    
+    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
+    longPress.minimumPressDuration = 2.0;
+    [longPress setDelegate:self];
+    [self.collectionView addGestureRecognizer:longPress];
 }
 
 - (void)initializeToolbar {
@@ -65,6 +71,16 @@ static NSInteger const kHeightOfToolBar           = 50;
     _toolbar.hidden = YES;
     _toolbar.delegate = self;
     [self.view addSubview:_toolbar];
+}
+
+- (void)handleLongPress:(UILongPressGestureRecognizer *)gestureRecognizer {
+    CGPoint point = [gestureRecognizer locationInView:self.collectionView];
+    NSIndexPath *indexPath = [self.collectionView indexPathForItemAtPoint:point];
+    if (indexPath != nil) {
+        EditTaskViewController *editTaskViewController = [[EditTaskViewController alloc] initWithNibName:@"EditTaskViewController" bundle:nil];
+        editTaskViewController.task = [_tasks objectAtIndex:indexPath.row];
+        [self.navigationController pushViewController:editTaskViewController animated:YES];
+    }
 }
 
 - (void)handleRightButtonClick {

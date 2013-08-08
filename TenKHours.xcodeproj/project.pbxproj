@@ -18,6 +18,8 @@
 		492079F0175DD02700D5BA15 /* TaskProgressBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 492079EF175DD02600D5BA15 /* TaskProgressBackgroundView.m */; };
 		4922BCF9176F31B700B7BE23 /* TaskSwitcher.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4922BCF8176F31B700B7BE23 /* TaskSwitcher.xib */; };
 		4922BCFC176F356B00B7BE23 /* TaskSwitcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 4922BCFB176F356B00B7BE23 /* TaskSwitcher.m */; };
+		49266D6E17B3DB0200E2E628 /* EditTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49266D6C17B3DB0200E2E628 /* EditTaskViewController.m */; };
+		49266D6F17B3DB0200E2E628 /* EditTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49266D6D17B3DB0200E2E628 /* EditTaskViewController.xib */; };
 		493527FB174DB0060030518F /* AddTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 493527F9174DB0060030518F /* AddTaskViewController.m */; };
 		493527FC174DB0060030518F /* AddTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 493527FA174DB0060030518F /* AddTaskViewController.xib */; };
 		4957F70017535BF100299233 /* AddTaskCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4957F6FF17535BF100299233 /* AddTaskCircle.m */; };
@@ -83,6 +85,9 @@
 		4922BCF8176F31B700B7BE23 /* TaskSwitcher.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskSwitcher.xib; sourceTree = "<group>"; };
 		4922BCFA176F356B00B7BE23 /* TaskSwitcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskSwitcher.h; sourceTree = "<group>"; };
 		4922BCFB176F356B00B7BE23 /* TaskSwitcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskSwitcher.m; sourceTree = "<group>"; };
+		49266D6B17B3DB0200E2E628 /* EditTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditTaskViewController.h; sourceTree = "<group>"; };
+		49266D6C17B3DB0200E2E628 /* EditTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditTaskViewController.m; sourceTree = "<group>"; };
+		49266D6D17B3DB0200E2E628 /* EditTaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditTaskViewController.xib; sourceTree = "<group>"; };
 		493527F8174DB0060030518F /* AddTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTaskViewController.h; sourceTree = "<group>"; };
 		493527F9174DB0060030518F /* AddTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTaskViewController.m; sourceTree = "<group>"; };
 		493527FA174DB0060030518F /* AddTaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddTaskViewController.xib; sourceTree = "<group>"; };
@@ -195,6 +200,16 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		49266D6A17B3DAA100E2E628 /* EditTask */ = {
+			isa = PBXGroup;
+			children = (
+				49266D6B17B3DB0200E2E628 /* EditTaskViewController.h */,
+				49266D6C17B3DB0200E2E628 /* EditTaskViewController.m */,
+				49266D6D17B3DB0200E2E628 /* EditTaskViewController.xib */,
+			);
+			name = EditTask;
+			sourceTree = "<group>";
+		};
 		49A7F4A51769C68500D8D1FC /* TaskChart */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,6 +264,7 @@
 				4912531F17565EC300B0A8E4 /* Resources */,
 				49C18066174B49D300A95FE6 /* StartTask */,
 				49C18065174B49BD00A95FE6 /* AddTask */,
+				49266D6A17B3DAA100E2E628 /* EditTask */,
 				49B68FC917486BE700CF841D /* AppDelegate.h */,
 				49B68FCA17486BE700CF841D /* AppDelegate.m */,
 				49B68FE61748757200CF841D /* HomeViewController.h */,
@@ -423,6 +439,7 @@
 				49A170E417831EBC009EF4A6 /* guide-count@2x.png in Resources */,
 				49A170E517831EBC009EF4A6 /* guide-rotate@2x.png in Resources */,
 				49A170E617831EBC009EF4A6 /* guide-stop@2x.png in Resources */,
+				49266D6F17B3DB0200E2E628 /* EditTaskViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +471,7 @@
 				49FAABEB1775D30100A26EF1 /* HomeViewToolbar.m in Sources */,
 				498355151782678000ECC3E9 /* WalkThroughViewController.m in Sources */,
 				498355191782770E00ECC3E9 /* ContentViewController.m in Sources */,
+				49266D6E17B3DB0200E2E628 /* EditTaskViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,6 +551,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TenKHours/TenKHours-Prefix.pch";
 				INFOPLIST_FILE = "TenKHours/TenKHours-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -544,6 +563,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TenKHours/TenKHours-Prefix.pch";
 				INFOPLIST_FILE = "TenKHours/TenKHours-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

@@ -185,4 +185,15 @@
     }
 }
 
+- (void)modifyName:(NSString *)newName
+{
+    NSManagedObjectContext *managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
+    self.name = newName;
+    
+    NSError *error = nil;
+    if (![managedObjectContext save:&error]) {
+        NSLog(@"Can't save! %@ %@", error, [error localizedDescription]);
+    }
+}
+
 @end

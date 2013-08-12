@@ -15,8 +15,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *buttonEdit;
 @property (weak, nonatomic) IBOutlet UIButton *buttonCancel;
 @property (weak, nonatomic) IBOutlet UITextField *textFieldTaskName;
+@property (weak, nonatomic) IBOutlet UIButton *buttonClear;
 
 - (IBAction)edit:(id)sender;
 - (IBAction)cancel:(id)sender;
+- (IBAction)clearTask:(id)sender;
 
 @end

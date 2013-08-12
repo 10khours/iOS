@@ -21,6 +21,7 @@
 @synthesize buttonEdit;
 @synthesize textFieldTaskName;
 @synthesize task;
+@synthesize buttonClear;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -41,6 +42,9 @@
     buttonEdit.backgroundColor = [task getColor];
     buttonEdit.layer.cornerRadius = 5;
     
+    buttonClear.backgroundColor = [UIColor colorWithRed:1 green:.32 blue:.32 alpha:1.0];
+    buttonClear.layer.cornerRadius = 5;
+    
     [textFieldTaskName becomeFirstResponder];
     textFieldTaskName.text = task.name;
 }
@@ -59,4 +63,18 @@
 - (IBAction)cancel:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+- (IBAction)clearTask:(id)sender {
+    UIAlertView *confirmation = [[UIAlertView alloc] initWithTitle:@"Clear Task Records" message:@"Are you sure you want to clear this task records?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Clear", nil];
+    [confirmation show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 1) {
+        task.records = nil;
+        task.total = 0;
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
+
 @end

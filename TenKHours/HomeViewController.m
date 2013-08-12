@@ -105,7 +105,10 @@ static NSInteger const kHeightOfToolBar           = 50;
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"order" ascending:YES];
+    NSArray* sortDescriptors = [[NSArray alloc] initWithObjects: sortDescriptor, nil];
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Task"];
+    [fetchRequest setSortDescriptors:sortDescriptors];
     _tasks = [[_managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
     [self.collectionView reloadData];
 }

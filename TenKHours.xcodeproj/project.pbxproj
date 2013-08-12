@@ -35,6 +35,8 @@
 		49A170E417831EBC009EF4A6 /* guide-count@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A170E017831EBC009EF4A6 /* guide-count@2x.png */; };
 		49A170E517831EBC009EF4A6 /* guide-rotate@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A170E117831EBC009EF4A6 /* guide-rotate@2x.png */; };
 		49A170E617831EBC009EF4A6 /* guide-stop@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A170E217831EBC009EF4A6 /* guide-stop@2x.png */; };
+		49A7F3D817B9067F00124D68 /* guide-edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A7F3D617B9067F00124D68 /* guide-edit.png */; };
+		49A7F3D917B9067F00124D68 /* guide-edit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A7F3D717B9067F00124D68 /* guide-edit@2x.png */; };
 		49A7F4A91769C6AD00D8D1FC /* TaskChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A7F4A71769C6AD00D8D1FC /* TaskChartViewController.m */; };
 		49A7F4AA1769C6AD00D8D1FC /* TaskChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49A7F4A81769C6AD00D8D1FC /* TaskChartViewController.xib */; };
 		49A7F4AF176AA56C00D8D1FC /* TaskChart.html in Resources */ = {isa = PBXBuildFile; fileRef = 49A7F4AD176AA56C00D8D1FC /* TaskChart.html */; };
@@ -108,6 +110,8 @@
 		49A170E017831EBC009EF4A6 /* guide-count@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guide-count@2x.png"; sourceTree = "<group>"; };
 		49A170E117831EBC009EF4A6 /* guide-rotate@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guide-rotate@2x.png"; sourceTree = "<group>"; };
 		49A170E217831EBC009EF4A6 /* guide-stop@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guide-stop@2x.png"; sourceTree = "<group>"; };
+		49A7F3D617B9067F00124D68 /* guide-edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guide-edit.png"; sourceTree = "<group>"; };
+		49A7F3D717B9067F00124D68 /* guide-edit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guide-edit@2x.png"; sourceTree = "<group>"; };
 		49A7F4A61769C6AD00D8D1FC /* TaskChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskChartViewController.h; sourceTree = "<group>"; };
 		49A7F4A71769C6AD00D8D1FC /* TaskChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskChartViewController.m; sourceTree = "<group>"; };
 		49A7F4A81769C6AD00D8D1FC /* TaskChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskChartViewController.xib; sourceTree = "<group>"; };
@@ -296,6 +300,8 @@
 		49B68FDD17486E2E00CF841D /* images */ = {
 			isa = PBXGroup;
 			children = (
+				49A7F3D617B9067F00124D68 /* guide-edit.png */,
+				49A7F3D717B9067F00124D68 /* guide-edit@2x.png */,
 				49A170DF17831EBC009EF4A6 /* guide-add@2x.png */,
 				49A170E017831EBC009EF4A6 /* guide-count@2x.png */,
 				49A170E117831EBC009EF4A6 /* guide-rotate@2x.png */,
@@ -440,6 +446,8 @@
 				49A170E517831EBC009EF4A6 /* guide-rotate@2x.png in Resources */,
 				49A170E617831EBC009EF4A6 /* guide-stop@2x.png in Resources */,
 				49266D6F17B3DB0200E2E628 /* EditTaskViewController.xib in Resources */,
+				49A7F3D817B9067F00124D68 /* guide-edit.png in Resources */,
+				49A7F3D917B9067F00124D68 /* guide-edit@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

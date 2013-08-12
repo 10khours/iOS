@@ -30,9 +30,9 @@
         NSArray *images;
         if ([[UIScreen mainScreen] respondsToSelector:@selector(displayLinkWithTarget:selector:)] &&
             ([UIScreen mainScreen].scale == 2.0)) {
-            images = [NSArray arrayWithObjects:@"guide-add@2x.png", @"guide-count@2x.png", @"guide-rotate@2x.png", @"guide-stop@2x.png", nil];
+            images = [NSArray arrayWithObjects:@"guide-add@2x.png", @"guide-count@2x.png", @"guide-edit@2x.png" @"guide-rotate@2x.png", @"guide-stop@2x.png", nil];
         } else {
-            images = [NSArray arrayWithObjects:@"guide-add.png", @"guide-count.png", @"guide-rotate.png", @"guide-stop.png", nil];
+            images = [NSArray arrayWithObjects:@"guide-add.png", @"guide-count.png", @"guide-edit.png", @"guide-rotate.png", @"guide-stop.png", nil];
         }
         walkThroughCon.contentList = images;
         [navigationController pushViewController:walkThroughCon animated:NO];

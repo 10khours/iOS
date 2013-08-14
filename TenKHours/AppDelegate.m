@@ -10,6 +10,7 @@
 #import "HomeViewController.h"
 #import "TaskShowingViewController.h"
 #import "WalkThroughViewController.h"
+#import "MobClick.h"
 
 #define FIRST_RUN @"FIRST_RUN"
 
@@ -42,6 +43,8 @@
     }
 
     [self.window makeKeyAndVisible];
+    
+    [MobClick startWithAppkey:@"520b5ca456240b764b092e20"];
     
     return YES;
 }

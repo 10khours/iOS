@@ -20,6 +20,7 @@
 		4922BCFC176F356B00B7BE23 /* TaskSwitcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 4922BCFB176F356B00B7BE23 /* TaskSwitcher.m */; };
 		49266D6E17B3DB0200E2E628 /* EditTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49266D6C17B3DB0200E2E628 /* EditTaskViewController.m */; };
 		49266D6F17B3DB0200E2E628 /* EditTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49266D6D17B3DB0200E2E628 /* EditTaskViewController.xib */; };
+		492DBF5F17BB9543009BAE48 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 492DBF5D17BB9543009BAE48 /* libMobClickLibrary.a */; };
 		493527FB174DB0060030518F /* AddTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 493527F9174DB0060030518F /* AddTaskViewController.m */; };
 		493527FC174DB0060030518F /* AddTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 493527FA174DB0060030518F /* AddTaskViewController.xib */; };
 		4957F70017535BF100299233 /* AddTaskCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4957F6FF17535BF100299233 /* AddTaskCircle.m */; };
@@ -90,6 +91,8 @@
 		49266D6B17B3DB0200E2E628 /* EditTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditTaskViewController.h; sourceTree = "<group>"; };
 		49266D6C17B3DB0200E2E628 /* EditTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditTaskViewController.m; sourceTree = "<group>"; };
 		49266D6D17B3DB0200E2E628 /* EditTaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditTaskViewController.xib; sourceTree = "<group>"; };
+		492DBF5D17BB9543009BAE48 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
+		492DBF5E17BB9543009BAE48 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
 		493527F8174DB0060030518F /* AddTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTaskViewController.h; sourceTree = "<group>"; };
 		493527F9174DB0060030518F /* AddTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTaskViewController.m; sourceTree = "<group>"; };
 		493527FA174DB0060030518F /* AddTaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddTaskViewController.xib; sourceTree = "<group>"; };
@@ -170,6 +173,7 @@
 				49B68FBB17486BE700CF841D /* UIKit.framework in Frameworks */,
 				49B68FBD17486BE700CF841D /* Foundation.framework in Frameworks */,
 				49B68FBF17486BE700CF841D /* CoreGraphics.framework in Frameworks */,
+				492DBF5F17BB9543009BAE48 /* libMobClickLibrary.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,6 +254,8 @@
 		49B68FB917486BE700CF841D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				492DBF5D17BB9543009BAE48 /* libMobClickLibrary.a */,
+				492DBF5E17BB9543009BAE48 /* MobClick.h */,
 				4990D466177D2F9D004729B5 /* Social.framework */,
 				89771ABA17515A4A00C63D2A /* QuartzCore.framework */,
 				49B00B971750B0A600139741 /* CoreData.framework */,
@@ -560,6 +566,10 @@
 				GCC_PREFIX_HEADER = "TenKHours/TenKHours-Prefix.pch";
 				INFOPLIST_FILE = "TenKHours/TenKHours-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -572,6 +582,10 @@
 				GCC_PREFIX_HEADER = "TenKHours/TenKHours-Prefix.pch";
 				INFOPLIST_FILE = "TenKHours/TenKHours-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

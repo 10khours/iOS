@@ -12,6 +12,7 @@
 #import "CommonHelper.h"
 #import "Record.h"
 #import <QuartzCore/QuartzCore.h>
+#import "MobClick.h"
 
 @implementation AddTaskViewController
 
@@ -78,6 +79,8 @@
     if (![_managedObjectContext save:&error]) {
         NSLog(@"Can't save! %@ %@", error, [error localizedDescription]);
     }
+    
+    [MobClick event:@"addTask" label:newTask.name];
 
     [self.navigationController popViewControllerAnimated:YES];
 }

@@ -10,6 +10,7 @@
 #import "CommonHelper.h"
 #import "AppDelegate.h"
 #import <QuartzCore/QuartzCore.h>
+#import "MobClick.h"
 
 @interface EditTaskViewController ()
 
@@ -57,6 +58,7 @@
 
 - (IBAction)edit:(id)sender {
     [task modifyName:textFieldTaskName.text];
+    [MobClick event:@"editTask"];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -73,6 +75,7 @@
     if (buttonIndex == 1) {
         task.records = nil;
         task.total = 0;
+        [MobClick event:@"clearTask"];
         [self.navigationController popViewControllerAnimated:YES];
     }
 }

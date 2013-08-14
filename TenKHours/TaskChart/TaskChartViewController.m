@@ -12,6 +12,7 @@
 #import "Task.h"
 #import "Record.h"
 #import <QuartzCore/QuartzCore.h>
+#import "MobClick.h"
 
 @interface TaskChartViewController () {
     NSArray *_tasks;
@@ -67,6 +68,7 @@
 
 - (void)handleSwitch:(Task *)task
 {
+    [MobClick event:@"switchStat" label:task.name];
     for (TaskSwitcher *taskSwitcher in _taskSwitchers) {
         if (taskSwitcher.task.order == task.order) {
             if (!taskSwitcher.isActive) {
@@ -95,6 +97,7 @@
 
 - (void)chartWithTask:(Task *)task {
     NSDictionary *readableRecords = [task getReadableRecords];
+    [MobClick event:@"checkStat" label:task.name];
 
     [self.webView stringByEvaluatingJavaScriptFromString:
      [NSString stringWithFormat:@"showChart('%@', '%@', '%@')", [readableRecords objectForKey:@"dates"], [readableRecords objectForKey:@"times"], [task getColorString]]];
